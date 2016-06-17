@@ -4,7 +4,28 @@ Parses addresses from eversource's list of unrepaired and repaired leaks.
 Finds the latitude and longitude of said addresses, inserts them into tables
 in datahub.csail.mit.edu
 
+preparation:
+============
+Create a file called secret.py:
+
+GOOGLE_API_KEY = "" # for geolocation with google maps
+
+username = "" # your datahub username
+password = "" # your datahub password
+
+# DataHub Oauth2 settings
+# register a client app at
+# https://datahub.csail.mit.edu/oauth2/applications/register/ with
+# the client type "confidential", authorization grant type "password", and
+# no redirect URIs.
+
+client_id = " # your datahub OAuth2 client ID
+client_secret = "" # your datahub OAuth2 Client Secret
+
+# In DataHub, create a repo. This code assumes that it is named natural_gas.
+
 usage:
+======
 $ python
 >>> from parsing import *
 """
@@ -236,33 +257,33 @@ def create_tables():
 print "Creating tables to be inserted into"
 create_tables()
 
-# print "===\nINSERTING eversource_repaired_2015\n==="
-# insert_csv_into_datahub(path='data/2015_eversource_repaired.csv',
-#                         repo='natural_gas',
-#                         table='eversource_repaired_2015',
-#                         classified_or_repaired='repaired',
-#                         delimiter=',')
+print "===\nINSERTING eversource_repaired_2015\n==="
+insert_csv_into_datahub(path='data/2015_eversource_repaired.csv',
+                        repo='natural_gas',
+                        table='eversource_repaired_2015',
+                        classified_or_repaired='repaired',
+                        delimiter=',')
 
-# print "===\nINSERTING eversource_unrepaired_2015\n==="
-# insert_csv_into_datahub(path='data/2015_eversource_unrepaired.csv',
-#                         repo='natural_gas',
-#                         table='eversource_unrepaired_2015',
-#                         classified_or_repaired='unrepaired',
-#                         delimiter=',')
+print "===\nINSERTING eversource_unrepaired_2015\n==="
+insert_csv_into_datahub(path='data/2015_eversource_unrepaired.csv',
+                        repo='natural_gas',
+                        table='eversource_unrepaired_2015',
+                        classified_or_repaired='unrepaired',
+                        delimiter=',')
 
-# print "===\nINSERTING eversource_repaired_2014\n==="
-# insert_csv_into_datahub(path='data/2014_eversource_repaired.csv',
-#                         repo='natural_gas',
-#                         table='eversource_repaired_2014',
-#                         classified_or_repaired='repaired',
-#                         delimiter=',')
+print "===\nINSERTING eversource_repaired_2014\n==="
+insert_csv_into_datahub(path='data/2014_eversource_repaired.csv',
+                        repo='natural_gas',
+                        table='eversource_repaired_2014',
+                        classified_or_repaired='repaired',
+                        delimiter=',')
 
-# print "===\nINSERTING eversource_unrepaired_2014\n==="
-# insert_csv_into_datahub(path='data/2014_eversource_unrepaired.csv',
-#                         repo='natural_gas',
-#                         table='eversource_unrepaired_2014',
-#                         classified_or_repaired='unrepaired',
-#                         delimiter=',')
+print "===\nINSERTING eversource_unrepaired_2014\n==="
+insert_csv_into_datahub(path='data/2014_eversource_unrepaired.csv',
+                        repo='natural_gas',
+                        table='eversource_unrepaired_2014',
+                        classified_or_repaired='unrepaired',
+                        delimiter=',')
 
 
 # Test Code
