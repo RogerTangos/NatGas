@@ -53,7 +53,12 @@ class Address(object):
         self.date_repaired = None
         if date_repaired and date_classified != '':
             self.date_repaired = parser.parse(date_repaired)
-        self.grade = int(grade)
+
+        # sometimes something strange will get passed in for grade
+        try:
+            self.grade = int(grade)
+        except:
+            self.grade = 0
 
         # the repo and table that this will be inserted into
         self.repo = repo
@@ -90,8 +95,12 @@ class Address(object):
             self.lng = result['geometry']['location']['lng']
             self.location_type = result['geometry']['location_type']
 
-    def insert_into_datahub(self):
-        """ inserts the address into the appropriate table in datahub"""
+    def get_query_values(self):
+        """
+        the values part of the insert statement.
+
+        It's useful to have it broken up, because that enables batch inserts.
+        """
 
         # do a little dance to make the date variable right
         date = None
@@ -100,19 +109,30 @@ class Address(object):
         elif self.date_repaired:
             date = self.date_repaired.date()
 
-        # escape characters
+        # escape quotations
         formatted_address = json.dumps(self.formatted_address)
         location_type = json.dumps(self.location_type)
 
-        query = (
+        values = ("(%d, '%s', %f, %f, '%s',"
+                  "to_date('%s', 'YYYY-MM-DD'), %d) "
+                  % (self.primary_key, formatted_address, self.lat,
+                      self.lng, location_type, str(date), self.grade))
+
+        return values
+
+    def get_query_insert(self):
+        insert = (
             "INSERT INTO %s.%s "
             "(id, formatted_address, lat, lng, "
             "location_type, record_date, grade) "
-            "values (%d, '%s', %f, %f, '%s', "
-            "to_date('%s', 'YYYY-MM-DD'), %d);"
-            % (self.repo, self.table, self.primary_key,
-                formatted_address, self.lat,
-                self.lng, location_type, str(date), self.grade))
+            % (self.repo, self.table))
+
+        return insert
+
+    def insert_into_datahub(self):
+        """ inserts the address into the appropriate table in datahub"""
+
+        query = self.get_query_insert() + " values " + self.get_query_values()
 
         try:
             res = self.__class__.datahub.query(REPO_BASE, self.repo, query)
@@ -160,7 +180,7 @@ def insert_csv_into_datahub(
                     intersection=row[3],
                     date_classified=date_classified,
                     date_repaired=date_repaired,
-                    grade=int(row[5]),
+                    grade=row[5],
                     repo=repo,
                     table=table)
 
@@ -216,30 +236,47 @@ def create_tables():
 print "Creating tables to be inserted into"
 create_tables()
 
-print "===\nINSERTING eversource_repaired_2015\n==="
-insert_csv_into_datahub(path='data/2015_eversource_repaired.csv',
-                        repo='natural_gas',
-                        table='eversource_repaired_2015',
-                        classified_or_repaired='repaired',
-                        delimiter=',')
+# print "===\nINSERTING eversource_repaired_2015\n==="
+# insert_csv_into_datahub(path='data/2015_eversource_repaired.csv',
+#                         repo='natural_gas',
+#                         table='eversource_repaired_2015',
+#                         classified_or_repaired='repaired',
+#                         delimiter=',')
 
-print "===\nINSERTING eversource_unrepaired_2015\n==="
-insert_csv_into_datahub(path='data/2015_eversource_unrepaired.csv',
-                        repo='natural_gas',
-                        table='eversource_unrepaired_2015',
-                        classified_or_repaired='unrepaired',
-                        delimiter=',')
+# print "===\nINSERTING eversource_unrepaired_2015\n==="
+# insert_csv_into_datahub(path='data/2015_eversource_unrepaired.csv',
+#                         repo='natural_gas',
+#                         table='eversource_unrepaired_2015',
+#                         classified_or_repaired='unrepaired',
+#                         delimiter=',')
 
-print "===\nINSERTING eversource_repaired_2014\n==="
-insert_csv_into_datahub(path='data/2014_eversource_repaired.csv',
-                        repo='natural_gas',
-                        table='eversource_repaired_2014',
-                        classified_or_repaired='repaired',
-                        delimiter=',')
+# print "===\nINSERTING eversource_repaired_2014\n==="
+# insert_csv_into_datahub(path='data/2014_eversource_repaired.csv',
+#                         repo='natural_gas',
+#                         table='eversource_repaired_2014',
+#                         classified_or_repaired='repaired',
+#                         delimiter=',')
 
-print "===\nINSERTING eversource_unrepaired_2014\n==="
-insert_csv_into_datahub(path='data/2014_eversource_unrepaired.csv',
-                        repo='natural_gas',
-                        table='eversource_unrepaired_2014',
-                        classified_or_repaired='unrepaired',
-                        delimiter=',')
+# print "===\nINSERTING eversource_unrepaired_2014\n==="
+# insert_csv_into_datahub(path='data/2014_eversource_unrepaired.csv',
+#                         repo='natural_gas',
+#                         table='eversource_unrepaired_2014',
+#                         classified_or_repaired='unrepaired',
+#                         delimiter=',')
+
+
+# Test Code
+
+# address = Address(
+#     primary_key=1,
+#     addr='45 Simpson',
+#     town='Somerville',
+#     intersection='@hollis',
+#     date_classified='6/17/2016',
+#     date_repaired=None,
+#     grade='3',
+#     repo='natural_gas',
+#     table='eversource_unrepaired_2014')
+
+# address.get_details_for_address()
+# print address.get_query_insert() + " values " + address.get_query_values()
