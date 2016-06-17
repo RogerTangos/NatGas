@@ -14,7 +14,6 @@ import urllib
 import requests
 import json
 import secret
-import pdb
 
 from dateutil import parser
 
@@ -115,10 +114,9 @@ class Address(object):
                 formatted_address, self.lat,
                 self.lng, location_type, str(date), self.grade))
 
-        res = self.__class__.datahub.query(REPO_BASE, self.repo, query)
-
         try:
-            print "%s: id %d" % (res['rows'][0]['status'], self.primary_key)
+            res = self.__class__.datahub.query(REPO_BASE, self.repo, query)
+            # print "%s: id %d" % (res['rows'][0]['status'], self.primary_key)
         except Exception:
             print ("Failed to insert row %d into %s.%s in datahub"
                    % (self.primary_key, self.repo, self.table))
