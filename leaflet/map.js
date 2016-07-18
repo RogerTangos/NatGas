@@ -39,4 +39,5 @@ for (var i = 0; i < leaks.length; i++) {
 
   // Instantiates a circle object given a geographical point, a radius in meters and optionally an options object.
   var circle = L.circle([leak['lat'], leak['lng']], radius, options).addTo(mymap);
+  circle.bindPopup('Grade: ' + leak['grade'] + '<br>' + 'Address: ' + leak['formatted_address'] + '<br>' + 'Record Date: ' + leak['record_date'] + '<br>' + 'ID: ' + leak['id']);
 }
