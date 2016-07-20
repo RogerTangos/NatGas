@@ -1,6 +1,6 @@
 'use strict';
 // Instantiates the map object on the "mapid" div element.  scrollWheelZoom false, disables Whether the map can be zoomed by using the mouse wheel/trackpad, so that the map will not zoom while scrolling the webpage.
-var mymap = L.map('mapid', {scrollWheelZoom : false}).setView([42.3736, -71.1097], 12);
+var mymap = L.map('mapid', {scrollWheelZoom : false}).setView([42.3736, -71.1097], 14);
 
 // Mapbox Streets tile layer
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
@@ -20,7 +20,7 @@ for (var i = 0; i < leaks.length; i++) {
   var shortDate = leak['record_date'].substr(0, 4);
   var numDate = parseInt(shortDate, 10);
   var yearDiff = currentYear-numDate;
-  var radius = (yearDiff*5)+5;
+  var radius = (yearDiff*10)+10;
 
   // color by grade
   var options = { fillOpacity: 0.5 };
