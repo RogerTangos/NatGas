@@ -41,6 +41,8 @@ from dateutil import parser
 from datahub import DataHub
 
 REPO_BASE = 'al_carter'
+
+# national grid shortcodes for cities and towns
 NATIONAL_GRID_NAMES = {
     'ABI': 'Abington',
     'ACT': 'Acton',
@@ -165,6 +167,9 @@ NATIONAL_GRID_NAMES = {
     'WRO': 'West Roxbury',
     'YAR': 'Yarmouth'}
 
+# ID's of rows that we don't want geocoded/inserted
+# This is used when we're repairing a partial insert into a table
+# or just checking on a subset of the data
 IDS = []
 
 
@@ -350,7 +355,6 @@ def insert_csv_into_datahub(
                         table=table)
 
                     point.get_details_for_address()
-                    import pdb; pdb.set_trace()
                     point.insert_into_datahub()
             except Exception as e:
                 print "Failed to insert row %s in file %s" % (row[0], path)
