@@ -94,7 +94,7 @@ a[class^="soc_"]:before, a[class*="soc_"]:before { vertical-align: middle; font-
 .soc_linkedin:before { content: '\e0b4'; }
 .soc_googlep:before { content: '\e0ad'; }
 .soc_dribble:before { content: '\e0b2'; }
-
+.soc_arrow:before { content: '\e03e'; }
 
 /*INPUTS*/
 input, textarea { margin-bottom: 18px; }
@@ -167,7 +167,7 @@ body.menuOpened { overflow: hidden; }
 .menuStyle2 + .mainSliderContainer, .menuStyle3 + .mainSliderContainer { margin-top: 90px; }
 
 .menuStyle2.smaller .menu, .menuStyle3.smaller .menu { height:60px; }
-.menuStyle2.smaller .menu h2, .menuStyle2.smaller .menu ul li, 
+.menuStyle2.smaller .menu h2, .menuStyle2.smaller .menu ul li,
 .menuStyle3.smaller .menu h2, .menuStyle3.smaller .menu ul li { margin-top:7px; margin-bottom:7px; }
 
 .menu h2, .menu ul li { -webkit-transition: all 0.5s ease; -moz-transition: all 0.5s ease; -o-transition: all 0.5s ease; -ms-transition: all 0.5s ease; transition: all 0.5s ease; }
@@ -187,7 +187,7 @@ body.menuOpened { overflow: hidden; }
 #footer .highlight { font-weight: 700; }
 
 /***************************
-* MAIN SLIDER 
+* MAIN SLIDER
 ****************************/
 /*.mainSliderContainer { position: relative; width: 100%; padding: 0; background: url('../images/slide1bg.jpg') center center no-repeat; }
 .mainSliderContainer .mainSlider { width: 100%; position: relative; }
@@ -308,6 +308,7 @@ blockquote footer { color: #fff; }
 .soc_youtube:hover:before, .social_youtube:hover { color: #b72d24 !important; }
 .soc_vimeo:hover:before, .social_vimeo:hover { color: #4c8ab0 !important; }
 .soc_tumbleupon:hover:before, .social_tumbleupon:hover { color: #EA4B24 !important; }
+.soc_arrow:hover:before, .social_arrow:hover { color: #EA4B24 !important; }
 /*GOOGLE MAPS*/
 #gmap_canvas #startLocation { color: #d82132; }
 #gmap_canvas ::-webkit-input-placeholder { color: #d82132; }
@@ -404,8 +405,8 @@ blockquote footer { color: #fff; }
 .darkSection .widget .widget-tags li h4:hover { background: #feb027; color: #e5e5e5; }
 .darkSection .widget .widget-categories li h4:hover { border-left-color: #ed2437; }
 
-/*.style2 .darkSection .descriptionColor, .style2 .darkSection .sectionDescription, .style2 .darkSection .arrowLink:before, .style2 .darkSection .goLower:before, 
-.style2 #footer.darkSection .highlight, .style2 .darkSection .memberPosition, .style2 .darkSection .memberSocialList [class*="soc_"], 
+/*.style2 .darkSection .descriptionColor, .style2 .darkSection .sectionDescription, .style2 .darkSection .arrowLink:before, .style2 .darkSection .goLower:before,
+.style2 #footer.darkSection .highlight, .style2 .darkSection .memberPosition, .style2 .darkSection .memberSocialList [class*="soc_"],
 .style2 .darkSection .blog_latest article .article_meta a, .style2 .darkSection .widget .widget-recentPosts .postMeta a,
 .style2 .darkSection .blog_latest .article_bottom .article_tags a { color:#009edb; }*/
 .style2 .darkSection .sliderPagination a.selected, .style2 .darkSection .defaultPager ul li a.active,

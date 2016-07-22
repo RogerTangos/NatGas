@@ -19,6 +19,7 @@
 
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+    <link href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
@@ -361,6 +362,7 @@
                                     <p>
                                       Albert Carter converted excel spreadsheets into CSV and ran through python program to standardize and sanitize data.
                                       Geolocate using google maps API. Insert into DataHub.
+                                      the csv <a href="https://datahub.csail.mit.edu/browse/al_carter/natural_gas/files">files</a>
                                     </p>
                                 </div>
                             </div>
@@ -376,33 +378,30 @@
                                       <li>We know leaks are the same because the date and address are the same.</li>
                                       <li>Remaining leaks are missing.  Link to the raw JSON file.</li>
                                     </ul>
-                                    <p>
-                                    have someone put in their address and look for leaks around their address
-                                    have someone perform a select query for leaks older than 5 years
-                                    </p>
                                 </div>
                             </div>
                             <div class="col-sm-5 col-sm-offset-1 timeline_box_container">
                                 <div class="timeline_box left" data-appear="fade-in" data-appear-delay="300">
-                                    <div class="date">[4th]</div>
-                                    <h4>Identify Missing Leaks</h4>
-                                    <ul>
-                                      <li>Take list of 2014 Leaks and 2014 Repairs.</li>
-                                      <li>If a repair happens near an existing leak (approx. 100 ft), count it as repaired.</li>
-                                      <li>Remaining leaks are counted as un-repaired.</li>
-                                      <li>If the same leak appears in 2015, it's not missing.  Remove it.</li>
-                                      <li>We know leaks are the same because the date and address are the same.</li>
-                                      <li>Remaining leaks are missing.  Link to the raw JSON file.</li>
-                                    </ul>
+                                    <div class="date">[5th]</div>
+                                    <h4>Try it Out</h4>
                                     <p>
-                                    have someone put in their address and look for leaks around their address
-                                    have someone perform a select query for leaks older than 5 years
+                                    pre-filled queries to <a href="https://datahub.csail.mit.edu/browse/al_carter/natural_gas/query?q=select+*+from+natural_gas.eversource_unrepaired_2015">datahub.csail.mit.edu</a>
+                                    <a href="https://datahub.csail.mit.edu/browse/al_carter/natural_gas/query?q=select+*+from+natural_gas.eversource_unrepaired_2014+where+id%3D1%3B">query2</a>
+                                    <a href="https://datahub.csail.mit.edu/browse/al_carter/natural_gas/query?q=select+*+from+natural_gas.eversource_unrepaired_2014+where+id%3D1%3B">query3</a>
+                                    <a href="https://datahub.csail.mit.edu/browse/al_carter/natural_gas/query?q=select+*+from+natural_gas.nstar_unrepaired_2014+where+id%3D1%3B">query4</a>
+                                    <a href="https://datahub.csail.mit.edu/browse/al_carter/natural_gas/files">raw CSV</a>
+                                    <a href="https://datahub.csail.mit.edu/download/al_carter/natural_gas/file/2014_eversource_unrepaired.csv">2014_eversource_unrepaired.csv</a>
+                                    <a href="http://datapipes.okfnlabs.org/csv/html/?url=https%3A%2F%2Fdatahub.csail.mit.edu%2Fdownload%2Fal_carter%2Fnatural_gas%2Ffile%2F2014_eversource_unrepaired.csv#L1">first row</a>
+                                    <a href="http://datapipes.okfnlabs.org/csv/html/?url=https%3A%2F%2Fdatahub.csail.mit.edu%2Fdownload%2Fal_carter%2Fnatural_gas%2Ffile%2F2014_ngrid_unrepaired.csv">NationalGrid</a>
+                                    <a href"https://datahub.csail.mit.edu/browse/al_carter/natural_gas/query?q=select+*+from+natural_gas.ngrid_unrepaired_2015+where+formatted_address+LIKE+%27%25117+Dudley+River+Rd%2C+Southbridge%2C+MA+01550%2C+USA%25%27+and+record_date+%3D+to_date%28%271992-03-18%27%2C+%27YYYY-MM-DD%27%29">select * from natural_gas.ngrid_unrepaired_2015 where formatted_address LIKE '%117 Dudley River Rd, Southbridge, MA 01550, USA%' and record_date = to_date('1992-03-18', 'YYYY-MM-DD')</a>
+                                    <!-- have someone put in their address and look for leaks around their address
+                                    have someone perform a select query for leaks older than 5 years -->
                                     </p>
                                 </div>
                             </div>
                             <div class="col-sm-5 col-sm-offset-6 timeline_box_container">
                                 <div class="timeline_box right" data-appear="fade-in" data-appear-delay="400">
-                                    <div class="date">[5th]</div>
+                                    <div class="date">[6th]</div>
                                     <h4>Allie built this map using Leaflet.js</h4>
                                 </div>
                             </div>
@@ -457,7 +456,7 @@
 
 
         <!--Meet the crew section-->
-        <section id="team" class="obliqueCut lightSection graySection separatorTop separatorBottom extraSpacing4">
+        <section id="about" class="obliqueCut lightSection graySection separatorTop separatorBottom">
             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="separator" viewBox="0 0 100 100" preserveAspectRatio="none">
                 <path d="M0 100 L100 0 L100 100 Z"></path>
             </svg>
@@ -469,9 +468,14 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="sectionInfo row">
-                            <h2 class="sectionTitle col-sm-4"><span class="underline">Meet</span> the team.</h2>
-                            <h2 class="sectionDescription col-sm-8">We are a small, passionate team.<br />
-                              We don't get paid to do this.</h2>
+                            <h2 class="sectionTitle col-sm-4"><span class="underline">About</span> Us</h2>
+                            <h2 class="sectionDescription col-sm-8">
+                              We don't get paid to do this.
+                            </h2>
+                            <h3 class="sectionSubDescription col-sm-7">
+                              Three independent volunteers, none of us are involved in any organizations pushing this.<br>
+                              We saw data that we found interesting and wanted to present it to the public.
+                            </h3>
                         </div>
                     </div>
                 </div>
@@ -490,18 +494,18 @@
                         <div class="crewAvatarsFixed">
                             <div class="member text-center" data-toggle="tab" data-target="#Member1">
                                 <img class="memberImg animateFast boxShadowHover" alt="Crew member" src="images/crew1.jpg" />
-                                <div class="memberName titleColor">Nathan Fields</div>
-                                <div class="memberPosition">Excel Guru</div>
+                                <div class="memberName titleColor">Al Carter</div>
+                                <div class="memberPosition">Data Wrangling, Clustering, Project Management</div>
                             </div>
                             <div class="member text-center" data-toggle="tab" data-target="#Member2">
                                 <img class="memberImg animateFast boxShadowHover" alt="Crew member" src="images/crew2.jpg" />
-                                <div class="memberName titleColor">Aleksio Gjoni</div>
-                                <div class="memberPosition">Python Master</div>
+                                <div class="memberName titleColor">Michael Webber</div>
+                                <div class="memberPosition">Clustering</div>
                             </div>
                             <div class="member text-center" data-toggle="tab" data-target="#Member3">
                                 <img class="memberImg animateFast boxShadowHover" alt="Crew member" src="images/crew3.jpg" />
-                                <div class="memberName titleColor">Karen Johnston</div>
-                                <div class="memberPosition">Organizational Wizard</div>
+                                <div class="memberName titleColor">Allie S.</div>
+                                <div class="memberPosition">Map and Website</div>
                             </div>
                         </div>
                     </div>
@@ -514,16 +518,27 @@
                             <!--ABOUT MEMBER-->
                             <div class="col-sm-7 col-sm-offset-1 paddingRight0">
                                 <div class="memberAbout">
-                                    <div class="memberName descriptionColor">About Nathan</div>
-                                    <div class="memberDesc1 titleColor">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae magna laoreet, fringilla libero ac, vulputate mi.</div>
-                                    <div class="memberDesc2">Curabitur a consequat quam, ultrices dictum felis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse odio nibh, lobortis sed nisl vitae, porttitor molestie elit. Vestibulum non mattis sapien. Aenean congue leo sit amet orci elementum lobortis. Aenean quis elementum risus. Praesent quam diam, hendrerit ultricies volutpat eu, vulputate a eros.</div>
+                                    <div class="memberName descriptionColor">About Al Carter</div>
+                                    <div class="memberDesc1 titleColor">
+                                      A Brown University Alum with experience in software development and project management.
+                                    </div>
+                                    <div class="memberDesc2">
+                                      Al has been working on testing and integrating experimental systems that the database group at MIT's Computer Science and Artificial Intelligence Lab (CSAIL) has developed.
+                                      These include:
+                                      <ul>
+                                        <li>OpenSense, a system sensor and data collection library for iOS</li>
+                                        <li>OpenPDS, a distributed privacy-protecting architecture for personal data online</li>
+                                        <li>MIT Mobile (iOS), MIT's Mobile app</li>
+                                        <li>GetFit, an MIT fitness tracking app for iOS</li>
+                                        <li>DataHub, a github-postgresql mashup that allows users to share, fork, and version databases online</li>
+                                      </ul>
+                                    </div>
                                     <div class="memberSocial">
-                                        <h4>Follow Nathan</h4>
+                                        <h4>Follow Al</h4>
                                         <ul class="memberSocialList">
-                                            <li><a class="soc_twitter" href="#">@nathanf</a></li>
-                                            <li><a class="soc_facebook" href="#">nathan.fields</a></li>
-                                            <li><a class="soc_instagram" href="#">nathanf</a></li>
-                                            <li><a class="soc_linkedin" href="#">nathanfields</a></li>
+                                            <li><a class="soc_" href="https://github.com/RogerTangos" target="_blank"><i class="fa fa-github"></i>github/RogerTangos</a></li>
+                                            <li><a class="soc_linkedin" href="https://www.linkedin.com/in/brownualcarter" target="_blank">brownualcarter</a></li>
+                                            <li><a class="soc_twitter" href="http://twitter.com/al_carter" target="_blank">@al_carter</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -536,16 +551,19 @@
                             <!--ABOUT MEMBER-->
                             <div class="col-sm-7 col-sm-offset-1 paddingRight0">
                                 <div class="memberAbout">
-                                    <div class="memberName descriptionColor">About Aleksio</div>
-                                    <div class="memberDesc1 titleColor">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae magna laoreet, fringilla libero ac, vulputate mi.</div>
-                                    <div class="memberDesc2">Curabitur a consequat quam, ultrices dictum felis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse odio nibh, lobortis sed nisl vitae, porttitor molestie elit. Vestibulum non mattis sapien. Aenean congue leo sit amet orci elementum lobortis. Aenean quis elementum risus. Praesent quam diam, hendrerit ultricies volutpat eu, vulputate a eros.</div>
+                                    <div class="memberName descriptionColor">About Michael Webber</div>
+                                    <div class="memberDesc1 titleColor">
+                                      A creative and determined problem solver and builder, committed to excellence in his work and personal interactions.
+                                    </div>
+                                    <div class="memberDesc2">
+                                      Michael has experience programming applications and supporting them, working as part of a team and on his own, travelling across the country and working remotely.
+                                      He is currently seeking interesting and challenging IT projects.
+                                    </div>
                                     <div class="memberSocial">
-                                        <h4>Follow Aleksio</h4>
+                                        <h4>Follow Michael Webber</h4>
                                         <ul class="memberSocialList">
-                                            <li><a class="soc_twitter" href="#">@aleksiog</a></li>
-                                            <li><a class="soc_facebook" href="#">aleksio.gjoni</a></li>
-                                            <li><a class="soc_instagram" href="#">aleksiog</a></li>
-                                            <li><a class="soc_linkedin" href="#">aleksiogjoni</a></li>
+                                            <li><a class="soc_" href="https://github.com/MichaelRyanWebber" target="_blank"><i class="fa fa-github"></i>github/MichaelRyanWebber</a></li>
+                                            <li><a class="soc_linkedin" href="https://www.linkedin.com/in/mike-webber-25469213" target="_blank">mike-webber-25469213</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -558,16 +576,24 @@
                             <!--ABOUT MEMBER-->
                             <div class="col-sm-7 col-sm-offset-1 paddingRight0">
                                 <div class="memberAbout">
-                                    <div class="memberName descriptionColor">About Karen</div>
-                                    <div class="memberDesc1 titleColor">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae magna laoreet, fringilla libero ac, vulputate mi.</div>
-                                    <div class="memberDesc2">Curabitur a consequat quam, ultrices dictum felis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse odio nibh, lobortis sed nisl vitae, porttitor molestie elit. Vestibulum non mattis sapien. Aenean congue leo sit amet orci elementum lobortis. Aenean quis elementum risus. Praesent quam diam, hendrerit ultricies volutpat eu, vulputate a eros.</div>
+                                    <div class="memberName descriptionColor">About Allison Sichling</div>
+                                    <div class="memberDesc1 titleColor">
+                                      Problem Solving, Learning, Collaborating, Drawing, Painting, Sewing, Making art with LEDs, passionate about creating things.
+                                    </div>
+                                    <div class="memberDesc2">
+                                      A web developer interested in interactive experiences, with a Bachelor's in Fine Art, Allison graduated from General Assembly’s full-time Web Development Immersive bootcamp December 2015.
+                                    </div>
                                     <div class="memberSocial">
-                                        <h4>Follow Karen</h4>
+                                        <h4>Follow Allie</h4>
                                         <ul class="memberSocialList">
-                                            <li><a class="soc_twitter" href="#">@karenj</a></li>
+                                            <li><a class="soc_" href="https://github.com/faetea" target="_blank"><i class="fa fa-github"></i>github/faetea</a></li>
+                                            <li><a class="soc_arrow" href="http://faetea.github.io/" target="_blank">Code Portfolio</a></li>
+                                            <li><a class="soc_linkedin" href="https://www.linkedin.com/in/allisonsebastian" target="_blank">allisonsebastian</a></li>
+                                            <li><a class="soc_twitter" href="https://twitter.com/faetea" target="_blank">@faetea</a></li>
+                                            <!-- <li><a class="soc_dribble" href="#">@nathanf</a></li>
+                                            <li><a class="soc_googlep" href="https://www.linkedin.com/in/brownualcarter">brownualcarter</a></li>
                                             <li><a class="soc_facebook" href="#">karen.johnston</a></li>
-                                            <li><a class="soc_instagram" href="#">karenj</a></li>
-                                            <li><a class="soc_linkedin" href="#">karenjohnston</a></li>
+                                            <li><a class="soc_instagram" href="#">@nathanf</a></li> -->
                                         </ul>
                                     </div>
                                 </div>
