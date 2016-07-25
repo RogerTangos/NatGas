@@ -1,5 +1,5 @@
 """
-Parses addresses from eversource's list of unrepaired and repaired leaks.
+Parses addresses from ngrid's list of unrepaired and repaired leaks.
 
 Finds the latitude and longitude of said addresses, inserts them into tables
 in datahub.csail.mit.edu
@@ -42,6 +42,136 @@ from datahub import DataHub
 
 REPO_BASE = 'al_carter'
 
+# national grid shortcodes for cities and towns
+NATIONAL_GRID_NAMES = {
+    'ABI': 'Abington',
+    'ACT': 'Acton',
+    'AME': 'Amesbury',
+    'ARL': 'arlington',
+    'AYE': 'Ayer',
+    'BAR': 'Barnstable Town',
+    'BED': 'bedford',
+    'BEL': 'belmont',
+    'BEV': 'beverly',
+    'BIL': 'Bellerica',
+    'BOS': 'Boston',
+    'BOU': 'bourne',
+    'BOX': 'Boxborough',
+    'BRA': 'Braintree',
+    'BRE': 'Brewster',
+    'BRI': 'brighton',
+    'BRK': 'Brookfield',
+    'BRO': 'Brookline',
+    'BUR': 'burlington',
+    'BUZ': 'buzzards bay',
+    'BXF': 'Boxford',
+    'CAR': 'Carlisle',
+    'CHM': 'Chatham',
+    'CEN': 'centerville',
+    'CFD': 'Chelmsford',
+    'CHA': 'charlestown',
+    'CHE': 'Chelsea',
+    'CLI': 'Clinton',
+    'COH': 'cohasset',
+    'CON': 'Concord',
+    'COT': 'Cotuit',
+    'DAN': 'danvers',
+    'DEN': 'Dennis',
+    'DEP': 'Dennis Port',
+    'DOR': 'Dorchester',
+    'DRA': 'dracut',
+    'DUD': 'dudley',
+    'DUN': 'Dunstable',
+    'EBO': 'East Boston',
+    'EBR': 'East Brookfield',
+    'ESS': 'essex',
+    'EVE': 'everett',
+    'FAH': 'Fairhaven',
+    'FAL': 'falmouth',
+    'GEO': 'Georgetown',
+    'GLO': 'gloucester',
+    'GRO': 'Groton',
+    'GVL': 'Groveland',
+    'HAM': 'Hampden',
+    'HAR': 'Harvard',
+    'HAV': 'Haverhill',
+    'HIN': 'hingham',
+    'HUL': 'Hull',
+    'HWH': 'Harwich',
+    'HYA': 'hyannis',
+    'IPS': 'ipswich',
+    'JPL': 'Jamaica Plain',
+    'LEI': 'Leicester',
+    'LEO': 'Leominster',
+    'LEX': 'lexington',
+    'LIN': 'Lincoln',
+    'LIT': 'Littleton',
+    'LNF': 'Lynnfield',
+    'LNN': 'Lynn',
+    'LOW': 'Lowell',
+    'MAL': 'Malden',
+    'MAM': 'Marston Mills',
+    'MAN': 'Manchester',
+    'MAR': 'Marblehead',
+    'MAS': 'Mashpee',
+    'MED': 'Medford',
+    'MEL': 'melrose',
+    'MER': 'Merrimac',
+    'MID': 'Middletown',
+    'MIL': 'Milton',
+    'MOB': 'Mounument Beach',
+    'NAH': 'nahant',
+    'NBR': 'New Bedford',
+    'NEW': 'Newton',
+    'NOR': 'Norwood',
+    'NWB': 'Newburyport or Newbury',
+    'ORL': 'Orleans',
+    'OST': 'Osterville',
+    'PEA': 'Peabody',
+    'PEP': 'Pepperell',
+    'POC': 'Pocasset',
+    'QUI': 'Quincy',
+    'RDG': 'Reading',
+    'REV': 'Revere',
+    'ROC': 'Rockland',
+    'ROS': 'Roslindale',
+    'ROX': 'Roxbury',
+    'SAL': 'Salem',
+    'SAU': 'Saugus',
+    'SAN': 'Sandwich',
+    'SBO': 'South Boston',
+    'SLB': 'Salisbury',
+    'SOM': 'Somerville',
+    'TEW': 'Tewksbury',
+    'TOP': 'Topsfield',
+    'TYN': 'Tyngsborough',
+    'WAK': 'wakefield',
+    'WAL': 'Waltham',
+    'PAB': 'Wareham',
+    'WAR': 'Wareham',
+    'WAT': 'Watertown',
+    'WAY': 'wayland',
+    'WEB': 'Webster',
+    'WEL': 'Wellesley',
+    'WEN': 'Wenham',
+    'WES': 'Westminster',
+    'WHA': 'West Harwich',
+    'WES': 'weston',
+    'WEY': 'Weymouth',
+    'WHI': 'Whitman',
+    'WCH': 'Winchester',
+    'WFD': 'Westford',
+    'WIL': 'Wilmington',
+    'WNT': 'Winthrop',
+    'WOB': 'Woburn',
+    'WRO': 'West Roxbury',
+    'YAR': 'Yarmouth'}
+
+# ID's of rows that we don't want geocoded/inserted
+# This is used when we're repairing a partial insert into a table
+# or just checking on a subset of the data
+IDS = []
+
 
 class Address(object):
     """
@@ -56,16 +186,23 @@ class Address(object):
                       password=secret.password)
 
     def __init__(self, primary_key, addr, town, intersection,
-                 date_classified, date_repaired, grade, repo, table):
+                 date_classified, date_repaired, grade, repo, table,
+                 national_grid=False):
         super(Address, self).__init__()
 
         self.primary_key = int(primary_key)
         self.addr = addr
         self.town = town
 
+        # uncomment for national grid
+        if national_grid:
+            self.town = NATIONAL_GRID_NAMES.get(town.upper().strip(), town)
+
         self.intersection = intersection
         if intersection is None:
             self.intersection = ''
+        elif national_grid:
+            self.intersection = 'and ' + intersection
 
         self.date_classified = None
         if date_classified and date_classified != '':
@@ -92,8 +229,15 @@ class Address(object):
 
         populates formatted_address, lat, lng, location_type
         """
-        addr_str = "%s %s %s, MA" % (
-            self.addr, self.intersection, self.town)
+        addr_str = ""
+
+        if self.addr[0].isdigit():
+            addr_str = "%s %s, MA" % (
+                self.addr, self.town)
+        else:
+            addr_str = "%s %s %s, MA" % (
+                self.addr, self.intersection, self.town)
+
         addr_str = urllib.quote(addr_str)
 
         URI = (
@@ -166,7 +310,8 @@ class Address(object):
 
 
 def insert_csv_into_datahub(
-        path, repo, table, classified_or_repaired, delimiter=','):
+        path, repo, table, classified_or_repaired, delimiter=',',
+        national_grid=False):
     """
     inserts the presented csv file path into a datahub repo and table
 
@@ -194,19 +339,23 @@ def insert_csv_into_datahub(
             # If an exception occurs, log it and move on. The data is probably
             # corrupt in some way
             try:
-                point = Address(
-                    primary_key=int(row[0]),
-                    addr=row[1],
-                    town=row[2],
-                    intersection=row[3],
-                    date_classified=date_classified,
-                    date_repaired=date_repaired,
-                    grade=row[5],
-                    repo=repo,
-                    table=table)
 
-                point.get_details_for_address()
-                point.insert_into_datahub()
+                myd = int(row[0])
+
+                if myd not in IDS:
+                    point = Address(
+                        primary_key=int(row[0]),
+                        addr=row[1],
+                        town=row[2],
+                        intersection=row[3],
+                        date_classified=date_classified,
+                        date_repaired=date_repaired,
+                        grade=row[5],
+                        repo=repo,
+                        table=table)
+
+                    point.get_details_for_address()
+                    point.insert_into_datahub()
             except Exception as e:
                 print "Failed to insert row %s in file %s" % (row[0], path)
                 print row
@@ -224,80 +373,115 @@ def create_tables():
                  password=secret.password)
 
     query = """
-        create table if not exists natural_gas.eversource_unrepaired_2014(
+        create table if not exists natural_gas.ngrid_repaired_2015(
         id integer, formatted_address text, lat double precision,
         lng double precision, location_type text, record_date date,
         grade integer, PRIMARY KEY (id));"""
     dh.query(REPO_BASE, 'natural_gas', query)
 
     query = """
-        create table if not exists natural_gas.eversource_unrepaired_2015(
+        create table if not exists natural_gas.ngrid_unrepaired_2015(
         id integer, formatted_address text, lat double precision,
         lng double precision, location_type text, record_date date,
         grade integer, PRIMARY KEY (id));"""
     dh.query(REPO_BASE, 'natural_gas', query)
 
     query = """
-        create table if not exists natural_gas.eversource_repaired_2014(
+        create table if not exists natural_gas.ngrid_unrepaired_2014(
         id integer, formatted_address text, lat double precision,
         lng double precision, location_type text, record_date date,
         grade integer, PRIMARY KEY (id));"""
     dh.query(REPO_BASE, 'natural_gas', query)
 
     query = """
-        create table if not exists natural_gas.eversource_repaired_2015(
+        create table if not exists natural_gas.ngrid_repaired_2014(
         id integer, formatted_address text, lat double precision,
         lng double precision, location_type text, record_date date,
         grade integer, PRIMARY KEY (id));"""
     dh.query(REPO_BASE, 'natural_gas', query)
 
-    print "Tables created.\n---"
+    # print "Tables created.\n---"
 
 
 print "Creating tables to be inserted into"
 create_tables()
 
-print "===\nINSERTING eversource_repaired_2015\n==="
-insert_csv_into_datahub(path='data/2015_eversource_repaired.csv',
+print "===\nINSERTING ngrid_repaired_2015\n==="
+insert_csv_into_datahub(path='data/ngrid/2015_ngrid_repaired.csv',
                         repo='natural_gas',
-                        table='eversource_repaired_2015',
+                        table='ngrid_repaired_2015',
                         classified_or_repaired='repaired',
-                        delimiter=',')
+                        delimiter=',',
+                        national_grid=True)
 
-print "===\nINSERTING eversource_unrepaired_2015\n==="
-insert_csv_into_datahub(path='data/2015_eversource_unrepaired.csv',
+print "===\nINSERTING ngrid_unrepaired_2015\n==="
+insert_csv_into_datahub(path='data/ngrid/2015_ngrid_unrepaired.csv',
                         repo='natural_gas',
-                        table='eversource_unrepaired_2015',
+                        table='ngrid_unrepaired_2015',
                         classified_or_repaired='unrepaired',
-                        delimiter=',')
+                        delimiter=',',
+                        national_grid=True)
 
-print "===\nINSERTING eversource_repaired_2014\n==="
-insert_csv_into_datahub(path='data/2014_eversource_repaired.csv',
+print "===\nINSERTING ngrid_repaired_2014\n==="
+insert_csv_into_datahub(path='data/ngrid/2014_ngrid_repaired.csv',
                         repo='natural_gas',
-                        table='eversource_repaired_2014',
+                        table='ngrid_repaired_2014',
                         classified_or_repaired='repaired',
-                        delimiter=',')
+                        delimiter=',',
+                        national_grid=True)
 
-print "===\nINSERTING eversource_unrepaired_2014\n==="
-insert_csv_into_datahub(path='data/2014_eversource_unrepaired.csv',
+print "===\nINSERTING ngrid_unrepaired_2014\n==="
+insert_csv_into_datahub(path='data/ngrid/2014_ngrid_unrepaired.csv',
                         repo='natural_gas',
-                        table='eversource_unrepaired_2014',
+                        table='ngrid_unrepaired_2014',
                         classified_or_repaired='unrepaired',
-                        delimiter=',')
+                        delimiter=',',
+                        national_grid=True)
+
+# print "===\nINSERTING eversource_repaired_2015\n==="
+# insert_csv_into_datahub(path='data/eversource/2015_eversource_repaired.csv',
+#                         repo='natural_gas',
+#                         table='eversource_repaired_2015',
+#                         classified_or_repaired='repaired',
+#                         delimiter=',')
+
+# print "===\nINSERTING eversource_unrepaired_2015\n==="
+# insert_csv_into_datahub(path='data/eversource/2015_eversource_unrepaired.csv',
+#                         repo='natural_gas',
+#                         table='eversource_unrepaired_2015',
+#                         classified_or_repaired='unrepaired',
+#                         delimiter=',')
+
+# print "===\nINSERTING eversource_repaired_2014\n==="
+# insert_csv_into_datahub(path='data/eversource/2014_eversource_repaired.csv',
+#                         repo='natural_gas',
+#                         table='eversource_repaired_2014',
+#                         classified_or_repaired='repaired',
+#                         delimiter=',')
+
+# print "===\nINSERTING eversource_unrepaired_2014\n==="
+# insert_csv_into_datahub(path='data/eversource/2014_eversource_unrepaired.csv',
+#                         repo='natural_gas',
+#                         table='eversource_unrepaired_2014',
+#                         classified_or_repaired='unrepaired',
+#                         delimiter=',')
+
+
 
 
 # Test Code
 
 # address = Address(
 #     primary_key=1,
-#     addr='45 Simpson',
-#     town='Somerville',
-#     intersection='@hollis',
-#     date_classified='6/17/2016',
-#     date_repaired=None,
-#     grade='3',
+#     addr='OAK GROVE CT',
+#     town='MALDEN',
+#     intersection='WASHINGTON ST',
+#     date_classified=None,
+#     date_repaired='3/10/2015',
+#     grade='1',
 #     repo='natural_gas',
-#     table='eversource_unrepaired_2014')
+#     table='ngrid_repaired_2015')
 
 # address.get_details_for_address()
+# import pdb; pdb.set_trace()
 # print address.get_query_insert() + " values " + address.get_query_values()
