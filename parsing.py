@@ -354,6 +354,7 @@ def insert_csv_into_datahub(
                         national_grid=national_grid)
 
                     point.get_details_for_address()
+                    print point.formatted_address
                     point.insert_into_datahub()
             except Exception as e:
                 print "Failed to insert row %s in file %s" % (row[0], path)
