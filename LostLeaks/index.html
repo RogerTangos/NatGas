@@ -30,7 +30,9 @@
 
     <link href="leaflet/leaflet.css" rel="stylesheet" type="text/css">
     <link href="map.css" rel="stylesheet" type="text/css">
-    <script src="../data/lostleaks.json"></script>
+    <!-- <script src="../data/lostleaks.json"></script> -->
+    <script src="../data/eversource/eversource_lostleaks_combined_2014_100.json"></script>
+    <script src="../data/ngrid/ngrid_lostleaks_combined_2014_100.json"></script>
 </head>
 <body class="style2 loading">
     <div id="loader" class="text-center">
@@ -340,9 +342,15 @@
                             </div>
                             <div class="col-xs-offset-3 col-xs-6 col-sm-offset-1 col-sm-5 col-md-4 col-lg-3 well well-lg featureBox clearfix" data-appear="fade-in" data-appear-direction="bottom" data-appear-delay="300">
                                 <h3 class="text-right">Legend</h3>
-                                <svg width="30" height="30" class="middle"><circle cx="15" cy="15" r="10" stroke="#e6002e" stroke-width="4" fill="#ff0033" style="fill-opacity:0.5;stroke-opacity:0.5"/></svg> &nbsp; <span class="gOne">Grade 1</span> &nbsp; Severe leak<br>
-                                <svg width="30" height="30" class="middle"><circle cx="15" cy="15" r="10" stroke="#e64500" stroke-width="4" fill="#FF4D00" style="fill-opacity:0.5;stroke-opacity:0.5"/></svg> &nbsp; <span class="gTwo">Grade 2</span> &nbsp; Moderate leak<br>
-                                <svg width="30" height="30" class="middle"><circle cx="15" cy="15" r="10" stroke="#e600a1" stroke-width="4" fill="#FF00B3" style="fill-opacity:0.5;stroke-opacity:0.5"/></svg> &nbsp; <span class="gThree">Grade 3</span> &nbsp; Mild leak
+                                <svg width="30" height="30" class="middle">
+                                  <circle cx="15" cy="15" r="10" stroke="#E60000" stroke-width="4" fill="#FF0000" style="fill-opacity:0.5;stroke-opacity:0.8"/>
+                                </svg> &nbsp; <span class="gOne">Grade 1</span> &nbsp; Severe leak<br>
+                                <svg width="30" height="30" class="middle">
+                                  <circle cx="15" cy="15" r="10" stroke="#FF0080" stroke-width="4" fill="#FF1A8D" style="fill-opacity:0.5;stroke-opacity:0.6"/>
+                                </svg> &nbsp; <span class="gTwo">Grade 2</span> &nbsp; Moderate leak<br>
+                                <svg width="30" height="30" class="middle">
+                                  <circle cx="15" cy="15" r="10" stroke="#FF8000" stroke-width="4" fill="#FF8D1A" style="fill-opacity:0.5;stroke-opacity:0.4"/>
+                                </svg> &nbsp; <span class="gThree">Grade 3</span> &nbsp; Mild leak
                             </div>
                         </div>
                     </div>

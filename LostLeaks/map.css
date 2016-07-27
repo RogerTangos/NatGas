@@ -30,13 +30,13 @@ html, body {
 }
 
 .gOne {
-  color: #ff0033;
+  color: #E60000;
 }
 .gTwo {
-  color: #FF4D00;
+  color: #FF0080;
 }
 .gThree {
-  color: #FF00B3;
+  color: #FF8000;
 }
 .lightSection h4 .lightSection .featureBox [class^="icon_"], .lightSection .featureBox [class*="icon_"] {
   color: #009edb;
