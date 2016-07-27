@@ -50,16 +50,15 @@
             <!--MENU-->
             <div class="menu_trigger descriptionColor" id="myMenuTrigger"></div>
             <div class="menu animate">
-                <h2 class="underline"><a href="index.html">Lost<span class="subLogo descriptionColor">Leaks</span></a></h2>
+                <h2 class="underline">Lost<span class="subLogo descriptionColor">Leaks</span></h2>
                 <span class="icon_close" id="menuClose"></span>
                 <ul id="mainMenu">
                     <li><a href="#header" class="active">Home</a></li>
                     <li><a href="#what">What</a></li>
-                    <li><a href="#where">Where</a></li>
+                    <!--<li><a href="#where">Where</a></li>-->
                     <li><a href="#mapid">Map</a></li>
                     <li><a href="#how">Our Process</a></li>
-                    <li><a href="#team">Our Team</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#about">About Us</a></li>
                 </ul>
             </div>
         </header>
@@ -206,10 +205,6 @@
                         </div>
                     </li>
                 </ul>
-                <!--<div class="navButtons text-center">
-                    <div class="Prev animate"><img alt="Previous" src="images/prev.png" class="img-responsive" /></div>
-                    <div class="Next animate"><img alt="Next" src="images/next.png" class="img-responsive" /></div>
-                </div>-->
                 <div class="Prev animate">
                     <img alt="Previous" src="images/prev.png" class="img-responsive" /></div>
                 <div class="Next animate">
@@ -220,7 +215,7 @@
 
 
         <!--Welcome to LostLeaks section-->
-        <section id="what" class="obliqueCut lightSection separatorTop">
+        <section id="lost" class="obliqueCut lightSection graySection separatorTop">
             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="separator"  viewBox="0 0 100 100" preserveAspectRatio="none">
                 <path d="M0 100 L100 0 L100 100 Z"></path>
             </svg>
@@ -229,49 +224,31 @@
                     <div class="col-sm-12">
                         <div class="sectionInfo row">
                             <h2 class="sectionTitle col-sm-4">Welcome to <span class="underline">LostLeaks</span></h2>
-                            <h2 class="sectionDescription col-sm-8">
-                              What do you mean they are lost?
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4">
-                        <!-- START FEATURE BOX -->
-                        <div class="featureBox clearfix" data-appear="fade-in" data-appear-direction="left">
-                            <h3><span class="icon_chat_alt"></span>What are Natural Gas Leaks?</h3>
-                            <p>Leave dead animals as gifts, throw up on your pillow.
-                              Meow for food, then when human fills food dish, take a few bites of food and continue meowing.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <!-- START FEATURE BOX -->
-                        <div class="featureBox clearfix" data-appear="fade-in" data-appear-direction="bottom" data-appear-delay="300">
-                            <h3><span class="icon_toolbox_alt"></span>Why did this happen?</h3>
-                            <p>
-                              Thinking longingly about tuna brine so meow scratch at the door then walk away.
-                              Put butt in owner's face, lick butt and make a weird face, throw up on your pillow, present belly, scratch hand when stroked.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <!-- START FEATURE BOX -->
-                        <div class="featureBox clearfix" data-appear="fade-in" data-appear-direction="right" data-appear-delay="600">
-                            <h3><span class="icon_mug"></span>Why do we care about this?</h3>
-                            <p>
-                              Plan steps for world domination, for hunt by meowing loudly at 5am next to human slave food dispenser, lick butt and make a weird face.
-                              Sleep in the bathroom sink, hopped up on catnip, scratch the box under the bed, intently stare at the same spot
-                            </p>
+                            <h2 class="sectionDescription col-sm-8">What do you mean they are lost?</h2>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
-                        <ul class="horizontalLinks">
-                            <li><a class="arrowLink arrowRight" href="#">X-link</a></li>
-                            <li><a class="arrowLink arrowRight" href="#">Y-link</a></li>
-                        </ul>
+                        <!-- START FEATURE BOX -->
+                        <div class="featureBox clearfix" data-appear="fade-in" data-appear-direction="left">
+                            <h3><!-- <span class="icon_chat_alt"></span> -->
+                              <span class="icon_documents_alt"></span>
+                              What does it means for a leak to be lost?</h3>
+                            <p>
+                              A "Lost" leak is one that existed in 2014, but wasn't repaired.  In 2015, it was "lost" from the public record.  Utility companies in Massachusetts have had to report natural gas leaks and repairs since 2014.
+                              <ul class="horizontalLinks">
+                                  <li>Records for 2014 and 2015 can be looked up at <a class="arrowLink arrowRight" href="http://web1.env.state.ma.us/DPU/FileRoom/dockets/bynumber">the department of public utilities</a></li>
+                              </ul>
+                            </p>
+                            <p>
+                              We analyzed the data, matching repairs to leaks.  Between 2014 and 2015, it appears that National Grid and Eversource deleted XX% and XX% (respectively) of their leaks, without repairing them.
+                            </p>
+                            <p>
+                              Why?  Some very small percentage of this is likely due to 3rd party repairs - for instance, when a construction company party damages a pipeline.
+                              Other leaks would have been deleted because of scheduled replacement to pipes.  These wouldn't be marked in the system, we expect that replacements would be mapped as dots along main streets where the pipelines were replaced.  Instead, the map looks like confetti.  XX % of the leaks is a lot of gas.  Something is amiss.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -279,32 +256,114 @@
         <!--END Welcome to LostLeaks section-->
 
 
+        <!--what section-->
+        <section id="what" class="obliqueCut lightSection separatorTop">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="separator"  viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 100 L100 0 L100 100 Z"></path>
+            </svg>
+            <div class="sectionIcon icon_cone"></div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="sectionInfo row">
+                            <h2 class="sectionTitle col-sm-12"><span class="underline">What</span> are Natural Gas Leaks?</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <!-- START FEATURE BOX -->
+                        <div class="featureBox clearfix" data-appear="fade-in" data-appear-direction="left">
+                            <h3><span class="icon_cone"></span>Why does this happen?</h3>
+                            <p>Natural gas is dangerous. In Boston, natural gas is often transported in old and leak prone cast iron, wrought iron, or unprotected steel pipes.</p>
+                            <ul class="horizontalLinks">
+                                <li>Risky Leaks From Gas Mains <br>
+                                  <a class="arrowLink arrowRight" href="https://www.bu.edu/news/2016/03/28/survey-gives-clearer-view-of-risky-leaks-from-gas-mains/" target="_blank">bu.edu</a></li>
+                                <li>A hidden culprit for dead trees <br>
+                                  <a class="arrowLink arrowRight" href="https://stateimpact.npr.org/pennsylvania/2015/11/27/gas-leaks-a-hidden-culprit-for-dead-trees/" target="_blank">stateimpact.npr.org</a></li>
+                                <li>Why are natural gas leaks a problem? <br>
+                                  <a class="arrowLink arrowRight" href="https://www.edf.org/climate/methanemaps/leaks-problem" target="_blank">edf.org/leaks-problem</a></li>
+                                <li>Boston: Snapshot of natural gas leaks <br>
+                                  <a class="arrowLink arrowRight" href="https://www.edf.org/climate/methanemaps/city-snapshots/boston" target="_blank">edf.org/city-snapshots</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <!-- START FEATURE BOX -->
+                        <div class="featureBox clearfix" data-appear="fade-in" data-appear-direction="bottom" data-appear-delay="600">
+                            <h3><span class="icon_heart"></span>Why do we care about this?</h3>
+                            <p>Contributes to greenhouse gas buildup.  Natural gas leaking from the local distribution system accounts for 60 percent to 100 percent of the region’s emissions of methane, one of the most insidious heat-trapping greenhouse gases.</p>
+                            <p>Roughly 1/6 of leaks are potentially explosive, and natural gas is known to kill trees and shrubs, and the methane and carbon monoxide present in natural gas well known to be toxic.</p>
+                            <ul class="horizontalLinks">
+                                <li>Gas infrastructure releasing methane <br>
+                                  <a class="arrowLink arrowRight" href="https://www.seas.harvard.edu/news/2015/01/boston-s-natural-gas-infrastructure-releases-high-levels-of-heat-trapping-methane" target="_blank">seas.harvard.edu</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <!-- START FEATURE BOX -->
+                        <div class="featureBox clearfix" data-appear="fade-in" data-appear-direction="right" data-appear-delay="300">
+                            <h3><span class="icon_currency_alt"></span>Who pays to repair these leaks?</h3>
+                            <p>Aging natural gas distribution system short-changes customers.  The Boston region loses 15 billion cubic feet of natural gas, worth $90 million dollars every year. This is 2.7 percent of gas brought into the region.</p>
+                            <p>The cost is not paid by utilities. Instead, utilities, which have local monopolies, pass it on to their customers.</p>
+                              <!-- [Public testimony from National Grid director of Health and Safety, Gas Leaks Hearing, Boston City Council, July 12, 2016].
+                              Al has video footage of the testimony. Have to find, upload to youtube, and link it. -->
+                            <p>Clearly, utilities have little economic incentive to fix these leaks on their own.</p>
+                        </div>
+                    </div>
+                </div>
+              </div>
+          </section>
+        <!--END what section-->
+
+
         <!--where section-->
         <section id="where" class="obliqueCut lightSection graySection separatorTop">
             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="separator"  viewBox="0 0 100 100" preserveAspectRatio="none">
                 <path d="M0 100 L100 0 L100 100 Z"></path>
             </svg>
-            <div class="sectionIcon icon_pin_alt"></div>
+            <div class="sectionIcon icon_pin"></div>  <!-- icon_search icon_compass_alt -->
+
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="sectionInfo row">
-                            <h2 class="sectionTitle col-sm-5">
-                              <span class="underline">Where</span> is this happening?
-                            </h2>
-                            <h2 class="sectionDescription col-sm-7">
-                              <span class="titleColor">The map below shows the areas this is affecting.</span>
-                            </h2>
+                            <h2 class="sectionTitle col-sm-5"><span class="underline">Show Me</span> Where?</h2>
+                            <h2 class="sectionSubDescription col-sm-7"><span class="titleColor">On the map below view areas affected by these leaks.</span></h2>
+                        </div>
+                        <div class="sectionInfo row">
+                            <div class="col-xs-12 col-sm-6 col-md-7 col-lg-8 featureBox clearfix" data-appear="fade-in" data-appear-direction="right" data-appear-delay="300">
+                                <p>Gas leaks are reported in Grades 1-3, with 1 being <span class="gOne">most severe</span> and 3 being <span class="gThree">least severe</span>.  The radius of the circle is based on how long ago the leak was reported.  So a newer leak will have a smaller circle <svg width="30" height="30" class="middle"><circle cx="15" cy="15" r="5" stroke="#e64500" stroke-width="4" fill="#FF4D00" style="fill-opacity:0.5;stroke-opacity:0.5"/></svg>
+                                and an older leak will have a larger circle <svg width="60" height="60" class="middle"><circle cx="30" cy="30" r="20" stroke="#e600a1" stroke-width="4" fill="#FF00B3" style="fill-opacity:0.5;stroke-opacity:0.5"/></svg></p>
+                                <p>Click a circle on the map to view more information about that datapoint.</p>
+                            </div>
+                            <div class="col-xs-offset-3 col-xs-6 col-sm-offset-1 col-sm-5 col-md-4 col-lg-3 well well-lg featureBox clearfix" data-appear="fade-in" data-appear-direction="bottom" data-appear-delay="300">
+                                <h3 class="text-right">Legend</h3>
+                                <svg width="30" height="30" class="middle"><circle cx="15" cy="15" r="10" stroke="#e6002e" stroke-width="4" fill="#ff0033" style="fill-opacity:0.5;stroke-opacity:0.5"/></svg> &nbsp; <span class="gOne">Grade 1</span> &nbsp; Severe leak<br>
+                                <svg width="30" height="30" class="middle"><circle cx="15" cy="15" r="10" stroke="#e64500" stroke-width="4" fill="#FF4D00" style="fill-opacity:0.5;stroke-opacity:0.5"/></svg> &nbsp; <span class="gTwo">Grade 2</span> &nbsp; Moderate leak<br>
+                                <svg width="30" height="30" class="middle"><circle cx="15" cy="15" r="10" stroke="#e600a1" stroke-width="4" fill="#FF00B3" style="fill-opacity:0.5;stroke-opacity:0.5"/></svg> &nbsp; <span class="gThree">Grade 3</span> &nbsp; Mild leak
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!--END where section-->
+        <!--END what section-->
+
 
         <!--map section-->
         <div id="mapid"></div>
         <!--END map section-->
+
+
+        <!--
+        <span class="icon_cogs"></span>
+        <span class="icon_tools"></span>
+        <span class="icon_toolbox_alt"></span>
+        <span class="icon_pencil"></span>
+        <span class="icon_pencil-edit"></span> -->
+
 
         <!-- Timeline How Data Processed -->
         <section id="how" class="obliqueCut darkSection purpleSection darkSection blueSection separatorTop paddingBottom120">
@@ -423,10 +482,8 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="sectionInfo row">
-                            <h2 class="sectionTitle col-sm-4"><span class="underline">Gas</span> companies.</h2>
-                            <h2 class="sectionDescription col-sm-8">
-                              These are the gas companies involved.
-                            </h2>
+                            <h2 class="sectionTitle col-sm-4"><span class="underline">Who</span> is Involved?</h2>
+                            <h2 class="sectionDescription col-sm-8">These are the natural gas companies we've analyzed so far.</h2>
                         </div>
                     </div>
                 </div>
@@ -436,23 +493,34 @@
                 <div class="row customers">
                     <div class="col-sm-12">
                         <ul class="customersList clearfix" data-appear="fade-in" data-appear-direction="top">
-                            <li><a href="#">
-                                <img alt="Customer" src="images/customer1.png" /></a></li>
-                            <li><a href="#">
-                                <img alt="Customer" src="images/customer2.png" /></a></li>
-                            <li><a href="#">
-                                <img alt="Customer" src="images/customer3.png" /></a></li>
-                            <li><a href="#">
-                                <img alt="Customer" src="images/customer4.png" /></a></li>
-                            <li><a href="#">
-                                <img alt="Customer" src="images/customer5.png" /></a></li>
+                            <li><a href="https://www.eversource.com/Content/ema-g">
+                                <img alt="Eversource" src="images/Eversource.png" /></a></li>
+                            <li><a href="https://www.nationalgridus.com/MA-Business/">
+                                <img alt="National Grid" src="images/national-grid-logo.png" /></a></li>
                         </ul>
                     </div>
                 </div>
                 <!-- END CUSTOMERS LIST -->
+
+                <!-- Other gas companies who many be involved, but we have not processed and analyzed their data yet: -->
+                <!--
+                <div class="row customers">
+                    <div class="col-sm-12">
+                        <ul class="customersList clearfix" data-appear="fade-in" data-appear-direction="top">
+                            <li><a href="https://www.columbiagasma.com/">
+                                <img alt="Columbia Gas of MA" src="images/cma.png" /></a></li>
+                            <li><a href="https://www.berkshiregas.com">
+                                <img alt="Berkshire Gas" src="images/berkshiregas_com.gif" /></a></li>
+                            <li><a href="https://libertyutilities.com/">
+                                <img alt="Liberty Utilities" src="images/libertyUtilities.png" /></a></li>
+                            <li><a href="http://unitil.com">
+                                <img alt="Unitil" src="images/unitil-large.png" /></a></li>
+                        </ul>
+                    </div>
+                </div> -->
             </div>
         </section>
-        <!--END Satisfied customers section-->
+        <!--END section-->
 
 
         <!--Meet the crew section-->
@@ -469,13 +537,15 @@
                     <div class="col-sm-12">
                         <div class="sectionInfo row">
                             <h2 class="sectionTitle col-sm-4"><span class="underline">About</span> Us</h2>
-                            <h2 class="sectionDescription col-sm-8">
-                              We don't get paid to do this.
-                            </h2>
-                            <h3 class="sectionSubDescription col-sm-7">
-                              Three independent volunteers, none of us are involved in any organizations pushing this.<br>
-                              We saw data that we found interesting and wanted to present it to the public.
-                            </h3>
+                            <div class="col-sm-8">
+                              <h2 class="sectionDescription">
+                                This isn't our day job, and we don't get paid to do this, but we hope it contributes to public discussion on this issue.
+                              </h2>
+                              <h3 class="sectionSubDescription">
+                                Three independent volunteers, none of us are involved in any organizations pushing this.<br>
+                                We saw data that we found interesting and wanted to present it to the public.
+                              </h3>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -518,20 +588,12 @@
                             <!--ABOUT MEMBER-->
                             <div class="col-sm-7 col-sm-offset-1 paddingRight0">
                                 <div class="memberAbout">
-                                    <div class="memberName descriptionColor">About Al Carter</div>
+                                    <div class="memberName descriptionColor">Albert Carter</div>
                                     <div class="memberDesc1 titleColor">
-                                      A Brown University Alum with experience in software development and project management.
+                                       A programmer and member of the research staff at the MIT CSAIL Big Data Initiative and LivingLab.
                                     </div>
                                     <div class="memberDesc2">
-                                      Al has been working on testing and integrating experimental systems that the database group at MIT's Computer Science and Artificial Intelligence Lab (CSAIL) has developed.
-                                      These include:
-                                      <ul>
-                                        <li>OpenSense, a system sensor and data collection library for iOS</li>
-                                        <li>OpenPDS, a distributed privacy-protecting architecture for personal data online</li>
-                                        <li>MIT Mobile (iOS), MIT's Mobile app</li>
-                                        <li>GetFit, an MIT fitness tracking app for iOS</li>
-                                        <li>DataHub, a github-postgresql mashup that allows users to share, fork, and version databases online</li>
-                                      </ul>
+                                      Albert Carter has been at MIT for 4 years.  While this project uses publicly available research and software from the lab, it is not a funded by MIT, CSAIL, or anyone else.
                                     </div>
                                     <div class="memberSocial">
                                         <h4>Follow Al</h4>
@@ -551,12 +613,12 @@
                             <!--ABOUT MEMBER-->
                             <div class="col-sm-7 col-sm-offset-1 paddingRight0">
                                 <div class="memberAbout">
-                                    <div class="memberName descriptionColor">About Michael Webber</div>
+                                    <div class="memberName descriptionColor">Michael Webber</div>
                                     <div class="memberDesc1 titleColor">
                                       A creative and determined problem solver and builder, committed to excellence in his work and personal interactions.
                                     </div>
                                     <div class="memberDesc2">
-                                      Michael has experience programming applications and supporting them, working as part of a team and on his own, travelling across the country and working remotely.
+                                      Michael Webber has experience programming applications and supporting them, working as part of a team and on his own, travelling across the country and working remotely.
                                       He is currently seeking interesting and challenging IT projects.
                                     </div>
                                     <div class="memberSocial">
@@ -576,13 +638,13 @@
                             <!--ABOUT MEMBER-->
                             <div class="col-sm-7 col-sm-offset-1 paddingRight0">
                                 <div class="memberAbout">
-                                    <div class="memberName descriptionColor">About Allison Sichling</div>
+                                    <div class="memberName descriptionColor">Allison Sichling</div>
                                     <div class="memberDesc1 titleColor">
-                                      Problem Solving, Learning, Collaborating, Drawing, Painting, Sewing, Making art with LEDs, passionate about creating things.
+                                      A web developer interested in interactive experiences, with a Bachelor's in Fine Art.
                                     </div>
                                     <div class="memberDesc2">
-                                      A web developer interested in interactive experiences, with a Bachelor's in Fine Art, Allison graduated from General Assembly’s full-time Web Development Immersive bootcamp December 2015.
-                                    </div>
+                                      Allison graduated from General Assembly’s full-time Web Development Immersive bootcamp December 2015.
+                                      Generally passionate about creating things, she enjoys solving problems, learning, collaborating, drawing, painting, sewing, and making art with LEDs.                                    </div>
                                     <div class="memberSocial">
                                         <h4>Follow Allie</h4>
                                         <ul class="memberSocialList">
@@ -610,89 +672,6 @@
             </svg>
         </section>
         <!--END Meet the crew section-->
-
-
-        <!--Quote section-->
-        <section id="sQuote" class="obliqueCut lightSection graySection imageBackground img1Bkg" data-parallax-speed="-1.0">
-            <!--SECTION ICON-->
-            <div class="sectionIcon icon_quotations"></div>
-            <!-- SECTION CONTENT-->
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="quote" data-appear="fade-in">
-                            <div class="quoteText alternateColor">Design must reflect the practical and aesthetic in business but above all... good design must primarily serve people.</div>
-                            <div class="quoteAuthor descriptionColor">- Thomas J. Watson</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--END SECTION CONTENT-->
-        </section>
-        <!--END Quote section-->
-
-
-        <!--Get in touch section-->
-        <section id="contact" class="obliqueCut lightSection graySection separatorTop separatorBottom">
-            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="separator"  viewBox="0 0 100 100" preserveAspectRatio="none">
-                <path d="M0 100 L100 0 L100 100 Z"></path>
-            </svg>
-            <div class="sectionIcon icon_pin_alt"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="sectionInfo row">
-                            <h2 class="sectionTitle col-sm-4">
-                              <span class="underline">Get</span> in touch.
-                            </h2>
-                            <h2 class="sectionDescription col-sm-8">
-                              <span class="titleColor">Say Hello!</span>
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-3">
-                        <!-- <ul class="socialList style2" data-appear="fade-in">
-                            <li><a class="soc_facebook" href="#">Follow us on facebook</a></li>
-                            <li><a class="soc_googlep" href="#">Join us on google+</a></li>
-                            <li><a class="soc_twitter" href="#">Follow us on twitter</a></li>
-                        </ul>-->
-                    </div>
-
-                    <div class="col-sm-8 col-sm-offset-1">
-                        <form method="post" class="contactForm" action="contact.php" data-appear="fade-in" data-appear-delay="300">
-                            <!-- <h2>Say hello!</h2> -->
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <input type="text" name="name" placeholder="Name:" />
-                                </div>
-                                <div class="col-sm-6">
-                                    <input type="email" name="email" placeholder="Email:" />
-                                </div>
-                                <div class="col-sm-12">
-                                    <textarea name="message" placeholder="Message:" rows="1"></textarea>
-                                </div>
-                                <div class="col-sm-12 text-right">
-                                    <span class="submit descriptionColor">
-                                        <input type="submit" value="send message" class="titleColor" />
-                                    </span>
-                                    <div id="contactResponse" class="text-left"></div>
-                                </div>
-                            </div>
-                            <div class="contactBusy">
-                                <div class="progressContainer"><span class="typing_loader"></span></div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="separator"  viewBox="0 0 100 100" preserveAspectRatio="none">
-                <path d="M0 100 L100 0 L0 0 Z"></path>
-            </svg>
-        </section>
-        <!--END Get in touch section-->
 
 
         <!--Footer-->

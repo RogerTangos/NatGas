@@ -23,3 +23,31 @@ html, body {
     font-size: 25px;
     margin-right: 23px;
 }
+
+.obliqueCut {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.gOne {
+  color: #ff0033;
+}
+.gTwo {
+  color: #FF4D00;
+}
+.gThree {
+  color: #FF00B3;
+}
+.lightSection h4 .lightSection .featureBox [class^="icon_"], .lightSection .featureBox [class*="icon_"] {
+  color: #009edb;
+}
+svg.middle {
+  vertical-align: middle;
+}
+#where .sectionInfo {
+  margin-bottom: 50px;
+}
+.well {
+  min-width: 16em;
+  /*min-width: 275px; */
+}
