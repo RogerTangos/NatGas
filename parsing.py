@@ -194,7 +194,6 @@ class Address(object):
         self.addr = addr
         self.town = town
 
-        # uncomment for national grid
         if national_grid:
             self.town = NATIONAL_GRID_NAMES.get(town.upper().strip(), town)
 
@@ -341,7 +340,6 @@ def insert_csv_into_datahub(
             try:
 
                 myd = int(row[0])
-
                 if myd not in IDS:
                     point = Address(
                         primary_key=int(row[0]),
@@ -352,7 +350,8 @@ def insert_csv_into_datahub(
                         date_repaired=date_repaired,
                         grade=row[5],
                         repo=repo,
-                        table=table)
+                        table=table,
+                        national_grid=national_grid)
 
                     point.get_details_for_address()
                     point.insert_into_datahub()
@@ -404,7 +403,7 @@ def create_tables():
 
 
 print "Creating tables to be inserted into"
-create_tables()
+# create_tables()
 
 print "===\nINSERTING ngrid_repaired_2015\n==="
 insert_csv_into_datahub(path='data/ngrid/2015_ngrid_repaired.csv',
