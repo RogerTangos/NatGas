@@ -51,3 +51,11 @@ svg.middle {
   min-width: 16em;
   /*min-width: 275px; */
 }
+
+.sectionInfo {
+  margin-bottom: 2em;
+}
+
+.bigText {
+  text-shadow: 2px 2px 4px #000000;
+}
