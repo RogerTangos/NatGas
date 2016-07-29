@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LostLeaks</title>
+
+    <!--meta-->
+    <meta charset="UTF-8">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="keywords" content="" />
+    <meta name="description" content="LostLeaks">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/favicons/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/favicons/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/favicons/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/favicons/apple-touch-icon-57-precomposed.png">
+    <link href="images/favicons/favicon.png" rel="shortcut icon">
+
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+    <link href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/icons.css" rel="stylesheet" />
+    <link href="css/magnific-popup.css" rel="stylesheet" />
+    <link href="rs-plugin/css/settings.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+
+    <link href="leaflet/leaflet.css" rel="stylesheet" type="text/css">
+    <link href="map.css" rel="stylesheet" type="text/css">
+    <!-- <script src="../data/lostleaks.json"></script> -->
+    <script src="../data/eversource/eversource_lostleaks_combined_2014_100.json"></script>
+    <script src="../data/ngrid/ngrid_lostleaks_combined_2014_100.json"></script>
+</head>
+<body class="style2 loading">
+    <div id="loader" class="text-center">
+        <h1><span class="underline">Lost</span>&shy;<span class="descriptionColor">Leaks</span></h1>
+        <h2>is loading...</h2>
+    </div>
+    <div id="page" class="animate">
+        <!--Header-->
+        <header id="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1 id="logo" class="underline"><a href="index-v2.html">Lost&shy;<span class="descriptionColor">Leaks</span></a></h1>
+                    </div>
+                </div>
+            </div>
+            <!--MENU-->
+            <div class="menu_trigger descriptionColor" id="myMenuTrigger"></div>
+            <div class="menu animate">
+                <h2 class="underline">Lost<span class="subLogo descriptionColor">Leaks</span></h2>
+                <span class="icon_close" id="menuClose"></span>
+                <ul id="mainMenu">
+                    <li><a href="#header" class="active">Home</a></li>
+                    <li><a href="#what">What</a></li>
+                    <!--<li><a href="#where">Where</a></li>-->
+                    <li><a href="#mapid">Map</a></li>
+                    <li><a href="#how">Our Process</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </div>
+        </header>
+        <!--END Header-->
+
+        <!--Main slider-->
+        <section class="mainSliderContainer">
+            <div class="mainSlider">
+                <ul>
+                    <!-- SLIDE 1-->
+                    <li data-transition="fade" data-slotamount="7" data-masterspeed="0">
+                        <!-- MAIN IMAGE
+                        src="images/slide1bg.jpg" -->
+                        <img alt="Slide1" src="images/blueFlame.jpg" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" />
+
+                        <!-- SECONDARY IMAGE -->
+                        <div class="slideImg tp-resizeme customin customout tp-caption"
+                            data-x="870" data-y="95" data-speed="1000" data-start="200"
+                            data-customin="x:200px;y:200px;"
+                            data-customout="x:200px;y:200px;"
+                            data-easing="easeOutExpo">
+                        </div>
+
+                        <!-- TEXT LINE 1 -->
+                        <div class="bigText tp-resizeme lft ltt tp-caption"
+                            data-x="375" data-y="400" data-speed="1000" data-start="600"
+                            data-easing="easeOutExpo">
+                            What are
+                        </div>
+
+                        <!-- TEXT LINE 2 -->
+                        <div class="bigText tp-resizeme lft ltt tp-caption"
+                            data-x="375" data-y="520" data-speed="1000" data-start="800"
+                            data-easing="easeOutExpo">
+                            Natural Gas Leaks?
+                        </div>
+
+                        <!-- TEXT LINE 3 -->
+                        <div class="mediumText imgArrowOffset tp-resizeme lft ltt tp-caption"
+                            data-x="450" data-y="625" data-speed="1000" data-start="1000"
+                            data-easing="easeOutExpo">
+                            <a href="#what">What do you mean they are lost?</a>
+                        </div>
+
+                        <!-- ARROW ON TEXT LINE 3 -->
+                        <div class="slideImgArrow tp-resizeme lfb ltt tp-caption"
+                            data-x="375" data-y="620" data-speed="2000" data-start="700"
+                            data-easing="Elastic.easeOut">
+                            <a href="#what">
+                                <img alt="Go to What" src="images/arrow_down.png" /></a>
+                        </div>
+                    </li>
+
+                    <!-- SLIDE 2-->
+                    <li data-transition="slidedown" data-slotamount="7" data-masterspeed="300">
+                        <!-- MAIN IMAGE -->
+                        <img alt="Slide1" src="images/slide2bg.jpg" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" />
+
+                        <!-- SECONDARY IMAGE -->
+                        <div class="slideImg tp-resizeme customin customout tp-caption"
+                            data-x="1070" data-y="295" data-speed="1000" data-start="0"
+                            data-customin="x:-200px;y:-200px;"
+                            data-customout="x:-200px;y:-200px;"
+                            data-easing="easeOutExpo">
+                        </div>
+
+                        <!-- SECONDARY IMAGE -->
+                        <div class="slideImg tp-resizeme customin customout tp-caption"
+                            data-x="1147" data-y="385" data-speed="1000" data-start="1000"
+                            data-customin="scaleX:0;scaleY:0;"
+                            data-customout="scaleX:0;scaleY:0;"
+                            data-easing="easeOutExpo">
+                        </div>
+                        <!-- TEXT LINE 1 -->
+                        <div class="bigText tp-resizeme lft ltt tp-caption"
+                            data-x="375" data-y="400" data-speed="1000" data-start="500"
+                            data-easing="easeOutExpo">
+                            Where is the area
+                        </div>
+
+                        <!-- TEXT LINE 2 -->
+                        <div class="bigText tp-resizeme lft ltt tp-caption"
+                            data-x="375" data-y="520" data-speed="1000" data-start="600"
+                            data-easing="easeOutExpo">
+                            this is affecting?
+                        </div>
+
+                        <!-- TEXT LINE 3 -->
+                        <div class="mediumText imgArrowOffset tp-resizeme lft ltt tp-caption"
+                            data-x="450" data-y="620" data-speed="1000" data-start="700"
+                            data-easing="easeOutExpo">
+                            <a href="#mapid">View the map.</a>
+                        </div>
+
+                        <!-- ARROW ON TEXT LINE 3 -->
+                        <div class="slideImgArrow tp-resizeme lfb ltt tp-caption"
+                            data-x="375" data-y="620" data-speed="2000" data-start="700"
+                            data-easing="Elastic.easeOut">
+                            <a href="#mapid">
+                                <img alt="Go to map" src="images/arrow_down.png" /></a>
+                        </div>
+                    </li>
+
+                    <!-- SLIDE 3 -->
+                    <li data-transition="slidedown" data-slotamount="7" data-masterspeed="300">
+                        <!-- MAIN IMAGE -->
+                        <img alt="Slide1" src="images/slide3bg.jpg" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" />
+
+                        <!-- SECONDARY IMAGE -->
+                        <div class="slideImg tp-resizeme customin customout tp-caption"
+                            data-x="1152" data-y="-12" data-speed="1000" data-start="0"
+                            data-customin="x:-8px;y:395px;rotationX:-45;scaleX:2;scaleY:2"
+                            data-customout="x:-8px;y:395px;"
+                            data-easing="easeOutExpo">
+                        </div>
+
+                        <!-- TEXT LINE 1 -->
+                        <div class="bigText tp-resizeme lft ltt tp-caption"
+                            data-x="375" data-y="425" data-speed="1000" data-start="500"
+                            data-easing="easeOutExpo">
+                            How did we track down
+                        </div>
+
+                        <!-- TEXT LINE 2 -->
+                        <div class="bigText tp-resizeme lft ltt tp-caption"
+                            data-x="375" data-y="520" data-speed="1000" data-start="600"
+                            data-easing="easeOutExpo">
+                            the lost records?
+                        </div>
+
+                        <!-- TEXT LINE 3 -->
+                        <div class="mediumText imgArrowOffset tp-resizeme lft ltt tp-caption"
+                            data-x="450" data-y="620" data-speed="1000" data-start="700"
+                            data-easing="easeOutExpo">
+                            <a href="#how">See our Process.</a>
+                        </div>
+
+                        <!-- ARROW ON TEXT LINE 3 -->
+                        <div class="slideImgArrow tp-resizeme lfb ltt tp-caption"
+                            data-x="375" data-y="620" data-speed="2000" data-start="700"
+                            data-easing="Elastic.easeOut">
+                            <a href="#how">
+                                <img alt="Go to how" src="images/arrow_down.png" /></a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="Prev animate">
+                    <img alt="Previous" src="images/prev.png" class="img-responsive" /></div>
+                <div class="Next animate">
+                    <img alt="Next" src="images/next.png" class="img-responsive" /></div>
+            </div>
+        </section>
+        <!--END Main slider-->
+
+
+        <!--Welcome to LostLeaks section-->
+        <section id="lost" class="obliqueCut lightSection graySection separatorTop">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="separator"  viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 100 L100 0 L100 100 Z"></path>
+            </svg>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="sectionInfo row">
+                            <h2 class="sectionTitle col-sm-4">Welcome to <span class="underline">LostLeaks</span></h2>
+                            <h2 class="sectionDescription col-sm-8">What do you mean they are lost?</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!-- START FEATURE BOX -->
+                        <div class="featureBox clearfix" data-appear="fade-in" data-appear-direction="left">
+                            <h3><!-- <span class="icon_chat_alt"></span> -->
+                              <span class="icon_documents_alt"></span>
+                              What does it means for a leak to be lost?</h3>
+                            <p>
+                              A "Lost" leak is one that existed in 2014, but wasn't repaired.  In 2015, it was "lost" from the public record.  Utility companies in Massachusetts have had to report natural gas leaks and repairs since 2014.
+                              <ul class="horizontalLinks">
+                                  <li>Records for 2014 and 2015 can be looked up at <a class="arrowLink arrowRight" href="http://web1.env.state.ma.us/DPU/FileRoom/dockets/bynumber">the department of public utilities</a></li>
+                              </ul>
+                            </p>
+                            <p>
+                              We analyzed the data, matching repairs to leaks.  Between 2014 and 2015, it appears that National Grid and Eversource deleted XX% and XX% (respectively) of their leaks, without repairing them.
+                            </p>
+                            <p>
+                              Why?  Some very small percentage of this is likely due to 3rd party repairs - for instance, when a construction company party damages a pipeline.
+                              Other leaks would have been deleted because of scheduled replacement to pipes.  These wouldn't be marked in the system, we expect that replacements would be mapped as dots along main streets where the pipelines were replaced.  Instead, the map looks like confetti.  XX % of the leaks is a lot of gas.  Something is amiss.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--END Welcome to LostLeaks section-->
+
+
+        <!--what section-->
+        <section id="what" class="obliqueCut lightSection separatorTop">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="separator"  viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 100 L100 0 L100 100 Z"></path>
+            </svg>
+            <div class="sectionIcon icon_cone"></div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="sectionInfo row">
+                            <h2 class="sectionTitle col-sm-12"><span class="underline">What</span> are Natural Gas Leaks?</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <!-- START FEATURE BOX -->
+                        <div class="featureBox clearfix" data-appear="fade-in" data-appear-direction="left">
+                            <h3><span class="icon_cone"></span>Why does this happen?</h3>
+                            <p>Natural gas is dangerous. In Boston, natural gas is often transported in old and leak prone cast iron, wrought iron, or unprotected steel pipes.</p>
+                            <ul class="horizontalLinks">
+                                <li>Risky Leaks From Gas Mains <br>
+                                  <a class="arrowLink arrowRight" href="https://www.bu.edu/news/2016/03/28/survey-gives-clearer-view-of-risky-leaks-from-gas-mains/" target="_blank">bu.edu</a></li>
+                                <li>A hidden culprit for dead trees <br>
+                                  <a class="arrowLink arrowRight" href="https://stateimpact.npr.org/pennsylvania/2015/11/27/gas-leaks-a-hidden-culprit-for-dead-trees/" target="_blank">stateimpact.npr.org</a></li>
+                                <li>Why are natural gas leaks a problem? <br>
+                                  <a class="arrowLink arrowRight" href="https://www.edf.org/climate/methanemaps/leaks-problem" target="_blank">edf.org/leaks-problem</a></li>
+                                <li>Boston: Snapshot of natural gas leaks <br>
+                                  <a class="arrowLink arrowRight" href="https://www.edf.org/climate/methanemaps/city-snapshots/boston" target="_blank">edf.org/city-snapshots</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <!-- START FEATURE BOX -->
+                        <div class="featureBox clearfix" data-appear="fade-in" data-appear-direction="bottom" data-appear-delay="600">
+                            <h3><span class="icon_heart"></span>Why do we care about this?</h3>
+                            <p>Contributes to greenhouse gas buildup.  Natural gas leaking from the local distribution system accounts for 60 percent to 100 percent of the region’s emissions of methane, one of the most insidious heat-trapping greenhouse gases.</p>
+                            <p>Roughly 1/6 of leaks are potentially explosive, and natural gas is known to kill trees and shrubs, and the methane and carbon monoxide present in natural gas well known to be toxic.</p>
+                            <ul class="horizontalLinks">
+                                <li>Gas infrastructure releasing methane <br>
+                                  <a class="arrowLink arrowRight" href="https://www.seas.harvard.edu/news/2015/01/boston-s-natural-gas-infrastructure-releases-high-levels-of-heat-trapping-methane" target="_blank">seas.harvard.edu</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <!-- START FEATURE BOX -->
+                        <div class="featureBox clearfix" data-appear="fade-in" data-appear-direction="right" data-appear-delay="300">
+                            <h3><span class="icon_currency_alt"></span>Who pays to repair these leaks?</h3>
+                            <p>Aging natural gas distribution system short-changes customers.  The Boston region loses 15 billion cubic feet of natural gas, worth $90 million dollars every year. This is 2.7 percent of gas brought into the region.</p>
+                            <p>The cost is not paid by utilities. Instead, utilities, which have local monopolies, pass it on to their customers.</p>
+                              <!-- [Public testimony from National Grid director of Health and Safety, Gas Leaks Hearing, Boston City Council, July 12, 2016].
+                              Al has video footage of the testimony. Have to find, upload to youtube, and link it. -->
+                            <p>Clearly, utilities have little economic incentive to fix these leaks on their own.</p>
+                        </div>
+                    </div>
+                </div>
+              </div>
+          </section>
+        <!--END what section-->
+
+
+        <!--where section-->
+        <section id="where" class="obliqueCut lightSection graySection separatorTop">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="separator"  viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 100 L100 0 L100 100 Z"></path>
+            </svg>
+            <div class="sectionIcon icon_pin"></div>  <!-- icon_search icon_compass_alt -->
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="sectionInfo row">
+                            <h2 class="sectionTitle col-sm-5"><span class="underline">Show Me</span> Where?</h2>
+                            <h2 class="sectionSubDescription col-sm-7"><span class="titleColor">On the map below view areas affected by these leaks.</span></h2>
+                        </div>
+                        <div class="sectionInfo row">
+                            <div class="col-xs-12 col-sm-6 col-md-7 col-lg-8 featureBox clearfix" data-appear="fade-in" data-appear-direction="right" data-appear-delay="300">
+                                <p>Gas leaks are reported in Grades 1-3, with 1 being <span class="gOne">most severe</span> and 3 being <span class="gThree">least severe</span>.  The radius of the circle is based on how long ago the leak was reported.  So a newer leak will have a smaller circle <svg width="30" height="30" class="middle"><circle cx="15" cy="15" r="5" stroke="#e64500" stroke-width="4" fill="#FF4D00" style="fill-opacity:0.5;stroke-opacity:0.5"/></svg>
+                                and an older leak will have a larger circle <svg width="60" height="60" class="middle"><circle cx="30" cy="30" r="20" stroke="#e600a1" stroke-width="4" fill="#FF00B3" style="fill-opacity:0.5;stroke-opacity:0.5"/></svg></p>
+                                <p>Click a circle on the map to view more information about that datapoint.</p>
+                            </div>
+                            <div class="col-xs-offset-3 col-xs-6 col-sm-offset-1 col-sm-5 col-md-4 col-lg-3 well well-lg featureBox clearfix" data-appear="fade-in" data-appear-direction="bottom" data-appear-delay="300">
+                                <h3 class="text-right">Legend</h3>
+                                <svg width="30" height="30" class="middle">
+                                  <circle cx="15" cy="15" r="10" stroke="#E60000" stroke-width="4" fill="#FF0000" style="fill-opacity:0.5;stroke-opacity:0.8"/>
+                                </svg> &nbsp; <span class="gOne">Grade 1</span> &nbsp; Severe leak<br>
+                                <svg width="30" height="30" class="middle">
+                                  <circle cx="15" cy="15" r="10" stroke="#FF0080" stroke-width="4" fill="#FF1A8D" style="fill-opacity:0.5;stroke-opacity:0.6"/>
+                                </svg> &nbsp; <span class="gTwo">Grade 2</span> &nbsp; Moderate leak<br>
+                                <svg width="30" height="30" class="middle">
+                                  <circle cx="15" cy="15" r="10" stroke="#FF8000" stroke-width="4" fill="#FF8D1A" style="fill-opacity:0.5;stroke-opacity:0.4"/>
+                                </svg> &nbsp; <span class="gThree">Grade 3</span> &nbsp; Mild leak
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--END what section-->
+
+
+        <!--map section-->
+        <div id="mapid"></div>
+        <!--END map section-->
+
+
+        <!--
+        <span class="icon_cogs"></span>
+        <span class="icon_tools"></span>
+        <span class="icon_toolbox_alt"></span>
+        <span class="icon_pencil"></span>
+        <span class="icon_pencil-edit"></span> -->
+
+
+        <!-- Timeline How Data Processed -->
+        <section id="how" class="obliqueCut darkSection purpleSection darkSection blueSection separatorTop paddingBottom120">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="separator"  viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 100 L100 0 L100 100 Z"></path>
+            </svg>
+            <div class="sectionIcon icon_cog"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="sectionInfo row">
+                            <h2 class="sectionTitle col-sm-4"><span class="underline">A Data</span> Story</h2>
+                            <h2 class="sectionDescription col-sm-8">The Process of How we find Lost Leaks.</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 timeline">
+                        <div class="row">
+                            <div class="col-sm-12 avatar" data-appear="fade-in">
+                                <img alt="Avatar" src="images/crew1.jpg" />
+                            </div>
+                            <div class="col-sm-5 col-sm-offset-1 timeline_box_container">
+                                <div class="timeline_box left" data-appear="fade-in" data-appear-delay="100">
+                                    <img src="" alt="" />
+                                    <div class="date">[1st]</div>
+                                    <h4>
+                                      Get data from the State of MA <br>
+                                      <a href="http://web1.env.state.ma.us/DPU/FileRoom/dockets/bynumber">Energy and Environmental Affairs</a>
+                                    </h4>
+                                    <p>
+                                      Find records via docket number and download from public utilities
+                                      The data is usually somewhat irregular, and in pdf format.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-5 col-sm-offset-6 timeline_box_container">
+                                <div class="timeline_box right" data-appear="fade-in">
+                                    <div class="date">[2nd]</div>
+                                    <h4>
+                                      Parse PDF's using SmallPDF.com, and PDFTables (Audrey at HEETMA)
+                                    </h4>
+                                    <p>
+                                      Audrey turns the pdfs into excel spreadsheets and cleans the excel data by hand.
+                                      _link a converted spreadsheet_ (Audrey at HEETMA)
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-5 col-sm-offset-1 timeline_box_container">
+                                <div class="timeline_box left" data-appear="fade-in" data-appear-delay="100">
+                                    <div class="date">[3rd]</div>
+                                    <h4>
+                                      Convert data to CSV, and standardize
+                                    </h4>
+                                    <p>
+                                      Albert Carter converted excel spreadsheets into CSV and ran through python program to standardize and sanitize data.
+                                      Geolocate using google maps API. Insert into DataHub.
+                                      the csv <a href="https://datahub.csail.mit.edu/browse/al_carter/natural_gas/files">files</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-5 col-sm-offset-6 timeline_box_container">
+                                <div class="timeline_box right" data-appear="fade-in" data-appear-delay="200">
+                                    <div class="date">[4th]</div>
+                                    <h4>Identify Missing Leaks</h4>
+                                    <ul>
+                                      <li>Take list of 2014 Leaks and 2014 Repairs.</li>
+                                      <li>If a repair happens near an existing leak (approx. 100 ft), count it as repaired.</li>
+                                      <li>Remaining leaks are counted as un-repaired.</li>
+                                      <li>If the same leak appears in 2015, it's not missing.  Remove it.</li>
+                                      <li>We know leaks are the same because the date and address are the same.</li>
+                                      <li>Remaining leaks are missing.  Link to the raw JSON file.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-5 col-sm-offset-1 timeline_box_container">
+                                <div class="timeline_box left" data-appear="fade-in" data-appear-delay="300">
+                                    <div class="date">[5th]</div>
+                                    <h4>Try it Out</h4>
+                                    <p>
+                                    pre-filled queries to <a href="https://datahub.csail.mit.edu/browse/al_carter/natural_gas/query?q=select+*+from+natural_gas.eversource_unrepaired_2015">datahub.csail.mit.edu</a>
+                                    <a href="https://datahub.csail.mit.edu/browse/al_carter/natural_gas/query?q=select+*+from+natural_gas.eversource_unrepaired_2014+where+id%3D1%3B">query2</a>
+                                    <a href="https://datahub.csail.mit.edu/browse/al_carter/natural_gas/query?q=select+*+from+natural_gas.eversource_unrepaired_2014+where+id%3D1%3B">query3</a>
+                                    <a href="https://datahub.csail.mit.edu/browse/al_carter/natural_gas/query?q=select+*+from+natural_gas.nstar_unrepaired_2014+where+id%3D1%3B">query4</a>
+                                    <a href="https://datahub.csail.mit.edu/browse/al_carter/natural_gas/files">raw CSV</a>
+                                    <a href="https://datahub.csail.mit.edu/download/al_carter/natural_gas/file/2014_eversource_unrepaired.csv">2014_eversource_unrepaired.csv</a>
+                                    <a href="http://datapipes.okfnlabs.org/csv/html/?url=https%3A%2F%2Fdatahub.csail.mit.edu%2Fdownload%2Fal_carter%2Fnatural_gas%2Ffile%2F2014_eversource_unrepaired.csv#L1">first row</a>
+                                    <a href="http://datapipes.okfnlabs.org/csv/html/?url=https%3A%2F%2Fdatahub.csail.mit.edu%2Fdownload%2Fal_carter%2Fnatural_gas%2Ffile%2F2014_ngrid_unrepaired.csv">NationalGrid</a>
+                                    <a href"https://datahub.csail.mit.edu/browse/al_carter/natural_gas/query?q=select+*+from+natural_gas.ngrid_unrepaired_2015+where+formatted_address+LIKE+%27%25117+Dudley+River+Rd%2C+Southbridge%2C+MA+01550%2C+USA%25%27+and+record_date+%3D+to_date%28%271992-03-18%27%2C+%27YYYY-MM-DD%27%29">select * from natural_gas.ngrid_unrepaired_2015 where formatted_address LIKE '%117 Dudley River Rd, Southbridge, MA 01550, USA%' and record_date = to_date('1992-03-18', 'YYYY-MM-DD')</a>
+                                    <!-- have someone put in their address and look for leaks around their address
+                                    have someone perform a select query for leaks older than 5 years -->
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-5 col-sm-offset-6 timeline_box_container">
+                                <div class="timeline_box right" data-appear="fade-in" data-appear-delay="400">
+                                    <div class="date">[6th]</div>
+                                    <h4>Allie built this map using Leaflet.js</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--END What I have done-->
+
+
+        <!-- Gas Company section-->
+        <section id="who" class="obliqueCut lightSection separatorTop">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="separator"  viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 100 L100 0 L100 100 Z"></path>
+            </svg>
+            <div class="container">
+                <!-- START TITLE AND DESCRIPTION -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="sectionInfo row">
+                            <h2 class="sectionTitle col-sm-4"><span class="underline">Who</span> is Involved?</h2>
+                            <h2 class="sectionDescription col-sm-8">These are the natural gas companies we've analyzed so far.</h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- END TITLE AND DESCRIPTION -->
+
+                <!-- START CUSTOMERS LIST -->
+                <div class="row customers">
+                    <div class="col-sm-12">
+                        <ul class="customersList clearfix" data-appear="fade-in" data-appear-direction="top">
+                            <li><a href="https://www.eversource.com/Content/ema-g">
+                                <img alt="Eversource" src="images/Eversource.png" /></a></li>
+                            <li><a href="https://www.nationalgridus.com/MA-Business/">
+                                <img alt="National Grid" src="images/national-grid-logo.png" /></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- END CUSTOMERS LIST -->
+
+                <!-- Other gas companies who many be involved, but we have not processed and analyzed their data yet: -->
+                <!--
+                <div class="row customers">
+                    <div class="col-sm-12">
+                        <ul class="customersList clearfix" data-appear="fade-in" data-appear-direction="top">
+                            <li><a href="https://www.columbiagasma.com/">
+                                <img alt="Columbia Gas of MA" src="images/cma.png" /></a></li>
+                            <li><a href="https://www.berkshiregas.com">
+                                <img alt="Berkshire Gas" src="images/berkshiregas_com.gif" /></a></li>
+                            <li><a href="https://libertyutilities.com/">
+                                <img alt="Liberty Utilities" src="images/libertyUtilities.png" /></a></li>
+                            <li><a href="http://unitil.com">
+                                <img alt="Unitil" src="images/unitil-large.png" /></a></li>
+                        </ul>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+        <!--END section-->
+
+
+        <!--Meet the crew section-->
+        <section id="about" class="obliqueCut lightSection graySection separatorTop separatorBottom">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="separator" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 100 L100 0 L100 100 Z"></path>
+            </svg>
+            <!--SECTION ICON-->
+            <div class="sectionIcon icon_group"></div>
+
+            <div class="container">
+                <!--SECTION TITLE-->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="sectionInfo row">
+                            <h2 class="sectionTitle col-sm-4"><span class="underline">About</span> Us</h2>
+                            <div class="col-sm-8">
+                              <h2 class="sectionDescription">
+                                This isn't our day job, and we don't get paid to do this, but we hope it contributes to public discussion on this issue.
+                              </h2>
+                              <h3 class="sectionSubDescription">
+                                Three independent volunteers, none of us are involved in any organizations pushing this.<br>
+                                We saw data that we found interesting and wanted to present it to the public.
+                              </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--END SECTION TITLE-->
+
+                <!--SECTION CONTENT-->
+                <div class="row overflowHidden crewMembers">
+                    <!--CREW AVATARS-->
+                    <div class="col-sm-3 clearfix crewAvatars" data-appear="fade-in" data-appear-direction="left">
+                        <div class="crewAvatarsSlider">
+                            <span class="Prev animate">
+                                <img alt="Previous" src="images/prevDark.png" /></span>
+                            <span class="Next animate">
+                                <img alt="Next" src="images/nextDark.png" /></span>
+                        </div>
+                        <div class="crewAvatarsFixed">
+                            <div class="member text-center" data-toggle="tab" data-target="#Member1">
+                                <img class="memberImg animateFast boxShadowHover" alt="Crew member" src="images/crew1.jpg" />
+                                <div class="memberName titleColor">Al Carter</div>
+                                <div class="memberPosition">Data Wrangling, Clustering, Project Management</div>
+                            </div>
+                            <div class="member text-center" data-toggle="tab" data-target="#Member2">
+                                <img class="memberImg animateFast boxShadowHover" alt="Crew member" src="images/crew2.jpg" />
+                                <div class="memberName titleColor">Michael Webber</div>
+                                <div class="memberPosition">Clustering</div>
+                            </div>
+                            <div class="member text-center" data-toggle="tab" data-target="#Member3">
+                                <img class="memberImg animateFast boxShadowHover" alt="Crew member" src="images/crew3.jpg" />
+                                <div class="memberName titleColor">Allie S.</div>
+                                <div class="memberPosition">Map and Website</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--END CREW AVATARS-->
+
+                    <!--CREW DESCRIPTION-->
+                    <div class="tab-content" data-appear="fade-in" data-appear-direction="right">
+                        <!--MEMBER 1-->
+                        <div id="Member1" class="tab-pane fade in active">
+                            <!--ABOUT MEMBER-->
+                            <div class="col-sm-7 col-sm-offset-1 paddingRight0">
+                                <div class="memberAbout">
+                                    <div class="memberName descriptionColor">Albert Carter</div>
+                                    <div class="memberDesc1 titleColor">
+                                       A programmer and member of the research staff at the MIT CSAIL Big Data Initiative and LivingLab.
+                                    </div>
+                                    <div class="memberDesc2">
+                                      Albert Carter has been at MIT for 4 years.  While this project uses publicly available research and software from the lab, it is not a funded by MIT, CSAIL, or anyone else.
+                                    </div>
+                                    <div class="memberSocial">
+                                        <h4>Follow Al</h4>
+                                        <ul class="memberSocialList">
+                                            <li><a class="soc_" href="https://github.com/RogerTangos" target="_blank"><i class="fa fa-github"></i>github/RogerTangos</a></li>
+                                            <li><a class="soc_linkedin" href="https://www.linkedin.com/in/brownualcarter" target="_blank">brownualcarter</a></li>
+                                            <li><a class="soc_twitter" href="http://twitter.com/al_carter" target="_blank">@al_carter</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--END MEMBER 1-->
+
+                        <!--MEMBER 2-->
+                        <div id="Member2" class="tab-pane fade">
+                            <!--ABOUT MEMBER-->
+                            <div class="col-sm-7 col-sm-offset-1 paddingRight0">
+                                <div class="memberAbout">
+                                    <div class="memberName descriptionColor">Michael Webber</div>
+                                    <div class="memberDesc1 titleColor">
+                                      A creative and determined problem solver and builder, committed to excellence in his work and personal interactions.
+                                    </div>
+                                    <div class="memberDesc2">
+                                      Michael Webber has experience programming applications and supporting them, working as part of a team and on his own, travelling across the country and working remotely.
+                                      He is currently seeking interesting and challenging IT projects.
+                                    </div>
+                                    <div class="memberSocial">
+                                        <h4>Follow Michael Webber</h4>
+                                        <ul class="memberSocialList">
+                                            <li><a class="soc_" href="https://github.com/MichaelRyanWebber" target="_blank"><i class="fa fa-github"></i>github/MichaelRyanWebber</a></li>
+                                            <li><a class="soc_linkedin" href="https://www.linkedin.com/in/mike-webber-25469213" target="_blank">mike-webber-25469213</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--END MEMBER 2-->
+
+                        <!--MEMBER 3-->
+                        <div id="Member3" class="tab-pane fade">
+                            <!--ABOUT MEMBER-->
+                            <div class="col-sm-7 col-sm-offset-1 paddingRight0">
+                                <div class="memberAbout">
+                                    <div class="memberName descriptionColor">Allison Sichling</div>
+                                    <div class="memberDesc1 titleColor">
+                                      A web developer interested in interactive experiences, with a Bachelor's in Fine Art.
+                                    </div>
+                                    <div class="memberDesc2">
+                                      Allison graduated from General Assembly’s full-time Web Development Immersive bootcamp December 2015.
+                                      Generally passionate about creating things, she enjoys solving problems, learning, collaborating, drawing, painting, sewing, and making art with LEDs.                                    </div>
+                                    <div class="memberSocial">
+                                        <h4>Follow Allie</h4>
+                                        <ul class="memberSocialList">
+                                            <li><a class="soc_" href="https://github.com/faetea" target="_blank"><i class="fa fa-github"></i>github/faetea</a></li>
+                                            <li><a class="soc_arrow" href="http://faetea.github.io/" target="_blank">Code Portfolio</a></li>
+                                            <li><a class="soc_linkedin" href="https://www.linkedin.com/in/allisonsebastian" target="_blank">allisonsebastian</a></li>
+                                            <li><a class="soc_twitter" href="https://twitter.com/faetea" target="_blank">@faetea</a></li>
+                                            <!-- <li><a class="soc_dribble" href="#">@nathanf</a></li>
+                                            <li><a class="soc_googlep" href="https://www.linkedin.com/in/brownualcarter">brownualcarter</a></li>
+                                            <li><a class="soc_facebook" href="#">karen.johnston</a></li>
+                                            <li><a class="soc_instagram" href="#">@nathanf</a></li> -->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--END MEMBER 3-->
+                    </div>
+                    <!--END CREW DESCRIPTION-->
+                </div>
+                <!--END SECTION CONTENT-->
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="separator" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 100 L100 0 L0 0 Z"></path>
+            </svg>
+        </section>
+        <!--END Meet the crew section-->
+
+
+        <!--Footer-->
+        <footer id="footer" class="obliqueCut lightSection separatorTop">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="separator"  viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 100 L100 0 L100 100 Z"></path>
+            </svg>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 text-left">
+                        <div><span class="highlight">&copy; LostLeaks</span> All rights Reserved</div>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <div>Theme designed by <a href="http://nasfactor.com" class="highlight">Nasirwd.</a> nasfactor.com</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--END Footer-->
+    </div>
+
+    <!--Scripts-->
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nprogress.min.js"></script>
+    <script src="js/jquery.color.min.js"></script>
+    <script src="js/jquery.carouFredSel-6.2.1-packed.js"></script>
+    <script src="js/jquery.touchSwipe.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/jquery-magnific-popup.min.js"></script>
+    <script src="js/jquery.parallax-1.1.3.js"></script>
+    <script src="js/instafeed.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.mb.YTPlayer.js"></script>
+    <!-- jQuery REVOLUTION Slider  -->
+    <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+    <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+    <!--Google maps javascript-->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+    <script src="js/gmaps.js"></script>
+    <!--My javascript-->
+    <script src="js/script.js"></script>
+
+    <script src="leaflet/leaflet.js"></script>
+    <script src="map.js"></script>
+</body>
+</html>

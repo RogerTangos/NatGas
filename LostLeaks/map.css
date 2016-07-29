@@ -1,0 +1,53 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#mapid {
+    height: 70em;
+}
+
+#where {
+    padding-bottom: 0px;
+}
+
+.sectionInfo .sectionSubDescription {
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 40px;
+}
+
+.fa-github {
+    color: #000;
+    font-size: 25px;
+    margin-right: 23px;
+}
+
+.obliqueCut {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.gOne {
+  color: #E60000;
+}
+.gTwo {
+  color: #FF0080;
+}
+.gThree {
+  color: #FF8000;
+}
+.lightSection h4 .lightSection .featureBox [class^="icon_"], .lightSection .featureBox [class*="icon_"] {
+  color: #009edb;
+}
+svg.middle {
+  vertical-align: middle;
+}
+#where .sectionInfo {
+  margin-bottom: 50px;
+}
+.well {
+  min-width: 16em;
+  /*min-width: 275px; */
+}
