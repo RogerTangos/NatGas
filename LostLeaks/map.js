@@ -27,22 +27,22 @@ for (var i = 0; i < eversourceLeaks.length; i++) {
   // color by grade
   var options = { fillOpacity: 0.5 };
   if(esLeak['grade'] === '1') {
-    options.color = '#E60000';
-    options.fillColor = '#FF0000';
-    options.opacity = 0.8;
-    options.fillOpacity = 0.8;
+    options.color = '#ff0099';  // Pure (or mostly pure) pink, a websafe color
+    options.fillColor = '#ff3399';  // Vivid pink, a websafe color
+    options.opacity = 0.9;
+    options.fillOpacity = 0.9;
   }
   if(esLeak['grade'] === '2') {
-    options.color = '#FF0080';
-    options.fillColor = '#FF1A8D';
+    options.color = '#cc0000';  // BU-red, Strong red, a websafe color
+    options.fillColor = '#ff0000';  // Red, Pure (or mostly pure) red, a websafe color
     options.opacity = 0.6;
     options.fillOpacity = 0.6;
   }
   if (esLeak['grade'] === '3') {
-    options.color = '#FF8000';
-    options.fillColor = '#FF8D1A';
-    options.opacity = 0.4;
-    options.fillOpacity = 0.4;
+    options.color = '#ff6600';  // Pure (or mostly pure) orange, a websafe color
+    options.fillColor = '#ff9933';  // deepSaffron, Vivid orange, a websafe color
+    options.opacity = 0.3;
+    options.fillOpacity = 0.3;
   }
 
   // trim address quotes
@@ -67,23 +67,23 @@ for (var i = 0; i < ngridLeaks.length; i++) {
 
   // color by grade
   var options = { fillOpacity: 0.5 };
-  if(ngLeak['grade'] === '1') {
-    options.color = '#E60000';
-    options.fillColor = '#FF0000';
-    options.opacity = 0.8;
-    options.fillOpacity = 0.8;
+  if(esLeak['grade'] === '1') {
+    options.color = '#ff0099';  // Pure (or mostly pure) pink, a websafe color
+    options.fillColor = '#ff3399';  // Vivid pink, a websafe color
+    options.opacity = 0.9;
+    options.fillOpacity = 0.9;
   }
-  if(ngLeak['grade'] === '2') {
-    options.color = '#FF0080';
-    options.fillColor = '#FF1A8D';
+  if(esLeak['grade'] === '2') {
+    options.color = '#cc0000';  // BU-red, Strong red, a websafe color
+    options.fillColor = '#ff0000';  // Red, Pure (or mostly pure) red, a websafe color
     options.opacity = 0.6;
     options.fillOpacity = 0.6;
   }
-  if (ngLeak['grade'] === '3') {
-    options.color = '#FF8000';
-    options.fillColor = '#FF8D1A';
-    options.opacity = 0.4;
-    options.fillOpacity = 0.4;
+  if (esLeak['grade'] === '3') {
+    options.color = '#ff6600';  // Pure (or mostly pure) orange, a websafe color
+    options.fillColor = '#ff9933';  // deepSaffron, Vivid orange, a websafe color
+    options.opacity = 0.3;
+    options.fillOpacity = 0.3;
   }
 
   // trim address quotes

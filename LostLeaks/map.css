@@ -1,61 +1,46 @@
 html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 #mapid {
-    height: 70em;
+  height: 70em;
 }
 
-#where {
-    padding-bottom: 0px;
-}
-
-.sectionInfo .sectionSubDescription {
-    font-size: 25px;
-    font-weight: 300;
-    line-height: 40px;
-}
-
-.fa-github {
-    color: #000;
-    font-size: 25px;
-    margin-right: 23px;
-}
-
-.obliqueCut {
-  padding-top: 120px;
-  padding-bottom: 120px;
-}
-
-.gOne {
-  color: #E60000;
-}
-.gTwo {
-  color: #FF0080;
-}
-.gThree {
-  color: #FF8000;
-}
 .lightSection h4 .lightSection .featureBox [class^="icon_"], .lightSection .featureBox [class*="icon_"] {
   color: #009edb;
 }
+
+#where {
+  padding-bottom: 0px;
+}
+/*Severe*/
+.gOne {
+  color: #ff3399;  /*Fill, Vivid pink, a websafe color*/
+  /*color: #ff0099;  /*Stroke, Pure pink, a websafe color*/
+}
+/*Moderate*/
+.gTwo {
+  color: #ff0000;  /*Fill, Red, Pure red, a websafe color*/
+  /*color: #cc0000;  /*Stroke, BU-red, Strong red, a websafe color*/
+}
+/*Mild*/
+.gThree {
+  color: #ff9933;  /*Fill, deepSaffron, Vivid orange, a websafe color*/
+  /*color: #ff6600;  /*Stroke, pureOrange, Pure (or mostly pure) orange, a websafe color*/
+}
+
 svg.middle {
   vertical-align: middle;
 }
-#where .sectionInfo {
-  margin-bottom: 50px;
-}
+
 .well {
   min-width: 16em;
-  /*min-width: 275px; */
 }
 
-.sectionInfo {
-  margin-bottom: 2em;
-}
-
-.bigText {
-  text-shadow: 2px 2px 4px #000000;
+.fa-github {
+  color: #000;
+  font-size: 25px;
+  margin-right: 23px;
 }

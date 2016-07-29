@@ -55,6 +55,7 @@ h3 { font-size: 18px; }
 h4 { font-size: 16px; }
 p { margin: 0 0 20px 0; }
 .bigText { font-weight: 900; font-size: 86px; line-height: 80px; }
+.bigText { text-shadow: 2px 2px 4px #000000; }
 .mediumText { font-size: 22px; line-height: 95px; }
 .textLight { font-weight: 300; }
 
@@ -454,7 +455,8 @@ blockquote footer { color: #fff; }
 .sectionIcon { font-size: 30px; display: inline-block; text-align: center; position: absolute; margin: auto; left: 0; right: 0; top: -37px; width: 75px; height: 75px; line-height: 75px; border-radius: 50%; vertical-align: middle; }
 section { position: relative; }
 
-.obliqueCut { padding-top: 120px; padding-bottom: 180px; position: relative; }
+/*.obliqueCut { padding-top: 120px; padding-bottom: 180px; position: relative; }*/
+.obliqueCut { padding-top: 120px; padding-bottom: 120px; position: relative; }
 .oblique .obliqueCut { padding-top: 75px; }
 .oblique .obliqueCut svg { position: absolute; display: block; z-index: 100; height: 110px; width: 100%; }
 .oblique .obliqueCut.separatorTop svg:first-of-type { top: -109px; bottom: auto; }
@@ -479,7 +481,8 @@ section { position: relative; }
 * CONTENT ELEMENTS
 ****************************/
 /*Section Info*/
-.sectionInfo { margin-bottom: 75px; }
+/*.sectionInfo { margin-bottom: 75px; }*/
+.sectionInfo { margin-bottom: 2em; }
 .extraSpacing2 .sectionInfo { margin-bottom: 90px; }
 .extraSpacing4 .sectionInfo { margin-bottom: 100px; }
 /*.sectionInfo h2 { font-size: 30px; }*/
