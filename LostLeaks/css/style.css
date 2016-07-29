@@ -482,7 +482,7 @@ section { position: relative; }
 .sectionInfo { margin-bottom: 75px; }
 .extraSpacing2 .sectionInfo { margin-bottom: 90px; }
 .extraSpacing4 .sectionInfo { margin-bottom: 100px; }
-.sectionInfo h2 { font-size: 30px; }
+/*.sectionInfo h2 { font-size: 30px; }*/
 .sectionTitle { font-weight: 900; margin-bottom: 20px; line-height: 44px; }
 .sectionDescription { font-weight: 300; line-height: 40px; }
 
