@@ -18,7 +18,7 @@ var grade3Layer = L.layerGroup();
 var currentYear = new Date().getFullYear();
 
 // eversourcesLeaks is the array of dataPoints
-// ../data/eversource/eversource_lostleaks_combined_2014_100.json
+// ../data/eversource/eversource_repairs_100.json
 for (var i = 0; i < eversourceLeaks.length; i++) {
   var esLeak = eversourceLeaks[i];
 
@@ -69,7 +69,7 @@ for (var i = 0; i < eversourceLeaks.length; i++) {
 }
 
 // ngridLeaks is the array of dataPoints
-// ../data/ngrid/ngrid_lostleaks_combined_2014_100.json
+// ../data/ngrid/ngrid_repairs_100.json
 for (var i = 0; i < ngridLeaks.length; i++) {
   var ngLeak = ngridLeaks[i];
 
