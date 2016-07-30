@@ -17,7 +17,7 @@ var grade3Layer = L.layerGroup();
 
 var currentYear = new Date().getFullYear();
 
-// eversourcesLeaks is the array of dataPoints
+// eversourceLeaks is the array of dataPoints
 // ../data/eversource/eversource_repairs_100.json
 for (var i = 0; i < eversourceLeaks.length; i++) {
   var esLeak = eversourceLeaks[i];
