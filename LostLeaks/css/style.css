@@ -361,6 +361,7 @@ blockquote footer { color: #fff; }
 .style2 .lightSection .memberPosition, .style2 .lightSection .memberSocialList [class*="soc_"],
 .style2 .lightSection .blog_latest article .article_meta a, .style2 .lightSection .widget .widget-recentPosts .postMeta a,
 .style2 .lightSection .blog_latest .article_bottom .article_tags a { color: #009edb; }
+.style2 .lightSection .sectionSubDescription { color: #999; }
 .style2 .lightSection .sliderPagination a.selected, .style2 .lightSection .defaultPager ul li a.active,
 .style2 .lightSection .defaultPager ul li:hover a,
 .style2 .lightSection #comments .comment .comment-body .avatar { background: #009edb; }
@@ -488,6 +489,7 @@ section { position: relative; }
 /*.sectionInfo h2 { font-size: 30px; }*/
 .sectionTitle { font-weight: 900; margin-bottom: 20px; line-height: 44px; }
 .sectionDescription { font-weight: 300; line-height: 40px; }
+.sectionSubDescription { font-weight: 400; line-height: 40px; }
 
 /*Feature Boxes*/
 .featureBox { margin-bottom: 25px; }
