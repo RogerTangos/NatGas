@@ -39,14 +39,14 @@ for (var i = 0; i < eversourceLeaks.length; i++) {
   if(esLeak['grade'] === '2') {
     options.color = '#cc0000';  // BU-red, Strong red, a websafe color
     options.fillColor = '#ff0000';  // Red, Pure (or mostly pure) red, a websafe color
-    options.opacity = 0.5;
-    options.fillOpacity = 0.5;
+    options.opacity = 0.7;
+    options.fillOpacity = 0.7;
   }
   if (esLeak['grade'] === '3') {
     options.color = '#ff6600';  // Pure (or mostly pure) orange, a websafe color
     options.fillColor = '#ff9933';  // deepSaffron, Vivid orange, a websafe color
-    options.opacity = 0.3;
-    options.fillOpacity = 0.3;
+    options.opacity = 0.5;
+    options.fillOpacity = 0.5;
   }
 
   // trim address quotes
@@ -90,14 +90,14 @@ for (var i = 0; i < ngridLeaks.length; i++) {
   if(ngLeak['grade'] === '2') {
     options.color = '#cc0000';  // BU-red, Strong red, a websafe color
     options.fillColor = '#ff0000';  // Red, Pure (or mostly pure) red, a websafe color
-    options.opacity = 0.5;
-    options.fillOpacity = 0.5;
+    options.opacity = 0.7;
+    options.fillOpacity = 0.7;
   }
   if (ngLeak['grade'] === '3') {
     options.color = '#ff6600';  // Pure (or mostly pure) orange, a websafe color
     options.fillColor = '#ff9933';  // deepSaffron, Vivid orange, a websafe color
-    options.opacity = 0.3;
-    options.fillOpacity = 0.3;
+    options.opacity = 0.5;
+    options.fillOpacity = 0.5;
   }
 
   // trim address quotes
