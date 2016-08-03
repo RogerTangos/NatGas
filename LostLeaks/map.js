@@ -55,7 +55,8 @@ for (var i = 0; i < eversourceLeaks.length; i++) {
 
   // Instantiates a circle object given a geographical point, a radius in meters and optionally an options object.
   var circle = L.circle([esLeak['lat'], esLeak['lng']], radius, options);
-  circle.bindPopup('Company: ' + 'Eversource' + '<br>' + 'Grade: ' + esLeak['grade'] + '<br>' + 'Address: ' + trim + '<br>' + 'Record Date: ' + esLeak['record_date'] + '<br>' + 'ID: ' + esLeak['id']);
+  circle.bindPopup('Company: ' + 'Eversource' + '<br>' + 'Grade: ' + esLeak['grade'] + '<br>' + 'Address: ' + trim + '<br>' + 'Record Date: ' + esLeak['record_date'] + '<br>' + 'ID: ' +
+  '<a href="https://datahub.csail.mit.edu/browse/al_carter/natural_gas/query?q=select+*+from+natural_gas.eversource_unrepaired_2014+where+id%3D+'+ esLeak['id'] +'%3B" target="_blank">' + esLeak['id'] + '</a>');
 
   if(esLeak['grade'] === '1') {
     grade1Layer.addLayer(circle);
@@ -106,7 +107,8 @@ for (var i = 0; i < ngridLeaks.length; i++) {
 
   // Instantiates a circle object given a geographical point, a radius in meters and optionally an options object.
   var circle = L.circle([ngLeak['lat'], ngLeak['lng']], radius, options);
-  circle.bindPopup('Company: ' + 'nationalgrid' + '<br>' + 'Grade: ' + ngLeak['grade'] + '<br>' + 'Address: ' + trim + '<br>' + 'Record Date: ' + ngLeak['record_date'] + '<br>' + 'ID: ' + ngLeak['id']);
+  circle.bindPopup('Company: ' + 'nationalgrid' + '<br>' + 'Grade: ' + ngLeak['grade'] + '<br>' + 'Address: ' + trim + '<br>' + 'Record Date: ' + ngLeak['record_date'] + '<br>' + 'ID: ' +
+  '<a href="https://datahub.csail.mit.edu/browse/al_carter/natural_gas/query?q=select+*+from+natural_gas.ngrid_unrepaired_2014+where+id%3D+' + ngLeak['id'] + '" target="_blank">' + ngLeak['id'] + '</a>' );
 
   if(ngLeak['grade'] === '1') {
     grade1Layer.addLayer(circle);

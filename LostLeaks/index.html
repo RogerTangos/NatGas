@@ -440,8 +440,8 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="sectionInfo row">
-                            <h2 class="sectionTitle col-sm-4"><span class="underline">A Data</span> Story</h2>
-                            <h2 class="sectionDescription col-sm-8">The Process of How we find Lost Leaks.</h2>
+                            <h2 class="sectionTitle col-sm-4"><span class="underline">A Data Story</span></h2>
+                            <h2 class="sectionDescription col-sm-8">How We Found Lost Leaks</h2>
                         </div>
                     </div>
                 </div>
@@ -449,84 +449,84 @@
                     <div class="col-sm-12 timeline">
                         <div class="row">
                             <div class="col-sm-12 avatar" data-appear="fade-in">
-                                <img alt="Avatar" src="images/crew1.jpg" />
+                                <img alt="Avatar" src="images/crew0.jpg" />
                             </div>
                             <div class="col-sm-5 col-sm-offset-1 timeline_box_container">
                                 <div class="timeline_box left" data-appear="fade-in" data-appear-delay="100">
                                     <img src="" alt="" />
-                                    <div class="date">[1st]</div>
+                                    <div class="date">[Step 1]</div>
                                     <h4>
-                                      Get data from the State of MA <br>
-                                      <a href="http://web1.env.state.ma.us/DPU/FileRoom/dockets/bynumber">Energy and Environmental Affairs</a>
+                                      Obtained data from the State of Massachusetts Office of
+                                      <a href="http://web1.env.state.ma.us/DPU/FileRoom/dockets/bynumber" target="_blank">Energy and Environmental Affairs</a>
                                     </h4>
                                     <p>
-                                      Find records via docket number and download from public utilities
-                                      The data is usually somewhat irregular, and in pdf format.
+                                      We identified records via docket number and downloaded them from public utilities.
+                                      The data was typically somewhat irregular and in pdf format.
                                     </p>
                                 </div>
                             </div>
                             <div class="col-sm-5 col-sm-offset-6 timeline_box_container">
                                 <div class="timeline_box right" data-appear="fade-in">
-                                    <div class="date">[2nd]</div>
+                                    <div class="date">[Step 2]</div>
                                     <h4>
-                                      Parse PDF's using SmallPDF.com, and PDFTables (Audrey at HEETMA)
+                                      Parse PDFs using SmallPDF.com and PDFTables (Audrey at HEETMA)
                                     </h4>
                                     <p>
-                                      Audrey turns the pdfs into excel spreadsheets and cleans the excel data by hand.
+                                      Audrey converted the pdfs into excel spreadsheets and cleaned the spreadsheet data by hand.
                                       _link a converted spreadsheet_ (Audrey at HEETMA)
                                     </p>
                                 </div>
                             </div>
                             <div class="col-sm-5 col-sm-offset-1 timeline_box_container">
                                 <div class="timeline_box left" data-appear="fade-in" data-appear-delay="100">
-                                    <div class="date">[3rd]</div>
+                                    <div class="date">[Step 3]</div>
                                     <h4>
-                                      Convert data to CSV, and standardize
+                                      Convert data to CSV and standardize
                                     </h4>
                                     <p>
-                                      Albert Carter converted excel spreadsheets into CSV and ran through python program to standardize and sanitize data.
-                                      Geolocate using google maps API. Insert into DataHub.
-                                      the csv <a href="https://datahub.csail.mit.edu/browse/al_carter/natural_gas/files">files</a>
+                                      Albert Carter converted the excel spreadsheets into CSV format and ran them through a Python program to standardize and sanitize the data.
+                                      Reported leaks were geolocated using the Google Maps API.
+                                      The latitude and longitude information was inserted into DataHub.
+                                    </p>
+                                    <p>
+                                      If you are interested in looking at the raw CSV data.
+                                      You can view them on <a href="https://datahub.csail.mit.edu/browse/al_carter/natural_gas/files" target="_blank">DataHub</a>. <br>
+                                      Here are is the <a href="http://datapipes.okfnlabs.org/csv/html/?url=https%3A%2F%2Fdatahub.csail.mit.edu%2Fdownload%2Fal_carter%2Fnatural_gas%2Ffile%2F2014_eversource_unrepaired.csv" target="_blank">2014_eversource_unrepaired.csv</a> and the
+                                      <a href="http://datapipes.okfnlabs.org/csv/html/?url=https%3A%2F%2Fdatahub.csail.mit.edu%2Fdownload%2Fal_carter%2Fnatural_gas%2Ffile%2F2014_ngrid_unrepaired.csv" target="_blank">2014_ngrid_unrepaired.csv</a>.
                                     </p>
                                 </div>
                             </div>
                             <div class="col-sm-5 col-sm-offset-6 timeline_box_container">
                                 <div class="timeline_box right" data-appear="fade-in" data-appear-delay="200">
-                                    <div class="date">[4th]</div>
-                                    <h4>Identify Missing Leaks</h4>
-                                    <ul>
-                                      <li>Take list of 2014 Leaks and 2014 Repairs.</li>
-                                      <li>If a repair happens near an existing leak (approx. 100 ft), count it as repaired.</li>
-                                      <li>Remaining leaks are counted as un-repaired.</li>
-                                      <li>If the same leak appears in 2015, it's not missing.  Remove it.</li>
-                                      <li>We know leaks are the same because the date and address are the same.</li>
-                                      <li>Remaining leaks are missing.  Link to the raw JSON file.</li>
-                                    </ul>
+                                    <div class="date">[Step 4]</div>
+                                    <h4>Identify lost leaks</h4>
+                                      <p>We compared the lists of 2014 leaks and 2014 repairs.
+                                        If a repair happened near a pre-existing leak (approximately 100 ft), the leak was counted as repaired and removed from analysis.
+                                      </p>
+                                      <p>Any remaining leaks without a matching repair were classified as un-repaired 2014 leaks.
+                                      </p>
+                                      <p>We cross-referenced our list of un-repaired 2014 leaks with the list of 2015 leaks.
+                                        We identified leaks appearing in both the 2014 and 2015 data as the same if their record date and address matched. If there was a match, the 2014 un-repaired leak was accounted for and therefore not a lost leak.
+                                      </p>
+                                      <p>The remaining un-repaired 2014 leaks that did not match with any 2015 leaks were identified as lost leaks.
+                                      </p>
                                 </div>
                             </div>
                             <div class="col-sm-5 col-sm-offset-1 timeline_box_container">
                                 <div class="timeline_box left" data-appear="fade-in" data-appear-delay="300">
-                                    <div class="date">[5th]</div>
-                                    <h4>Try it Out</h4>
+                                    <div class="date">[Step 5]</div>
+                                    <h4>The database on DataHub is accessible if you are interested in searching it.</h4>
                                     <p>
-                                    pre-filled queries to <a href="https://datahub.csail.mit.edu/browse/al_carter/natural_gas/query?q=select+*+from+natural_gas.eversource_unrepaired_2015">datahub.csail.mit.edu</a>
-                                    <a href="https://datahub.csail.mit.edu/browse/al_carter/natural_gas/query?q=select+*+from+natural_gas.eversource_unrepaired_2014+where+id%3D1%3B">query2</a>
-                                    <a href="https://datahub.csail.mit.edu/browse/al_carter/natural_gas/query?q=select+*+from+natural_gas.eversource_unrepaired_2014+where+id%3D1%3B">query3</a>
-                                    <a href="https://datahub.csail.mit.edu/browse/al_carter/natural_gas/query?q=select+*+from+natural_gas.nstar_unrepaired_2014+where+id%3D1%3B">query4</a>
-                                    <a href="https://datahub.csail.mit.edu/browse/al_carter/natural_gas/files">raw CSV</a>
-                                    <a href="https://datahub.csail.mit.edu/download/al_carter/natural_gas/file/2014_eversource_unrepaired.csv">2014_eversource_unrepaired.csv</a>
-                                    <a href="http://datapipes.okfnlabs.org/csv/html/?url=https%3A%2F%2Fdatahub.csail.mit.edu%2Fdownload%2Fal_carter%2Fnatural_gas%2Ffile%2F2014_eversource_unrepaired.csv#L1">first row</a>
-                                    <a href="http://datapipes.okfnlabs.org/csv/html/?url=https%3A%2F%2Fdatahub.csail.mit.edu%2Fdownload%2Fal_carter%2Fnatural_gas%2Ffile%2F2014_ngrid_unrepaired.csv">NationalGrid</a>
-                                    <a href"https://datahub.csail.mit.edu/browse/al_carter/natural_gas/query?q=select+*+from+natural_gas.ngrid_unrepaired_2015+where+formatted_address+LIKE+%27%25117+Dudley+River+Rd%2C+Southbridge%2C+MA+01550%2C+USA%25%27+and+record_date+%3D+to_date%28%271992-03-18%27%2C+%27YYYY-MM-DD%27%29">select * from natural_gas.ngrid_unrepaired_2015 where formatted_address LIKE '%117 Dudley River Rd, Southbridge, MA 01550, USA%' and record_date = to_date('1992-03-18', 'YYYY-MM-DD')</a>
-                                    <!-- have someone put in their address and look for leaks around their address
-                                    have someone perform a select query for leaks older than 5 years -->
+                                      Each leak is associated with an ID number.  On the map, inside each popup is a link to view the data in Datahub. <br>
+                                      For example: <a href="https://datahub.csail.mit.edu/browse/al_carter/natural_gas/query?q=select+*+from+natural_gas.eversource_unrepaired_2014+where+id%3D1%3B" target="_blank">This is a leak originally reported by Eversource with the id of 1</a>
                                     </p>
                                 </div>
                             </div>
                             <div class="col-sm-5 col-sm-offset-6 timeline_box_container">
                                 <div class="timeline_box right" data-appear="fade-in" data-appear-delay="400">
-                                    <div class="date">[6th]</div>
-                                    <h4>Allie built this map using Leaflet.js</h4>
+                                    <div class="date">[Step 6]</div>
+                                    <h4>Making the Map</h4>
+                                    <p>Lost leaks were populated onto this map Allie built with Leaflet.js</p>
                                 </div>
                             </div>
                         </div>

@@ -33,3 +33,19 @@ svg.middle {
   font-size: 25px;
   margin-right: 23px;
 }
+
+#how a:link { color: #ff9933; /* Deep saffron, Vivid orange*/ }
+#how a:hover { color: #ff3399; /* Vivid pink */ }
+#how a:visited { color: #ff6600; /* Pure orange*/ }
+
+#who .quoteText {
+    font-size: 18px;
+    /*font-weight: 300;*/
+    line-height: 36px;
+    /*margin-bottom: 50px;*/
+}
+#who .quoteAuthor {
+    font-size: 14px;
+    font-weight: 700;
+    /*margin-bottom: 30px;*/
+}
