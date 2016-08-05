@@ -26,7 +26,7 @@ for (var i = 0; i < eversourceLeaks.length; i++) {
   var shortDate = esLeak['record_date'].substr(0, 4);
   var numDate = parseInt(shortDate, 10);
   var yearDiff = currentYear-numDate;
-  var radius = (yearDiff*5)+5;
+  var radius = (yearDiff*10)+5;
 
   // color by grade
   var options = { fillOpacity: 0.5 };

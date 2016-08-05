@@ -56,7 +56,7 @@ h4 { font-size: 16px; }
 p { margin: 0 0 20px 0; }
 .bigText { font-weight: 900; font-size: 86px; line-height: 80px; }
 .bigText { text-shadow: 2px 2px 4px #000000; }
-.mediumText { font-size: 22px; line-height: 95px; }
+.mediumText { font-size: 22px; line-height: 95px; text-shadow: 1px 1px 2px #000000; }
 .textLight { font-weight: 300; }
 
 /* Anchors */
