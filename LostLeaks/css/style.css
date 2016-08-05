@@ -735,7 +735,7 @@ section { position: relative; }
 .timeline .timeline_box.right { margin-left: 40px; }
 .timeline .timeline_box h4 { font-weight: 700; }
 .timeline .timeline_box .date { font-weight: 700; font-size: 13px; margin-bottom: 10px; }
-.timeline .timeline_box p { font-weight: 300; font-size: 14px; line-height: 22px; }
+.timeline .timeline_box p { font-weight: 500; font-size: 14px; line-height: 22px; }
 .timeline .timeline_box p:last-child { margin-bottom: 0; }
 .timeline .timeline_box:before { content: ' '; display: block; width: 24px; height: 24px; border: 4px solid #fff; background: #337cc6; border-radius: 50%; position: absolute; top: 0; bottom: 0; margin: auto; }
 .timeline .timeline_box.left:before { right: -12px; }

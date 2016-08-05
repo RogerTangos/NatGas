@@ -51,3 +51,36 @@ svg.middle {
     padding-right: 28px;
     /*margin-bottom: 30px;*/
 }
+
+@media (max-width:767px) {
+  #lost {
+      padding-top: 60px;
+  }
+  .sectionTitle {
+      font-weight: 700;
+      margin-bottom: 12px;
+  }
+  h1 {
+      font-size: 24px;
+  }
+  .sectionInfo {
+      margin-bottom: 1em;
+  }
+  .featureBox p {
+    line-height: 28px;
+    font-size: 16px;
+  }
+}
+
+/*
+lg
+@media (min-width: 1200px) {}
+md
+@media (max-width: 1200px) {}
+sm
+@media (max-width:992px) {}
+sm
+@media (min-width:768px) {}
+xs
+@media (max-width:320px) {}
+*/
