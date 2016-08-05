@@ -11,11 +11,11 @@
     <meta name="description" content="LostLeaks">
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/favicons/apple-touch-icon-144-precomposed.png">
+    <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/favicons/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/favicons/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/favicons/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/favicons/apple-touch-icon-57-precomposed.png">
-    <link href="images/favicons/favicon.png" rel="shortcut icon">
+    <link href="images/favicons/favicon.png" rel="shortcut icon"> -->
 
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
@@ -184,6 +184,53 @@
         </section>
         <!--END Main slider-->
 
+        <!--where section-->
+        <section id="where" class="obliqueCut lightSection graySection separatorTop">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="separator"  viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 100 L100 0 L100 100 Z"></path>
+            </svg>
+            <div class="sectionIcon icon_pin"></div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="sectionInfo row">
+                            <h1 class="sectionTitle col-sm-12 col-md-5"><span class="underline">Where</span> Are Lost Leaks?</h1>
+                            <h2 class="sectionDescription col-sm-12 col-md-7">On the map below, you can explore the areas nearby lost leaks</h2>
+                        </div>
+                        <div class="sectionInfo row">
+                            <div class="col-xs-12 col-sm-6 col-md-7 col-lg-8 featureBox clearfix" data-appear="fade-in" data-appear-direction="right" data-appear-delay="300">
+                                <p>Gas leaks are reported in Grades 1 to 3, with 1 being the most severe and 3 being the least severe.  The radius of the circle is based on how long ago the leak was reported.  A newer leak will have a smaller circle
+                                  <svg width="30" height="30" class="middle"><circle cx="15" cy="15" r="5" stroke="#cc0000" stroke-width="4" fill="#ff0000" style="fill-opacity:0.7;stroke-opacity:0.7"/></svg>
+                                  , and an older leak will have a larger circle
+                                  <svg width="60" height="60" class="middle"><circle cx="30" cy="30" r="20" stroke="#cc0000" stroke-width="4" fill="#ff0000" style="fill-opacity:0.7;stroke-opacity:0.7"/></svg>
+                                </p>
+                                <p>Click the circles on the map to view more information about specific lost leaks, and click the checkboxes on the left side of the map to view each grade individually.</p>
+                            </div>
+                            <div class="col-xs-offset-3 col-xs-6 col-sm-offset-1 col-sm-4 col-md-3 col-lg-2 well well-lg featureBox clearfix" data-appear="fade-in" data-appear-direction="bottom" data-appear-delay="300">
+                                <h2 class="text-right">Legend</h2>
+                                <svg width="30" height="30" class="middle">
+                                  <circle cx="15" cy="15" r="10" stroke="#ff0099" stroke-width="4" fill="#ff3399" style="fill-opacity:0.9;stroke-opacity:0.9"/>
+                                </svg> &nbsp; Grade 1 &nbsp; Severe leak<br>
+                                <svg width="30" height="30" class="middle">
+                                  <circle cx="15" cy="15" r="10" stroke="#cc0000" stroke-width="4" fill="#ff0000" style="fill-opacity:0.7;stroke-opacity:0.7"/>
+                                </svg> &nbsp; Grade 2 &nbsp; Moderate leak<br>
+                                <svg width="30" height="30" class="middle">
+                                  <circle cx="15" cy="15" r="10" stroke="#ff6600" stroke-width="4" fill="#ff9933" style="fill-opacity:0.5;stroke-opacity:0.5"/>
+                                </svg> &nbsp; Grade 3 &nbsp; Mild leak
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--END what section-->
+
+
+        <!--map section-->
+        <div id="mapid"></div>
+        <!--END map section-->
+
 
         <!--Welcome to untitled section-->
         <section id="lost" class="obliqueCut lightSection graySection separatorTop">
@@ -287,54 +334,6 @@
               </div>
           </section>
         <!--END why section-->
-
-
-        <!--where section-->
-        <section id="where" class="obliqueCut lightSection graySection separatorTop">
-            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="separator"  viewBox="0 0 100 100" preserveAspectRatio="none">
-                <path d="M0 100 L100 0 L100 100 Z"></path>
-            </svg>
-            <div class="sectionIcon icon_pin"></div>
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="sectionInfo row">
-                            <h1 class="sectionTitle col-sm-12 col-md-5"><span class="underline">Where</span> Are Lost Leaks?</h1>
-                            <h2 class="sectionDescription col-sm-12 col-md-7">On the map below, you can explore the areas nearby lost leaks</h2>
-                        </div>
-                        <div class="sectionInfo row">
-                            <div class="col-xs-12 col-sm-6 col-md-7 col-lg-8 featureBox clearfix" data-appear="fade-in" data-appear-direction="right" data-appear-delay="300">
-                                <p>Gas leaks are reported in Grades 1 to 3, with 1 being the most severe and 3 being the least severe.  The radius of the circle is based on how long ago the leak was reported.  A newer leak will have a smaller circle
-                                  <svg width="30" height="30" class="middle"><circle cx="15" cy="15" r="5" stroke="#cc0000" stroke-width="4" fill="#ff0000" style="fill-opacity:0.7;stroke-opacity:0.7"/></svg>
-                                  , and an older leak will have a larger circle
-                                  <svg width="60" height="60" class="middle"><circle cx="30" cy="30" r="20" stroke="#cc0000" stroke-width="4" fill="#ff0000" style="fill-opacity:0.7;stroke-opacity:0.7"/></svg>
-                                </p>
-                                <p>Click the circles on the map to view more information about specific lost leaks, and click the checkboxes on the left side of the map to view each grade individually.</p>
-                            </div>
-                            <div class="col-xs-offset-3 col-xs-6 col-sm-offset-1 col-sm-4 col-md-3 col-lg-2 well well-lg featureBox clearfix" data-appear="fade-in" data-appear-direction="bottom" data-appear-delay="300">
-                                <h2 class="text-right">Legend</h2>
-                                <svg width="30" height="30" class="middle">
-                                  <circle cx="15" cy="15" r="10" stroke="#ff0099" stroke-width="4" fill="#ff3399" style="fill-opacity:0.9;stroke-opacity:0.9"/>
-                                </svg> &nbsp; Grade 1 &nbsp; Severe leak<br>
-                                <svg width="30" height="30" class="middle">
-                                  <circle cx="15" cy="15" r="10" stroke="#cc0000" stroke-width="4" fill="#ff0000" style="fill-opacity:0.7;stroke-opacity:0.7"/>
-                                </svg> &nbsp; Grade 2 &nbsp; Moderate leak<br>
-                                <svg width="30" height="30" class="middle">
-                                  <circle cx="15" cy="15" r="10" stroke="#ff6600" stroke-width="4" fill="#ff9933" style="fill-opacity:0.5;stroke-opacity:0.5"/>
-                                </svg> &nbsp; Grade 3 &nbsp; Mild leak
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--END what section-->
-
-
-        <!--map section-->
-        <div id="mapid"></div>
-        <!--END map section-->
 
 
         <!--grades section-->
@@ -482,7 +481,7 @@
                                     </p>
                                     <p>
                                       If you are interested in looking at the raw CSV data.
-                                      You can view them on <a href="https://datahub.csail.mit.edu/browse/al_carter/natural_gas/files" target="_blank">DataHub</a>.
+                                      You can view them on <a href="https://datahub.csail.mit.edu/browse/al_carter/natural_gas/files" target="_blank">DataHub</a>. You can also find our data sanitization code on <a class="soc_" href="https://github.com/RogerTangos/NatGas/blob/master/parsing.py" target="_blank">GitHub <i class="fa fa-github"></i></a>
                                     </p>
                                 </div>
                             </div>
@@ -499,6 +498,8 @@
                                         We identified leaks appearing in both the 2014 and 2015 data as the same if their record date and address matched. If there was a match, the 2014 un-repaired leak was accounted for and therefore not a lost leak.
                                       </p>
                                       <p>The remaining un-repaired 2014 leaks that did not match with any 2015 leaks were identified as lost leaks.
+                                      </p>
+                                      <p>You can find our code for this on <a class="soc_" href="https://github.com/MichaelRyanWebber/clustering/blob/master/nearbyX.py" target="_blank">GitHub <i class="fa fa-github"></i></a>
                                       </p>
                                 </div>
                             </div>
