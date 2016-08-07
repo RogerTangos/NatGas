@@ -183,7 +183,43 @@
             </div>
         </section>
         <!--END Main slider-->
+        <section id="faq" class="obliqueCut lightSection graySection separatorTop">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="sectionInfo row">
+                            <h1 class="sectionTitle col-sm-12 col-md-5"><span class="underline">What</span> do you mean "lost leak"?</h1>
+                            <h2 class="sectionDescription col-sm-12 col-md-7">These natural leaks weren't repaired, but they've vanished from public utility company data between 2014 and 2015.</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="sectionInfo row">
+                            <h1 class="sectionTitle col-sm-12 col-md-5"><span class="underline">So</span> what happened to them?</h1>
+                            <h2 class="sectionDescription col-sm-12 col-md-7">Some may have been omitted due to clerical error, or repaired via replacing gas mains. It appears that many have simply been deleted from the record. That's 1,263 (32%) lost Eversource Leaks, and 2,938 (17%) lost NationalGrid leaks.</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="sectionInfo row">
+                            <h1 class="sectionTitle col-sm-12 col-md-5"><span class="underline">How</span> can you tell?</h1>
+                            <h2 class="sectionDescription col-sm-12 col-md-7">Utilities are required to release data on leaks and repairs. We checked their data, and found that parts of it were missing. <a href="#how" style="text-decoration: underline;">Our process</a>, <a href="https://github.com/RogerTangos/NatGas" target="_blank" style="text-decoration: underline;">our</a> <a href="https://github.com/MichaelRyanWebber/clustering" target="_blank" style="text-decoration: underline;">code</a>, and <a href="https://datahub.csail.mit.edu/browse/al_carter/natural_gas/tables" target="_blank" style="text-decoration: underline;">the data</a> are publically documented.</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="sectionInfo row">
+                            <h1 class="sectionTitle col-sm-12 col-md-5"><span class="underline">Has</span> anyone else done work on this?</h1>
+                            <h2 class="sectionDescription col-sm-12 col-md-7">Yes. The Home Energy Efficienty Team did a <a href="http://www.heetma.org/squeaky-leak/natural-gas-leaks-maps/" target="_blank" style="text-decoration: underline;">manual analysis of the data</a>. Our automated study has reached similar results.</h2>
+                        </div>
+                    </div>
+                </div>
 
+            </div>
+        </section>
         <!--where section-->
         <section id="where" class="obliqueCut lightSection graySection separatorTop">
             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="separator"  viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -196,7 +232,7 @@
                     <div class="col-sm-12">
                         <div class="sectionInfo row">
                             <h1 class="sectionTitle col-sm-12 col-md-5"><span class="underline">Where</span> Are Lost Leaks?</h1>
-                            <h2 class="sectionDescription col-sm-12 col-md-7">On the map below, you can explore the areas nearby lost leaks</h2>
+                            <h2 class="sectionDescription col-sm-12 col-md-7">This doesn't show <strong>all</strong> leaks, but only the ones in our dataset that are lost.</h2>
                         </div>
                         <div class="sectionInfo row">
                             <div class="col-xs-12 col-sm-6 col-md-7 col-lg-8 featureBox clearfix" data-appear="fade-in" data-appear-direction="right" data-appear-delay="300">
@@ -208,7 +244,7 @@
                                 <p>Click the circles on the map to view more information about specific lost leaks, and click the checkboxes on the left side of the map to view each grade individually.</p>
                             </div>
                             <div class="col-xs-offset-3 col-xs-6 col-sm-offset-1 col-sm-4 col-md-3 col-lg-2 well well-lg featureBox clearfix" data-appear="fade-in" data-appear-direction="bottom" data-appear-delay="300">
-                                <h2 class="text-right">Legend</h2>
+                                <h2 class="text-right">Lost Leak Legend</h2>
                                 <svg width="30" height="30" class="middle">
                                   <circle cx="15" cy="15" r="10" stroke="#ff0099" stroke-width="4" fill="#ff3399" style="fill-opacity:0.9;stroke-opacity:0.9"/>
                                 </svg> &nbsp; Grade 1 &nbsp; Severe leak<br>
@@ -256,7 +292,7 @@
                     </div>
                     <div class="col-sm-12 col-lg-6">
                         <div class="featureBox clearfix" data-appear="fade-in" data-appear-direction="left" data-appear-delay="600">
-                            <p>Why?  A very small percentage of leaks were likely omitted to reflect third-party repairs, such as when a construction company damages a pipeline.  Other leaks may have been omitted due to standard scheduled replacements to pipes, which would have happened regardless of the presence of a leak, effectively repairing the leaks.  These standard updates can't be logged in the public record as repairs, so the leaks remedied by planned pipe replacements would simply be deleted from the record.</p>
+                            <p>Why?  A very small percentage of leaks were likely omitted to reflect third-party repairs, such as when a construction company damages a pipeline.  Other leaks may have been omitted due to standard scheduled replacements to pipes, which would have happened regardless of the presence of a leak, effectively repairing the leaks.  These standard updates can't be logged in the public record as repairs, so the leaks remedied by planned pipe replacements would simply be deleted from the public record.</p>
                             <p>However, if scheduled pipe replacements accounted for all (or most) of the missing gas leaks we discovered, we would expect these leaks to be clustered along main streets where pipes were replaced between 2014 and 2015.  But we don't see an obvious pattern like that.  Instead, the map looks like confetti, with missing leaks scattered far away from main streets.  We have no way of knowing whether anything has been done to address these leaks.</p>
                             <p>This is a lot of unaccounted for gas.  Something is amiss.</p>
                         </div>
