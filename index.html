@@ -35,6 +35,11 @@
     <script src="sanitization/data/ngrid/ngrid_repairs_100.json"></script> -->
     <script src="sanitization/data/eversource/eversource_lostleaks_combined_2014_100.json"></script>
     <script src="sanitization/data/ngrid/ngrid_lostleaks_combined_2014_100.json"></script>
+
+    <script src="sanitization/data/eversource/eversource_leaks_combined_2015_100.json"></script>
+    <script src="sanitization/data/ngrid/ngrid_leaks_combined_2015_100.json"></script>
+
+
 </head>
 <body class="style2 loading">
     <div id="loader" class="text-center">
@@ -232,7 +237,7 @@
                     <div class="col-sm-12">
                         <div class="sectionInfo row">
                             <h1 class="sectionTitle col-sm-12 col-md-5"><span class="underline">Where</span> Are Lost Leaks?</h1>
-                            <h2 class="sectionDescription col-sm-12 col-md-7">This doesn't show <strong>all</strong> leaks, but only the ones in our dataset that are lost.</h2>
+                            <h2 class="sectionDescription col-sm-12 col-md-7">Colored leaks are "lost." "Found" leaks not repaired, but were found in the 2015 data.</h2>
                         </div>
                         <div class="sectionInfo row">
                             <div class="col-xs-12 col-sm-6 col-md-7 col-lg-8 featureBox clearfix" data-appear="fade-in" data-appear-direction="right" data-appear-delay="300">
@@ -241,19 +246,27 @@
                                   while older leaks have larger ones
                                   <svg width="60" height="60" class="middle"><circle cx="30" cy="30" r="20" stroke="#cc0000" stroke-width="4" fill="#ff0000" style="fill-opacity:0.7;stroke-opacity:0.7"/></svg>.
                                 </p>
+                                <p>Colored leaks <svg width="30" height="30" class="middle"><circle cx="15" cy="15" r="5" stroke="#ff0099" stroke-width="4" fill="#ff3399" style="fill-opacity:0.7;stroke-opacity:0.7"/></svg>
+                                <svg width="30" height="30" class="middle"><circle cx="15" cy="15" r="5" stroke="#cc0000" stroke-width="4" fill="#ff0000" style="fill-opacity:0.7;stroke-opacity:0.7"/></svg>
+                                <svg width="30" height="30" class="middle"><circle cx="15" cy="15" r="5" stroke="#ff6600" stroke-width="4" fill="#ff9933" style="fill-opacity:0.7;stroke-opacity:0.7"/></svg>
+                                are "lost," while leaks in gray <svg width="30" height="30" class="middle"><circle cx="15" cy="15" r="5" stroke="#999999" stroke-width="4" fill="#b3b3b3" style="fill-opacity:0.7;stroke-opacity:0.7"/></svg> are "found."</p>
                                 <p>Click the circles on the map to view more information about specific lost leaks, and click the checkboxes on the left side of the map to view each grade individually.</p>
                             </div>
                             <div class="col-xs-offset-3 col-xs-6 col-sm-offset-1 col-sm-4 col-md-3 col-lg-2 well well-lg featureBox clearfix" data-appear="fade-in" data-appear-direction="bottom" data-appear-delay="300">
-                                <h2 class="text-right">Lost Leak Legend</h2>
+                                <h2 class="text-right">Leak Legend</h2>
                                 <svg width="30" height="30" class="middle">
                                   <circle cx="15" cy="15" r="10" stroke="#ff0099" stroke-width="4" fill="#ff3399" style="fill-opacity:0.9;stroke-opacity:0.9"/>
-                                </svg> &nbsp; Grade 1 &nbsp; Severe leak<br>
+                                </svg> &nbsp; Grade 1 &nbsp; Severe lost leak<br>
                                 <svg width="30" height="30" class="middle">
                                   <circle cx="15" cy="15" r="10" stroke="#cc0000" stroke-width="4" fill="#ff0000" style="fill-opacity:0.7;stroke-opacity:0.7"/>
-                                </svg> &nbsp; Grade 2 &nbsp; Moderate leak<br>
+                                </svg> &nbsp; Grade 2 &nbsp; Moderate lost leak<br>
                                 <svg width="30" height="30" class="middle">
                                   <circle cx="15" cy="15" r="10" stroke="#ff6600" stroke-width="4" fill="#ff9933" style="fill-opacity:0.5;stroke-opacity:0.5"/>
-                                </svg> &nbsp; Grade 3 &nbsp; Mild leak
+                                </svg> &nbsp; Grade 3 &nbsp; Mild lost leak<br>
+                                <svg width="30" height="30" class="middle">
+                                  <circle cx="15" cy="15" r="10" stroke="#999999" stroke-width="4" fill="#b3b3b3" style="fill-opacity:0.5;stroke-opacity:0.5"/>
+                                </svg> &nbsp; All Found Leaks &nbsp;
+
                             </div>
                         </div>
                     </div>

@@ -14,6 +14,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 var grade1Layer = L.layerGroup();
 var grade2Layer = L.layerGroup();
 var grade3Layer = L.layerGroup();
+var grade2015Layer = L.layerGroup();
 
 var currentYear = new Date().getFullYear();
 
@@ -121,13 +122,73 @@ for (var i = 0; i < ngridLeaks.length; i++) {
   }
 }
 
+
+// leaks in both eversource and national grid that
+// are accounted for, but still exist at the end
+// of 2015
+for (var i = 0; i < ngrid2015Leaks.length; i++) {
+  var ngLeak = ngrid2015Leaks[i];
+
+  var shortDate = ngLeak['record_date'].substr(0, 4);
+  var numDate = parseInt(shortDate, 10);
+  var yearDiff = currentYear-numDate;
+  var radius = (yearDiff*5)+5;
+
+  var options = { fillOpacity: 0.5 };
+  options.color = '#999999'; // light gray
+  options.fillColor = '#b3b3b3';  // Vivid pink, a websafe color
+  options.opacity = 0.4;
+  options.fillOpacity = 0.3;
+
+  // trim address quotes
+  var addressString = ngLeak['formatted_address'];  // has quotes
+  var trim = addressString.replace( /\"/g, '');  // trims \" from begining and end of addressString
+
+  // Instantiates a circle object given a geographical point, a radius in meters and optionally an options object.
+  var circle = L.circle([ngLeak['lat'], ngLeak['lng']], radius, options);
+  circle.bindPopup('Found Leak <br >' + 'Company: ' + 'nationalgrid' + '<br>' + 'Grade: ' + ngLeak['grade'] + '<br>' + 'Address: ' + trim + '<br>' + 'Record Date: ' + ngLeak['record_date'] + '<br>' + 'ID: ' +
+  '<a href="https://datahub.csail.mit.edu/browse/al_carter/natural_gas/query?q=select+*+from+natural_gas.ngrid_unrepaired_2015+where+id%3D+' + ngLeak['id'] + '" target="_blank">' + ngLeak['id'] + '</a>' );
+
+
+  grade2015Layer.addLayer(circle);
+}
+
+for (var i = 0; i < eversource2015Leaks.length; i++) {
+  var ngLeak = eversource2015Leaks[i];
+
+  var shortDate = ngLeak['record_date'].substr(0, 4);
+  var numDate = parseInt(shortDate, 10);
+  var yearDiff = currentYear-numDate;
+  var radius = (yearDiff*5)+5;
+
+  var options = { fillOpacity: 0.5 };
+  options.color = '#999999'; // light gray
+  options.fillColor = '#b3b3b3';  // Vivid pink, a websafe color
+  options.opacity = 0.4;
+  options.fillOpacity = 0.3;
+
+  // trim address quotes
+  var addressString = ngLeak['formatted_address'];  // has quotes
+  var trim = addressString.replace( /\"/g, '');  // trims \" from begining and end of addressString
+
+  // Instantiates a circle object given a geographical point, a radius in meters and optionally an options object.
+  var circle = L.circle([ngLeak['lat'], ngLeak['lng']], radius, options);
+  circle.bindPopup('Found Leak <br >' + 'Company: ' + 'nationalgrid' + '<br>' + 'Grade: ' + ngLeak['grade'] + '<br>' + 'Address: ' + trim + '<br>' + 'Record Date: ' + ngLeak['record_date'] + '<br>' + 'ID: ' +
+  '<a href="https://datahub.csail.mit.edu/browse/al_carter/natural_gas/query?q=select+*+from+natural_gas.eversource_unrepaired_2015+where+id%3D+' + ngLeak['id'] + '" target="_blank">' + ngLeak['id'] + '</a>' );
+
+
+  grade2015Layer.addLayer(circle);
+}
+
+
 grade1Layer.addTo(mymap);
 grade2Layer.addTo(mymap);
 grade3Layer.addTo(mymap);
 
 var sortControl = {
-  "Grade 1: Severe": grade1Layer,
-  "Grade 2: Moderate": grade2Layer,
-  "Grade 3: Mild": grade3Layer,
+  "Grade 1: Lost, Severe": grade1Layer,
+  "Grade 2: Lost, Moderate": grade2Layer,
+  "Grade 3: Lost, Mild": grade3Layer,
+  "Found Leaks": grade2015Layer,
 };
 var legend = L.control.layers(null, sortControl, {position: 'topleft', collapsed: false}).addTo(mymap);
