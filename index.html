@@ -200,10 +200,10 @@
                         </div>
                         <div class="sectionInfo row">
                             <div class="col-xs-12 col-sm-6 col-md-7 col-lg-8 featureBox clearfix" data-appear="fade-in" data-appear-direction="right" data-appear-delay="300">
-                                <p>Gas leaks are reported in Grades 1 to 3, with 1 being the most severe and 3 being the least severe.  The radius of the circle is based on how long ago the leak was reported.  A newer leak will have a smaller circle
+                                <p>Gas leaks are reported in Grades 1 to 3, with 1 being the most severe and 3 being the least severe.  The radius of the circle is based on how long ago the leak was reported.  Newer leaks have smaller circles
                                   <svg width="30" height="30" class="middle"><circle cx="15" cy="15" r="5" stroke="#cc0000" stroke-width="4" fill="#ff0000" style="fill-opacity:0.7;stroke-opacity:0.7"/></svg>
-                                  , and an older leak will have a larger circle
-                                  <svg width="60" height="60" class="middle"><circle cx="30" cy="30" r="20" stroke="#cc0000" stroke-width="4" fill="#ff0000" style="fill-opacity:0.7;stroke-opacity:0.7"/></svg>
+                                  while older leaks have larger ones
+                                  <svg width="60" height="60" class="middle"><circle cx="30" cy="30" r="20" stroke="#cc0000" stroke-width="4" fill="#ff0000" style="fill-opacity:0.7;stroke-opacity:0.7"/></svg>.
                                 </p>
                                 <p>Click the circles on the map to view more information about specific lost leaks, and click the checkboxes on the left side of the map to view each grade individually.</p>
                             </div>
@@ -256,7 +256,7 @@
                     </div>
                     <div class="col-sm-12 col-lg-6">
                         <div class="featureBox clearfix" data-appear="fade-in" data-appear-direction="left" data-appear-delay="600">
-                            <p>Why?  A very small percentage of leaks were likely omitted to reflect third party repairs, such as when a construction company damages a pipeline.  Other leaks may have been omitted due to standard scheduled replacements to pipes, which would have happened regardless of the presence of a leak, effectively repairing the leaks.  These standard updates can't be logged in the public record as repairs, so the leaks remedied by planned pipe replacements would simply be deleted from the record.</p>
+                            <p>Why?  A very small percentage of leaks were likely omitted to reflect third-party repairs, such as when a construction company damages a pipeline.  Other leaks may have been omitted due to standard scheduled replacements to pipes, which would have happened regardless of the presence of a leak, effectively repairing the leaks.  These standard updates can't be logged in the public record as repairs, so the leaks remedied by planned pipe replacements would simply be deleted from the record.</p>
                             <p>However, if scheduled pipe replacements accounted for all (or most) of the missing gas leaks we discovered, we would expect these leaks to be clustered along main streets where pipes were replaced between 2014 and 2015.  But we don't see an obvious pattern like that.  Instead, the map looks like confetti, with missing leaks scattered far away from main streets.  We have no way of knowing whether anything has been done to address these leaks.</p>
                             <p>This is a lot of unaccounted for gas.  Something is amiss.</p>
                         </div>
@@ -509,7 +509,7 @@
                                     <h4>The database on DataHub is accessible if you are interested in searching it.</h4>
                                     <p>
                                       Each leak is associated with an ID number.  On the map, inside each popup is a link to view the data in Datahub. <br>
-                                      For example: <a href="https://datahub.csail.mit.edu/browse/al_carter/natural_gas/query?q=select+*+from+natural_gas.eversource_unrepaired_2014+where+id%3D3%3B" target="_blank">This is a leak originally reported by Eversource with the id of 6.</a> Please note that the location_type for the coordinates is "ROOFTOP", but that the leak is mostly likely in the street or parking lot around the address.
+                                      For example: <a href="https://datahub.csail.mit.edu/browse/al_carter/natural_gas/query?q=select+*+from+natural_gas.eversource_unrepaired_2014+where+id%3D3%3B" target="_blank">This is a leak originally reported by Eversource with the id of 6.</a> Please note that the location_type for the coordinates is "ROOFTOP," but that the leak is mostly likely in the street or parking lot around the address.
                                     </p>
                                 </div>
                             </div>
@@ -517,7 +517,7 @@
                                 <div class="timeline_box right" data-appear="fade-in" data-appear-delay="400">
                                     <div class="date">[Step 6]</div>
                                     <h4>Making the Map</h4>
-                                    <p>Lost leaks were populated onto this map Allie built with Leaflet.js</p>
+                                    <p>Lost leaks were populated onto this map Allie built with Leaflet.js.</p>
                                 </div>
                             </div>
                         </div>
@@ -561,7 +561,7 @@
                     <div class="col-sm-12">
                         <div class="quote" data-appear="fade-in">
                             <div class="quoteText">
-                              National Grid's 2014 Annual Service Quality Report PDF included the location of each leak existing as of February 2015; the date each leak was reported; the dates of repairs performed on each leak in 2014; and current classification.  National Grid is made up of Boston Gas Company, Colonial Gas Company, and Essex Gas Company.
+                              National Grid's 2014 Annual Service Quality Report PDF included the location of each leak existing as of February 2015, the date each leak was reported, the dates of repairs performed on each leak in 2014, and current classification.  National Grid is made up of Boston Gas Company, Colonial Gas Company, and Essex Gas Company.
                             <span class="quoteAuthor descriptionColor">- <a href="sanitization/data/Raw/NationalGrid/initial_filing.pdf">National Grid's 2014 Annual Service Quality Report</a></span></div>
                         </div>
                     </div>
