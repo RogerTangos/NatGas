@@ -497,7 +497,7 @@
                                     <img src="" alt="" />
                                     <div class="date">[Step 1]</div>
                                     <h4>
-                                      Obtained data from the State of Massachusetts Office of
+                                      Obtain data from the State of Massachusetts Office of
                                       <a href="http://web1.env.state.ma.us/DPU/FileRoom/dockets/bynumber" target="_blank">Energy and Environmental Affairs</a>
                                     </h4>
                                     <p>
@@ -538,26 +538,25 @@
                                 <div class="timeline_box right" data-appear="fade-in" data-appear-delay="200">
                                     <div class="date">[Step 4]</div>
                                     <h4>Identify lost leaks</h4>
-                                      <p>We compared the lists of 2014 leaks and 2014 repairs.
-                                        If a repair happened near a pre-existing leak (approximately 100 ft), the leak was counted as repaired and removed from analysis.
+                                      <p>We compared the lists of 2014 leaks and 2014 repairs. If a repair happened near a pre-existing leak (approximately 100 ft), the leak was counted as repaired and removed from analysis.
                                       </p>
                                       <p>Any remaining leaks without a matching repair were classified as unrepaired 2014 leaks.
                                       </p>
-                                      <p>We cross-referenced our list of un-repaired 2014 leaks with the list of 2015 leaks.
-                                        We identified leaks appearing in both the 2014 and 2015 data as the same if their record date and address matched. If there was a match, the 2014 un-repaired leak was accounted for and therefore not a lost leak.
+                                      <p>We cross-referenced our list of unrepaired 2014 leaks with the list of 2015 leaks.
+                                        We identified leaks appearing in both the 2014 and 2015 data as the same if their record date and address matched. If there was a match, the 2014 unrepaired leak was accounted for and therefore not a lost leak.
                                       </p>
-                                      <p>The remaining un-repaired 2014 leaks that did not match with any 2015 leaks were identified as lost leaks.
+                                      <p>The remaining unrepaired 2014 leaks that did not match with any 2015 leaks were identified as lost leaks.
                                       </p>
-                                      <p>You can find our code for this on <a class="soc_" href="https://github.com/MichaelRyanWebber/clustering/blob/master/nearbyX.py" target="_blank">GitHub <i class="fa fa-github"></i></a>
+                                      <p>Michael wrote this section of the code. You can find it on <a class="soc_" href="https://github.com/MichaelRyanWebber/clustering/blob/master/nearbyX.py" target="_blank">GitHub <i class="fa fa-github"></i></a>
                                       </p>
                                 </div>
                             </div>
                             <div class="col-sm-5 col-sm-offset-1 timeline_box_container">
                                 <div class="timeline_box left" data-appear="fade-in" data-appear-delay="300">
                                     <div class="date">[Step 5]</div>
-                                    <h4>The database on DataHub is accessible if you are interested in searching it.</h4>
+                                    <h4>Publish the data on DataHub</h4>
                                     <p>
-                                      Each leak is associated with an ID number.  On the map, inside each popup is a link to view the data in Datahub. <br>
+                                      Each leak was associated with an ID number.  On the map, inside each popup is a link to view the data in Datahub. <br>
                                       For example: <a href="https://datahub.csail.mit.edu/browse/al_carter/natural_gas/query?q=select+*+from+natural_gas.eversource_unrepaired_2014+where+id%3D3%3B" target="_blank">This is a leak originally reported by Eversource with the id of 6.</a> Please note that the location_type for the coordinates is "ROOFTOP," but that the leak is mostly likely in the street or parking lot around the address.
                                     </p>
                                 </div>
@@ -565,7 +564,7 @@
                             <div class="col-sm-5 col-sm-offset-6 timeline_box_container">
                                 <div class="timeline_box right" data-appear="fade-in" data-appear-delay="400">
                                     <div class="date">[Step 6]</div>
-                                    <h4>Making the Map</h4>
+                                    <h4>Make the Map</h4>
                                     <p>Lost leaks were populated onto this map Allie built with Leaflet.js.</p>
                                 </div>
                             </div>
@@ -588,7 +587,7 @@
                     <div class="col-sm-12">
                         <div class="sectionInfo row">
                             <h2 class="sectionTitle col-sm-4"><span class="underline">Who</span> is Involved?</h2>
-                            <h2 class="sectionDescription col-sm-8">These are the natural gas companies (utilities) we've analyzed</h2>
+                            <h2 class="sectionDescription col-sm-8">These are the natural gas utilities we've analyzed</h2>
                         </div>
                     </div>
                 </div>
@@ -621,7 +620,7 @@
                     <div class="col-sm-12">
                         <div class="row">
                             <h2 class="sectionDescription col-sm-8 col-sm-offset-2">
-                              Other natural gas companies in Massachusetts:
+                              Other (unanalyzed) natural gas utilities in Massachusetts:
                             </h2>
                         </div>
                     </div>
