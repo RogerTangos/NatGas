@@ -189,6 +189,6 @@ var sortControl = {
   "Grade 1: Lost, Severe": grade1Layer,
   "Grade 2: Lost, Moderate": grade2Layer,
   "Grade 3: Lost, Mild": grade3Layer,
-  "Found Leaks": grade2015Layer,
+  "All Found Leaks": grade2015Layer,
 };
 var legend = L.control.layers(null, sortControl, {position: 'topleft', collapsed: false}).addTo(mymap);
