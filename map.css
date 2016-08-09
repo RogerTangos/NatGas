@@ -52,9 +52,25 @@ svg.middle {
     /*margin-bottom: 30px;*/
 }
 
-.bluetext {
-  font-weight: 700;
-  color: #009edb;
+.blueEM {
+    font-weight: 700;
+    color: #009edb;
+}
+
+#faq .featureBox h3 {
+    color: #009edb;
+    font-weight: normal;
+    line-height: 30px;
+}
+
+#faq h2 .arrowLink:before, #faq h2 .arrowLink:after {
+  color: #999;
+}
+
+#faq h2 a {
+  color: #999;
+  font-size: 16px;
+  font-weight: normal;
 }
 
 @media (max-width:767px) {
