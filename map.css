@@ -52,6 +52,11 @@ svg.middle {
     /*margin-bottom: 30px;*/
 }
 
+.bluetext {
+  font-weight: 700;
+  color: #009edb;
+}
+
 @media (max-width:767px) {
   #lost {
       padding-top: 60px;

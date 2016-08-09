@@ -30,15 +30,12 @@
 
     <link href="leaflet/leaflet.css" rel="stylesheet" type="text/css">
     <link href="map.css" rel="stylesheet" type="text/css">
-    <!-- <script src="../data/lostleaks.json"></script>
-    <script src="sanitization/data/eversource/eversource_repairs_100.json"></script>
-    <script src="sanitization/data/ngrid/ngrid_repairs_100.json"></script> -->
+
     <script src="sanitization/data/eversource/eversource_lostleaks_combined_2014_100.json"></script>
     <script src="sanitization/data/ngrid/ngrid_lostleaks_combined_2014_100.json"></script>
 
     <script src="sanitization/data/eversource/eversource_leaks_combined_2015_100.json"></script>
     <script src="sanitization/data/ngrid/ngrid_leaks_combined_2015_100.json"></script>
-
 
 </head>
 <body class="style2 loading">
@@ -65,21 +62,24 @@
                 <ul id="mainMenu">
                     <li><a href="#header" class="active">Home</a></li>
                     <li><a href="#mapid">Map</a></li>
-                    <li><a href="#why">Natural Gas Leaks</a></li>
+                    <li><a href="#why">Why Natural Gas Leaks</a></li>
                     <li><a href="#how">Our Process</a></li>
                     <li><a href="#about">About Us</a></li>
                 </ul>
                 <!--  Section1:#header
-                      Section2:#lost (What is a “lost leak”?)
-                      Section3:#why -Natural Gas Leaks (What are Natural Gas Leaks?)
-                      Section4:#where (Where Are Lost Leaks?)
-                      Section5:#mapid -Map
-                      Section6:#how -Our Process (A Data Story)
-                      Section7:#who (Who is Involved)
-                      Section8:#about -About Us -->
+                      Section2: #faq
+                      Section3: #where map legend
+                      Section4: #mapid -Map
+                      Section5: #lost (What is a “lost leak”?)
+                      Section6: #why - Why Natural Gas Leaks
+                      Section7: #grades section 144
+                      Section8: #how - Our Process (A Data Story)
+                      Section9: #who (Who is Involved)
+                      Section10: #about - About Us -->
             </div>
         </header>
         <!--END Header-->
+
 
         <!--Main slider-->
         <section class="mainSliderContainer">
@@ -188,7 +188,10 @@
             </div>
         </section>
         <!--END Main slider-->
-        <section id="faq" class="obliqueCut lightSection graySection separatorTop">
+
+
+        <!--faq section-->
+        <section id="faq" class="obliqueCut lightSection separatorTop">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
@@ -225,6 +228,9 @@
 
             </div>
         </section>
+        <!-- END faq section-->
+
+
         <!--where section-->
         <section id="where" class="obliqueCut lightSection graySection separatorTop">
             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="separator"  viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -240,19 +246,22 @@
                             <h2 class="sectionDescription col-sm-12 col-md-7">Colored leaks are "lost." "Found" leaks not repaired, but were found in the 2015 data.</h2>
                         </div>
                         <div class="sectionInfo row">
-                            <div class="col-xs-12 col-sm-6 col-md-7 col-lg-8 featureBox clearfix" data-appear="fade-in" data-appear-direction="right" data-appear-delay="300">
+                            <div class="col-xs-12 col-sm-6 col-md-7 col-lg-7 featureBox clearfix" data-appear="fade-in" data-appear-direction="right" data-appear-delay="300">
                                 <p>Gas leaks are reported in Grades 1 to 3, with 1 being the most severe and 3 being the least severe.  The radius of the circle is based on how long ago the leak was reported.  Newer leaks have smaller circles
                                   <svg width="30" height="30" class="middle"><circle cx="15" cy="15" r="5" stroke="#cc0000" stroke-width="4" fill="#ff0000" style="fill-opacity:0.7;stroke-opacity:0.7"/></svg>
                                   while older leaks have larger ones
                                   <svg width="60" height="60" class="middle"><circle cx="30" cy="30" r="20" stroke="#cc0000" stroke-width="4" fill="#ff0000" style="fill-opacity:0.7;stroke-opacity:0.7"/></svg>.
                                 </p>
-                                <p>Colored leaks <svg width="30" height="30" class="middle"><circle cx="15" cy="15" r="5" stroke="#ff0099" stroke-width="4" fill="#ff3399" style="fill-opacity:0.7;stroke-opacity:0.7"/></svg>
-                                <svg width="30" height="30" class="middle"><circle cx="15" cy="15" r="5" stroke="#cc0000" stroke-width="4" fill="#ff0000" style="fill-opacity:0.7;stroke-opacity:0.7"/></svg>
-                                <svg width="30" height="30" class="middle"><circle cx="15" cy="15" r="5" stroke="#ff6600" stroke-width="4" fill="#ff9933" style="fill-opacity:0.7;stroke-opacity:0.7"/></svg>
-                                are "lost," while leaks in gray <svg width="30" height="30" class="middle"><circle cx="15" cy="15" r="5" stroke="#999999" stroke-width="4" fill="#b3b3b3" style="fill-opacity:0.7;stroke-opacity:0.7"/></svg> are "found."</p>
+                                <p>Colored leaks
+                                  <svg width="20" height="20" class="middle"><circle cx="10" cy="10" r="5" stroke="#ff0099" stroke-width="4" fill="#ff3399" style="fill-opacity:0.9;stroke-opacity:0.9"/></svg>
+                                  <svg width="20" height="20" class="middle"><circle cx="10" cy="10" r="5" stroke="#cc0000" stroke-width="4" fill="#ff0000" style="fill-opacity:0.7;stroke-opacity:0.7"/></svg>
+                                  <svg width="20" height="20" class="middle"><circle cx="10" cy="10" r="5" stroke="#ff6600" stroke-width="4" fill="#ff9933" style="fill-opacity:0.5;stroke-opacity:0.5"/></svg>
+                                  are "lost," while leaks in gray
+                                  <svg width="20" height="20" class="middle"><circle cx="10" cy="10" r="5" stroke="#999999" stroke-width="4" fill="#b3b3b3" style="fill-opacity:0.5;stroke-opacity:0.5"/></svg>
+                                  are "found."</p>
                                 <p>Click the circles on the map to view more information about specific lost leaks, and click the checkboxes on the left side of the map to view each grade individually.</p>
                             </div>
-                            <div class="col-xs-offset-3 col-xs-6 col-sm-offset-1 col-sm-4 col-md-3 col-lg-2 well well-lg featureBox clearfix" data-appear="fade-in" data-appear-direction="bottom" data-appear-delay="300">
+                            <div class="col-xs-offset-1 col-xs-10 col-sm-5 col-md-4 col-lg-4 well well-lg featureBox clearfix" data-appear="fade-in" data-appear-direction="bottom" data-appear-delay="300">
                                 <h2 class="text-right">Leak Legend</h2>
                                 <svg width="30" height="30" class="middle">
                                   <circle cx="15" cy="15" r="10" stroke="#ff0099" stroke-width="4" fill="#ff3399" style="fill-opacity:0.9;stroke-opacity:0.9"/>
@@ -301,11 +310,11 @@
                             <p>In Boston, natural gas is often transported in old and leak-prone cast iron, wrought iron, or unprotected steel pipes.  Natural gas is dangerous, especially when it escapes from pipes into surrounding neighborhoods  <span class="icon_cone"></span></p>
                             <p>Utility companies in Massachusetts have had to report natural gas leaks and repairs since 2014.</p>
                             <p>We call leaks “lost” if, after being recorded in 2014, they disappeared from the public record for 2015 without having been logged as repaired.  We analyzed the data to match repairs to leaks  <span class="icon_documents_alt"></span></p>
-                            <p>Between 2014 and 2015, it appears that <strong>2,938</strong> of National Grid's and <strong>1,263</strong> of Eversource's leaks went missing. That is 17% and 32% (respectively) of leaks that were omitted from the public record without any information about their being repaired.</p></div>
+                            <p>Between 2014 and 2015, it appears that <span class="bluetext">2,938</span> of National Grid's and <span class="bluetext">1,263</span> of Eversource's leaks went missing. That is 17% and 32% (respectively) of leaks that were omitted from the public record without any information about their being repaired.</p></div>
                     </div>
                     <div class="col-sm-12 col-lg-6">
                         <div class="featureBox clearfix" data-appear="fade-in" data-appear-direction="left" data-appear-delay="600">
-                            <p>Why?  Some leaks may have been omitted due to clerical errors. Others might have been omitted due to standard scheduled replacements to pipes, which would have happened regardless of the presence of a leak, effectively repairing the leaks.  These standard updates can't be logged in the public record as repairs, so the leaks remedied by planned pipe replacements would simply be deleted from the public record.</p>
+                            <p>Why?  Some leaks may have been omitted due to clerical errors. Others might have been omitted due to standard scheduled replacements to pipes, which would have happened regardless of the presence of a leak, effectively repairing the leaks.  These standard updates can't be logged in the public record as repairs, so the leaks remedied by planned pipe replacements would simply be deleted from the public record  <span class="icon_tools"></span></p>
                             <p>However, if scheduled pipe replacements accounted for all (or most) of the missing gas leaks we discovered, we would expect these leaks to be clustered along streets where pipes were replaced between 2014 and 2015.  But we don't see an obvious pattern like that.  Instead, the map looks like confetti.  We have no way of knowing whether anything has been done to address these leaks.</p>
                             <p>This is a lot of unaccounted for gas.  Something is amiss.</p>
                         </div>
@@ -386,7 +395,7 @@
 
 
         <!--grades section-->
-        <section id="grades" class="obliqueCut lightSection separatorTop">
+        <section id="grades" class="obliqueCut lightSection graySection separatorTop">
             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="separator"  viewBox="0 0 100 100" preserveAspectRatio="none">
                 <path d="M0 100 L100 0 L100 100 Z"></path>
             </svg>
@@ -461,14 +470,6 @@
               </div>
           </section>
         <!--END grades section-->
-
-
-        <!--
-        <span class="icon_cogs"></span>
-        <span class="icon_tools"></span>
-        <span class="icon_toolbox_alt"></span>
-        <span class="icon_pencil"></span>
-        <span class="icon_pencil-edit"></span> -->
 
 
         <!-- Timeline How Data Processed -->
@@ -573,7 +574,7 @@
                 </div>
             </div>
         </section>
-        <!--END What I have done-->
+        <!--END Timeline How Data Processed-->
 
 
         <!-- Gas Company section-->
@@ -581,6 +582,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="separator"  viewBox="0 0 100 100" preserveAspectRatio="none">
                 <path d="M0 100 L100 0 L100 100 Z"></path>
             </svg>
+            <div class="sectionIcon icon_building"></div>
             <div class="container">
                 <!-- START TITLE AND DESCRIPTION -->
                 <div class="row">
