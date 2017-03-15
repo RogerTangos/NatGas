@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LostLeaks</title>
+
+    <!--meta-->
+    <meta charset="UTF-8">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="keywords" content="" />
+    <meta name="description" content="LostLeaks">
+
+    <!-- Favicons -->
+    <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/favicons/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/favicons/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/favicons/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/favicons/apple-touch-icon-57-precomposed.png">
+    <link href="images/favicons/favicon.png" rel="shortcut icon"> -->
+
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+    <link href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/icons.css" rel="stylesheet" />
+    <link href="css/magnific-popup.css" rel="stylesheet" />
+    <link href="rs-plugin/css/settings.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+
+    <link href="leaflet/leaflet.css" rel="stylesheet" type="text/css">
+    <link href="map.css" rel="stylesheet" type="text/css">
+    <!-- <script src="../data/lostleaks.json"></script>
+    <script src="sanitization/data/eversource/eversource_repairs_100.json"></script>
+    <script src="sanitization/data/ngrid/ngrid_repairs_100.json"></script> -->
+    <script src="sanitization/data/eversource/eversource_lostleaks_combined_2014_100.json"></script>
+    <script src="sanitization/data/ngrid/ngrid_lostleaks_combined_2014_100.json"></script>
+
+    <script src="sanitization/data/eversource/eversource_leaks_combined_2015_100.json"></script>
+    <script src="sanitization/data/ngrid/ngrid_leaks_combined_2015_100.json"></script>
+
+
+</head>
+<body class="style2 loading">
+    <div id="loader" class="text-center">
+        <h1><span class="underline">Lost</span>&shy;<span class="descriptionColor">Leaks</span></h1>
+        <h2>is loading...</h2>
+    </div>
+    <div id="page" class="animate">
+
+        <!--Header-->
+        <header id="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1 id="logo" class="underline"><a href="index.html">Lost&shy;<span class="descriptionColor">Leaks</span></a></h1>
+                    </div>
+                </div>
+            </div>
+            <!--MENU-->
+            <div class="menu_trigger descriptionColor" id="myMenuTrigger"></div>
+            <div class="menu animate">
+                <h2 class="underline">Lost<span class="subLogo descriptionColor">Leaks</span></h2>
+                <span class="icon_close" id="menuClose"></span>
+                <ul id="mainMenu">
+                    <li><a href="#header" class="active">Home</a></li>
+                    <li><a href="#mapid">Map</a></li>
+                    <li><a href="#why">Natural Gas Leaks</a></li>
+                    <li><a href="#how">Our Process</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+                <!--  Section1:#header
+                      Section2:#lost (What is a “lost leak”?)
+                      Section3:#why -Natural Gas Leaks (What are Natural Gas Leaks?)
+                      Section4:#where (Where Are Lost Leaks?)
+                      Section5:#mapid -Map
+                      Section6:#how -Our Process (A Data Story)
+                      Section7:#who (Who is Involved)
+                      Section8:#about -About Us -->
+            </div>
+        </header>
+        <!--END Header-->
+
+        <!--Main slider-->
+        <section class="mainSliderContainer">
+            <div class="mainSlider">
+                <ul>
+                    <!-- SLIDE 1-->
+                    <li data-transition="fade" data-slotamount="7" data-masterspeed="0">
+                        <img alt="Slide1" src="images/blueFlame.jpg" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" />
+                        <!-- Leak count -->
+                        <div class="mediumText tp-resizeme lft ltt tp-caption leakinfo"
+                            data-x="375" data-y="400" data-speed="1000" data-start="500"
+                            data-easing="easeOutExpo">
+                            1,263 (32%) of Eversource leaks are lost. 2,938 (17%) of NationalGrid leaks are lost.
+                        </div>
+                        <!-- TEXT LINE 1 -->
+                        <div class="bigText tp-resizeme lft ltt tp-caption"
+                            data-x="375" data-y="520" data-speed="1000" data-start="600"
+                            data-easing="easeOutExpo">
+                            What is a "lost leak"?
+                        </div>
+                        <!-- ARROW ON TEXT LINE 2 -->
+                        <div class="slideImgArrow tp-resizeme lfb ltt tp-caption"
+                            data-x="375" data-y="620" data-speed="2000" data-start="700"
+                            data-easing="Elastic.easeOut">
+                            <a href="#lost">
+                                <img alt="Go to Lost" src="images/arrow_down.png" /></a>
+                        </div>
+                    </li>
+
+                    <!-- SLIDE 2-->
+                    <li data-transition="slidedown" data-slotamount="7" data-masterspeed="300">
+                        <!-- MAIN IMAGE -->
+                        <img alt="Slide1" src="images/slide2bg.jpg" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" />
+                        <div class="mediumText tp-resizeme lft ltt tp-caption leakinfo"
+                            data-x="375" data-y="325" data-speed="1000" data-start="500"
+                            data-easing="easeOutExpo">
+                            1,263 (32%) of Eversource leaks are lost. 2,938 (17%) of NationalGrid leaks are lost.
+                        </div>
+                        <!-- TEXT LINE 1 -->
+                        <div class="bigText tp-resizeme lft ltt tp-caption"
+                            data-x="375" data-y="400" data-speed="1000" data-start="500"
+                            data-easing="easeOutExpo">
+                            What areas may be
+                        </div>
+                        <!-- TEXT LINE 2 -->
+                        <div class="bigText tp-resizeme lft ltt tp-caption"
+                            data-x="375" data-y="520" data-speed="1000" data-start="600"
+                            data-easing="easeOutExpo">
+                            affected by lost leaks?
+                        </div>
+                        <!-- TEXT LINE 3 -->
+                        <div class="mediumText imgArrowOffset tp-resizeme lft ltt tp-caption"
+                            data-x="450" data-y="620" data-speed="1000" data-start="700"
+                            data-easing="easeOutExpo">
+                            <a href="#mapid">View the map.</a>
+                        </div>
+                        <!-- ARROW ON TEXT LINE 3 -->
+                        <div class="slideImgArrow tp-resizeme lfb ltt tp-caption"
+                            data-x="375" data-y="620" data-speed="2000" data-start="700"
+                            data-easing="Elastic.easeOut">
+                            <a href="#mapid">
+                                <img alt="Go to map" src="images/arrow_down.png" /></a>
+                        </div>
+                    </li>
+
+                    <!-- SLIDE 3 -->
+                    <li data-transition="slidedown" data-slotamount="7" data-masterspeed="300">
+                        <!-- MAIN IMAGE -->
+                        <img alt="Slide1" src="images/slide3bg.jpg" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" />
+                        <div class="mediumText tp-resizeme lft ltt tp-caption leakinfo"
+                            data-x="375" data-y="350" data-speed="1000" data-start="500"
+                            data-easing="easeOutExpo">
+                            1,263 (32%) of Eversource leaks are lost. 2,938 (17%) of NationalGrid leaks are lost.
+                        </div>
+                        <!-- TEXT LINE 1 -->
+                        <div class="bigText tp-resizeme lft ltt tp-caption"
+                            data-x="375" data-y="425" data-speed="1000" data-start="500"
+                            data-easing="easeOutExpo">
+                            How did we track
+                        </div>
+                        <!-- TEXT LINE 2 -->
+                        <div class="bigText tp-resizeme lft ltt tp-caption"
+                            data-x="375" data-y="520" data-speed="1000" data-start="600"
+                            data-easing="easeOutExpo">
+                            down lost leaks?
+                        </div>
+                        <!-- TEXT LINE 3 -->
+                        <div class="mediumText imgArrowOffset tp-resizeme lft ltt tp-caption"
+                            data-x="450" data-y="620" data-speed="1000" data-start="700"
+                            data-easing="easeOutExpo">
+                            <a href="#how">Explore our Process.</a>
+                        </div>
+                        <!-- ARROW ON TEXT LINE 3 -->
+                        <div class="slideImgArrow tp-resizeme lfb ltt tp-caption"
+                            data-x="375" data-y="620" data-speed="2000" data-start="700"
+                            data-easing="Elastic.easeOut">
+                            <a href="#how">
+                                <img alt="Go to how" src="images/arrow_down.png" /></a>
+                        </div>
+                    </li>
+                </ul>
+                <!-- <div class="Prev animate">
+                    <img alt="Previous" src="images/prev.png" class="img-responsive" /></div>
+                <div class="Next animate">
+                    <img alt="Next" src="images/next.png" class="img-responsive" /></div> -->
+            </div>
+        </section>
+        <!--END Main slider-->
+        <section id="faq" class="obliqueCut lightSection graySection separatorTop">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="sectionInfo row">
+                            <h1 class="sectionTitle col-sm-12 col-md-5"><span class="underline">What</span> do you mean "lost leak"?</h1>
+                            <h2 class="sectionDescription col-sm-12 col-md-7">These natural leaks weren't repaired, but they've vanished from public utility company data between 2014 and 2015.</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="sectionInfo row">
+                            <h1 class="sectionTitle col-sm-12 col-md-5"><span class="underline">So</span> what happened to them?</h1>
+                            <h2 class="sectionDescription col-sm-12 col-md-7">Some may have been omitted due to clerical error, or repaired via replacing gas mains. It appears that many have simply been deleted from the record. That's 1,263 (32%) lost Eversource Leaks, and 2,938 (17%) lost NationalGrid leaks.</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="sectionInfo row">
+                            <h1 class="sectionTitle col-sm-12 col-md-5"><span class="underline">How</span> can you tell?</h1>
+                            <h2 class="sectionDescription col-sm-12 col-md-7">Utilities are required to release data on leaks and repairs. We checked their data, and found that parts of it were missing. <a href="#how" style="text-decoration: underline;">Our process</a>, <a href="https://github.com/RogerTangos/NatGas" target="_blank" style="text-decoration: underline;">our</a> <a href="https://github.com/MichaelRyanWebber/clustering" target="_blank" style="text-decoration: underline;">code</a>, and <a href="https://datahub.csail.mit.edu/browse/al_carter/natural_gas/tables" target="_blank" style="text-decoration: underline;">the data</a> are publically documented.</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="sectionInfo row">
+                            <h1 class="sectionTitle col-sm-12 col-md-5"><span class="underline">Has</span> anyone else done work on this?</h1>
+                            <h2 class="sectionDescription col-sm-12 col-md-7">Yes. The Home Energy Efficienty Team did a <a href="http://www.heetma.org/squeaky-leak/natural-gas-leaks-maps/" target="_blank" style="text-decoration: underline;">manual analysis of the data</a>. Our automated study has reached similar results.</h2>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!--where section-->
+        <section id="where" class="obliqueCut lightSection graySection separatorTop">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="separator"  viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 100 L100 0 L100 100 Z"></path>
+            </svg>
+            <div class="sectionIcon icon_pin"></div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="sectionInfo row">
+                            <h1 class="sectionTitle col-sm-12 col-md-5"><span class="underline">Where</span> Are Lost Leaks?</h1>
+                            <h2 class="sectionDescription col-sm-12 col-md-7">Colored leaks are "lost." "Found" leaks not repaired, but were found in the 2015 data.</h2>
+                        </div>
+                        <div class="sectionInfo row">
+                            <div class="col-xs-12 col-sm-6 col-md-7 col-lg-8 featureBox clearfix" data-appear="fade-in" data-appear-direction="right" data-appear-delay="300">
+                                <p>Gas leaks are reported in Grades 1 to 3, with 1 being the most severe and 3 being the least severe.  The radius of the circle is based on how long ago the leak was reported.  Newer leaks have smaller circles
+                                  <svg width="30" height="30" class="middle"><circle cx="15" cy="15" r="5" stroke="#cc0000" stroke-width="4" fill="#ff0000" style="fill-opacity:0.7;stroke-opacity:0.7"/></svg>
+                                  while older leaks have larger ones
+                                  <svg width="60" height="60" class="middle"><circle cx="30" cy="30" r="20" stroke="#cc0000" stroke-width="4" fill="#ff0000" style="fill-opacity:0.7;stroke-opacity:0.7"/></svg>.
+                                </p>
+                                <p>Colored leaks <svg width="30" height="30" class="middle"><circle cx="15" cy="15" r="5" stroke="#ff0099" stroke-width="4" fill="#ff3399" style="fill-opacity:0.7;stroke-opacity:0.7"/></svg>
+                                <svg width="30" height="30" class="middle"><circle cx="15" cy="15" r="5" stroke="#cc0000" stroke-width="4" fill="#ff0000" style="fill-opacity:0.7;stroke-opacity:0.7"/></svg>
+                                <svg width="30" height="30" class="middle"><circle cx="15" cy="15" r="5" stroke="#ff6600" stroke-width="4" fill="#ff9933" style="fill-opacity:0.7;stroke-opacity:0.7"/></svg>
+                                are "lost," while leaks in gray <svg width="30" height="30" class="middle"><circle cx="15" cy="15" r="5" stroke="#999999" stroke-width="4" fill="#b3b3b3" style="fill-opacity:0.7;stroke-opacity:0.7"/></svg> are "found."</p>
+                                <p>Click the circles on the map to view more information about specific lost leaks, and click the checkboxes on the left side of the map to view each grade individually.</p>
+                            </div>
+                            <div class="col-xs-offset-3 col-xs-6 col-sm-offset-1 col-sm-4 col-md-3 col-lg-2 well well-lg featureBox clearfix" data-appear="fade-in" data-appear-direction="bottom" data-appear-delay="300">
+                                <h2 class="text-right">Leak Legend</h2>
+                                <svg width="30" height="30" class="middle">
+                                  <circle cx="15" cy="15" r="10" stroke="#ff0099" stroke-width="4" fill="#ff3399" style="fill-opacity:0.9;stroke-opacity:0.9"/>
+                                </svg> &nbsp; Grade 1 &nbsp; Severe lost leak<br>
+                                <svg width="30" height="30" class="middle">
+                                  <circle cx="15" cy="15" r="10" stroke="#cc0000" stroke-width="4" fill="#ff0000" style="fill-opacity:0.7;stroke-opacity:0.7"/>
+                                </svg> &nbsp; Grade 2 &nbsp; Moderate lost leak<br>
+                                <svg width="30" height="30" class="middle">
+                                  <circle cx="15" cy="15" r="10" stroke="#ff6600" stroke-width="4" fill="#ff9933" style="fill-opacity:0.5;stroke-opacity:0.5"/>
+                                </svg> &nbsp; Grade 3 &nbsp; Mild lost leak<br>
+                                <svg width="30" height="30" class="middle">
+                                  <circle cx="15" cy="15" r="10" stroke="#999999" stroke-width="4" fill="#b3b3b3" style="fill-opacity:0.5;stroke-opacity:0.5"/>
+                                </svg> &nbsp; All Found Leaks &nbsp;
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--END what section-->
+
+
+        <!--map section-->
+        <div id="mapid"></div>
+        <!--END map section-->
+
+
+        <!--Welcome to untitled section-->
+        <section id="lost" class="obliqueCut lightSection graySection separatorTop">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="separator" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 100 L100 0 L100 100 Z"></path>
+            </svg>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="sectionInfo row">
+                            <h1 class="sectionTitle col-sm-8 col-md-7 col-lg-6"><span class="underline">What causes Natural Gas Leaks?</span></h1>
+                            <h2 class="sectionDescription col-sm-4 col-md-5 col-lg-6">What is a “lost leak”?</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-lg-6">
+                        <div class="featureBox clearfix" data-appear="fade-in" data-appear-direction="left" data-appear-delay="300">
+                            <p>In Boston, natural gas is often transported in old and leak-prone cast iron, wrought iron, or unprotected steel pipes.  Natural gas is dangerous, especially when it escapes from pipes into surrounding neighborhoods  <span class="icon_cone"></span></p>
+                            <p>Utility companies in Massachusetts have had to report natural gas leaks and repairs since 2014.</p>
+                            <p>We call leaks “lost” if, after being recorded in 2014, they disappeared from the public record for 2015 without having been logged as repaired.  We analyzed the data to match repairs to leaks  <span class="icon_documents_alt"></span></p>
+                            <p>Between 2014 and 2015, it appears that <strong>2,938</strong> of National Grid's and <strong>1,263</strong> of Eversource's leaks went missing. That is 17% and 32% (respectively) of leaks that were omitted from the public record without any information about their being repaired.</p></div>
+                    </div>
+                    <div class="col-sm-12 col-lg-6">
+                        <div class="featureBox clearfix" data-appear="fade-in" data-appear-direction="left" data-appear-delay="600">
+                            <p>Why?  A very small percentage of leaks were likely omitted to reflect third-party repairs, such as when a construction company damages a pipeline.  Other leaks may have been omitted due to standard scheduled replacements to pipes, which would have happened regardless of the presence of a leak, effectively repairing the leaks.  These standard updates can't be logged in the public record as repairs, so the leaks remedied by planned pipe replacements would simply be deleted from the public record.</p>
+                            <p>However, if scheduled pipe replacements accounted for all (or most) of the missing gas leaks we discovered, we would expect these leaks to be clustered along main streets where pipes were replaced between 2014 and 2015.  But we don't see an obvious pattern like that.  Instead, the map looks like confetti, with missing leaks scattered far away from main streets.  We have no way of knowing whether anything has been done to address these leaks.</p>
+                            <p>This is a lot of unaccounted for gas.  Something is amiss.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ul class="horizontalLinks">
+                            <li>Natural Gas Leaks A Problem? <a class="arrowLink arrowRight" href="https://www.edf.org/climate/methanemaps/leaks-problem" target="_blank">edf.org/leaks-problem</a></li>
+                            <li>Boston: Snapshot Natural Gas Leaks <a class="arrowLink arrowRight" href="https://www.edf.org/climate/methanemaps/city-snapshots/boston" target="_blank">edf.org/city-snapshots</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--END Welcome section-->
+
+
+        <!--why section-->
+        <section id="why" class="obliqueCut lightSection separatorTop">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="separator"  viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 100 L100 0 L100 100 Z"></path>
+            </svg>
+            <div class="sectionIcon icon_cone"></div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="sectionInfo row">
+                            <h1 class="sectionTitle col-sm-12"><span class="underline">Why are we concerned about Natural Gas Leaks?</span></h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="featureBox clearfix" data-appear="fade-in" data-appear-direction="left" data-appear-delay="300">
+                            <h3><span class="icon_heart"></span>Gas leaks harm our home and planet</h3>
+                            <p>Gas leaks contribute to greenhouse gas buildup.  Natural gas leaking from the local distribution system accounts for 60 percent to 100 percent of the region’s emissions of methane, one of the most insidious heat-trapping greenhouse gases.</p>
+                            <p>According to a March 28, 2016 study from BU, roughly 15% of leaks are potentially explosive and 7% of leaks contribute 50% of the Metro Boston Area's methane emissions.
+                              <ul class="horizontalLinks">
+                                  <li>Risky Leaks From Gas Mains <a class="arrowLink arrowRight" href="https://www.bu.edu/news/2016/03/28/survey-gives-clearer-view-of-risky-leaks-from-gas-mains/" target="_blank">bu.edu</a></li>
+                              </ul>
+                            </p>
+                            <p>Similarly, the paper <i>'Fugitive methane emissions from leak-prone natural gas distribution infrastructure in urban environments'</i> concluded that 15% of leaks surveyed qualified as potentially explosive.  All leaks must be addressed, as even small leaks cannot be disregarded as ‘safely leaking.’
+                              <ul class="horizontalLinks">
+                                  <li>Methane emissions from leak-prone infrastructure <a class="arrowLink arrowRight" href="http://www.sciencedirect.com/science/article/pii/S0269749116300938" target="_blank">sciencedirect.com</a></li>
+                              </ul>
+                            </p>
+                            <p>Natural gas is known to kill trees and shrubs by causing root asphyxiation in the soil, and the methane and carbon monoxide present in natural gas are well known asphyxiants and are dangers to human health.
+                              <ul class="horizontalLinks">
+                                  <li>Hidden Culprit For Dead Trees <a class="arrowLink arrowRight" href="https://stateimpact.npr.org/pennsylvania/2015/11/27/gas-leaks-a-hidden-culprit-for-dead-trees/" target="_blank">stateimpact.npr.org</a></li>
+                                  <li>Natural Gas Injury Trees and Shrubs <a class="arrowLink arrowRight" href="https://extension.umd.edu/hgic/natural-gas-injury-trees-and-shrubs" target="_blank">extension.umd.edu</a></li>
+                              </ul>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="featureBox clearfix" data-appear="fade-in" data-appear-direction="right" data-appear-delay="600">
+                            <h3><span class="icon_currency_alt"></span>The cost is not paid by utilities</h3>
+                            <p>Our aging natural gas distribution system short-changes customers.</p>
+                            <p>In 2015, a Harvard-led team estimated that the Boston region loses 15 billion cubic feet of natural gas worth $90 million dollars each year. This means 2.7 percent of the gas that is brought to the Boston region never makes it to customers, but instead escapes into the atmosphere (and soil). These loss rate estimates are more than twice as high as those made by government regulators and utilities.
+                              <ul class="horizontalLinks">
+                                  <li>Gas infrastructure releasing methane <a class="arrowLink arrowRight" href="https://www.seas.harvard.edu/news/2015/01/boston-s-natural-gas-infrastructure-releases-high-levels-of-heat-trapping-methane" target="_blank">seas.harvard.edu</a></li>
+                              </ul>
+                            </p>
+                            <p>Instead of focusing on repairing all existing leaks, utility companies are focused on building new pipelines.  The utility companies can then shift the cost of the new pipelines onto their customers through pipeline tariffs (taxes on all natural gas customers) which subsidize the construction of new natural gas pipelines across the state.
+                              <ul class="horizontalLinks">
+                                  <li>Baker/Healey face off over pipeline tariff <a class="arrowLink arrowRight" href="https://www.bostonglobe.com/business/2016/05/05/governor-baker-pipeline-tariff-faces-challenge-state-highest-court/iCwg13xMuhytsWv3qXv8iI/story.html" target="_blank">bostonglobe.com</a></li>
+                              </ul>
+                            </p>
+                            <p>Because utility companies have local monopolies, <a href="https://www.youtube.com/watch?v=LRh58P4Qtic&t=35s" target="_blank" class="highlight">customers have no choice but to pay these higher prices.</a></p>
+                        </div>
+                    </div>
+                </div>
+              </div>
+          </section>
+        <!--END why section-->
+
+
+        <!--grades section-->
+        <section id="grades" class="obliqueCut lightSection separatorTop">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="separator"  viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 100 L100 0 L100 100 Z"></path>
+            </svg>
+            <div class="sectionIcon icon_toolbox_alt"></div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="sectionInfo row">
+                            <h1 class="sectionTitle col-sm-12 col-md-5 col-lg-4">
+                              <ul class="horizontalLinks">
+                                  <li><span class="underline">MA Law </span><a class="arrowLink arrowRight" href="https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXXII/Chapter164/Section144" target="_blank">Section 144</a></li>
+                              </ul>
+                            </h1>
+                            <h2 class="sectionDescription col-sm-12 col-md-7 col-lg-8">(a) There shall be uniform natural gas leaks classification for all gas companies</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="sectionInfo row">
+                            <h3 class="sectionSubDescription col-sm-12 col-lg-8 col-lg-offset-4">(b) (1) Gas companies shall assess a grade to all reported natural gas leaks based on the system provided in this section.</h3>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-4">
+                        <div class="featureBox clearfix" data-appear="fade-in" data-appear-direction="left">
+                            <h3>(2) A Grade 1 leak </h3>
+                            <p>shall be a leak that represents an existing or probable hazard to persons or property. Grade 1 leaks require repair as immediately as possible and continuous action until the conditions are no longer hazardous. The gas company shall immediately schedule a completion of repairs and the condition shall be kept under continuous surveillance until the hazard or source of the leak is eliminated. Whenever appropriate and feasible, a gas company shall notify the fire department and chief law enforcement officer in each city or town where a Grade 1 leak is identified.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="featureBox clearfix" data-appear="fade-in" data-appear-direction="bottom" data-appear-delay="600">
+                            <h3>(3) A Grade 2 leak </h3>
+                            <p>shall be a leak that is recognized as non-hazardous to persons or property at the time of detection, but justifies scheduled repair based on probable future hazard. The gas company shall repair Grade 2 leaks or replace the main within 12 months from the date the leak was classified. All Grade 2 leaks shall be reevaluated by a gas company at least once every 6 months until eliminated; provided, however, that the frequency of reevaluation shall be determined by the location and magnitude of the leakage condition.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="featureBox clearfix" data-appear="fade-in" data-appear-direction="right" data-appear-delay="300">
+                            <h3>(4) A Grade 3 leak </h3>
+                            <p>shall be a leak that is recognized as non-hazardous to persons or property at the time of detection and can be reasonably expected to remain non-hazardous. The gas company shall reevaluate Grade 3 leaks during the next scheduled survey, or within 12 months from the date last evaluated, whichever occurs first, until the leak is eliminated or the main is replaced. A municipal or state public safety official may request a reevaluation of a Grade 3 leak prior to the next scheduled survey, or sooner than 12 months of the date last evaluated, if the official reasonably believes that the Grade 3 leak poses a threat to public safety.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="featureBox clearfix" data-appear="fade-in" data-appear-direction="left">
+                            <h3>(c) Projects on Public Ways</h3>
+                            <p>Upon the undertaking of a significant project on a public way exposing confirmed natural gas infrastructure, and with sufficient notice, a municipality or the commonwealth shall submit written notification of the project to a gas company. The gas company shall survey the project area for the presence of Grade 1 or Grade 2 leaks and set repair and replacement schedules for all known or newly detected Grade 1 or Grade 2 leaks. The gas company shall ensure that any shut off valve in the significant project area has a gate box installed upon it or a reasonable alternative that would otherwise ensure continued public safety and that any critical valve that has not been inspected and tested within the past 12 months is verified to be operational and accessible. The gas company shall provide the repair and replacement schedule of gas leaks to the municipality or the commonwealth</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="featureBox clearfix" data-appear="fade-in" data-appear-direction="bottom" data-appear-delay="600">
+                            <h3>(d) School Zones</h3>
+                            <p>Gas companies shall prioritize any pipeline repairs required under this section for gas leaks detected within a school zone. For the purposes of this section, ''school zone'' shall mean on or within 50 feet of the real property comprising a public or private accredited preschool, accredited Head Start facility, elementary, vocational or secondary school.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="featureBox clearfix" data-appear="fade-in" data-appear-direction="right" data-appear-delay="300">
+                            <h3>(e) Gas Company Response and Reporting</h3>
+                            <p>As part of the annual service quality standards report required by section 1I, each gas company shall report to the department the location of each Grade 1, Grade 2 and Grade 3 leak existing as of the date of the report, the date each Grade 1, Grade 2 and Grade 3 leak was classified and the dates of repairs performed on each Grade 1, Grade 2 and Grade 3 leak. A gas company shall specify any reclassification of previously identified leaks in its annual report. Gas leak information shall be made available to any municipal or state public safety official upon written request to the department.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-lg-offset-1">
+                        <div class="featureBox clearfix" data-appear="fade-in" data-appear-direction="left">
+                            <h3>(f)</h3>
+                            <p>The department shall promulgate regulations necessary to implement the uniform natural gas leak classifications as specified in this section and shall oversee and monitor company response and reporting.</p>
+                        </div>
+                    </div>
+                </div>
+              </div>
+          </section>
+        <!--END grades section-->
+
+
+        <!--
+        <span class="icon_cogs"></span>
+        <span class="icon_tools"></span>
+        <span class="icon_toolbox_alt"></span>
+        <span class="icon_pencil"></span>
+        <span class="icon_pencil-edit"></span> -->
+
+
+        <!-- Timeline How Data Processed -->
+        <section id="how" class="obliqueCut darkSection purpleSection darkSection blueSection separatorTop paddingBottom120">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="separator"  viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 100 L100 0 L100 100 Z"></path>
+            </svg>
+            <div class="sectionIcon icon_cog"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="sectionInfo row">
+                            <h2 class="sectionTitle col-sm-4"><span class="underline">A Data Story</span></h2>
+                            <h2 class="sectionDescription col-sm-8">How We Found Lost Leaks</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 timeline">
+                        <div class="row">
+                            <div class="col-sm-12 avatar" data-appear="fade-in">
+                                <img alt="Avatar" src="images/crew0.jpg" />
+                            </div>
+                            <div class="col-sm-5 col-sm-offset-1 timeline_box_container">
+                                <div class="timeline_box left" data-appear="fade-in" data-appear-delay="100">
+                                    <img src="" alt="" />
+                                    <div class="date">[Step 1]</div>
+                                    <h4>
+                                      Obtained data from the State of Massachusetts Office of
+                                      <a href="http://web1.env.state.ma.us/DPU/FileRoom/dockets/bynumber" target="_blank">Energy and Environmental Affairs</a>
+                                    </h4>
+                                    <p>
+                                      We identified records via docket number and downloaded them from public utilities.
+                                      The data was typically somewhat irregular and in pdf format.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-5 col-sm-offset-6 timeline_box_container">
+                                <div class="timeline_box right" data-appear="fade-in">
+                                    <div class="date">[Step 2]</div>
+                                    <h4>
+                                      Parse PDFs using SmallPDF.com and PDFTables <a href="http://www.heetma.org/who/staff/" target="_blank">Audrey Schulman, HEET Co-founder</a>
+                                    </h4>
+                                    <p>
+                                      Audrey converted the pdfs into excel spreadsheets and cleaned the spreadsheet data by hand. You can some of this data <a href="https://github.com/RogerTangos/NatGas/tree/master/data/Raw" target="_blank">in our repository</a>.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-5 col-sm-offset-1 timeline_box_container">
+                                <div class="timeline_box left" data-appear="fade-in" data-appear-delay="100">
+                                    <div class="date">[Step 3]</div>
+                                    <h4>
+                                      Convert data to CSV and standardize
+                                    </h4>
+                                    <p>
+                                      Albert Carter converted the excel spreadsheets into CSV format and ran them through a Python program to standardize and sanitize the data.
+                                      Reported leaks were geolocated using the Google Maps API.
+                                      The latitude and longitude information was inserted into DataHub.
+                                    </p>
+                                    <p>
+                                      If you are interested in looking at the raw CSV data.
+                                      You can view them on <a href="https://datahub.csail.mit.edu/browse/al_carter/natural_gas/files" target="_blank">DataHub</a>. You can also find our data sanitization code on <a class="soc_" href="https://github.com/RogerTangos/NatGas/blob/master/parsing.py" target="_blank">GitHub <i class="fa fa-github"></i></a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-5 col-sm-offset-6 timeline_box_container">
+                                <div class="timeline_box right" data-appear="fade-in" data-appear-delay="200">
+                                    <div class="date">[Step 4]</div>
+                                    <h4>Identify lost leaks</h4>
+                                      <p>We compared the lists of 2014 leaks and 2014 repairs.
+                                        If a repair happened near a pre-existing leak (approximately 100 ft), the leak was counted as repaired and removed from analysis.
+                                      </p>
+                                      <p>Any remaining leaks without a matching repair were classified as un-repaired 2014 leaks.
+                                      </p>
+                                      <p>We cross-referenced our list of un-repaired 2014 leaks with the list of 2015 leaks.
+                                        We identified leaks appearing in both the 2014 and 2015 data as the same if their record date and address matched. If there was a match, the 2014 un-repaired leak was accounted for and therefore not a lost leak.
+                                      </p>
+                                      <p>The remaining un-repaired 2014 leaks that did not match with any 2015 leaks were identified as lost leaks.
+                                      </p>
+                                      <p>You can find our code for this on <a class="soc_" href="https://github.com/MichaelRyanWebber/clustering/blob/master/nearbyX.py" target="_blank">GitHub <i class="fa fa-github"></i></a>
+                                      </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-5 col-sm-offset-1 timeline_box_container">
+                                <div class="timeline_box left" data-appear="fade-in" data-appear-delay="300">
+                                    <div class="date">[Step 5]</div>
+                                    <h4>The database on DataHub is accessible if you are interested in searching it.</h4>
+                                    <p>
+                                      Each leak is associated with an ID number.  On the map, inside each popup is a link to view the data in Datahub. <br>
+                                      For example: <a href="https://datahub.csail.mit.edu/browse/al_carter/natural_gas/query?q=select+*+from+natural_gas.eversource_unrepaired_2014+where+id%3D3%3B" target="_blank">This is a leak originally reported by Eversource with the id of 6.</a> Please note that the location_type for the coordinates is "ROOFTOP," but that the leak is mostly likely in the street or parking lot around the address.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-5 col-sm-offset-6 timeline_box_container">
+                                <div class="timeline_box right" data-appear="fade-in" data-appear-delay="400">
+                                    <div class="date">[Step 6]</div>
+                                    <h4>Making the Map</h4>
+                                    <p>Lost leaks were populated onto this map Allie built with Leaflet.js.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--END What I have done-->
+
+
+        <!-- Gas Company section-->
+        <section id="who" class="obliqueCut lightSection separatorTop">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="separator"  viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 100 L100 0 L100 100 Z"></path>
+            </svg>
+            <div class="container">
+                <!-- START TITLE AND DESCRIPTION -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="sectionInfo row">
+                            <h2 class="sectionTitle col-sm-4"><span class="underline">Who</span> is Involved?</h2>
+                            <h2 class="sectionDescription col-sm-8">These are the natural gas companies (utilities) we've analyzed</h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- END TITLE AND DESCRIPTION -->
+
+                <div class="row customers">
+                    <div class="col-sm-12">
+                        <ul class="customersList clearfix" data-appear="fade-in" data-appear-direction="top">
+                            <li><a href="https://www.eversource.com/Content/ema-g">
+                                <img alt="Eversource" src="images/Eversource.png" /></a></li>
+                            <li><a href="https://www.nationalgridus.com/MA-Business/">
+                                <img alt="National Grid" src="images/national-grid-logo.png" /></a></li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="quote" data-appear="fade-in">
+                            <div class="quoteText">
+                              National Grid's 2014 Annual Service Quality Report PDF included the location of each leak existing as of February 2015, the date each leak was reported, the dates of repairs performed on each leak in 2014, and current classification.  National Grid is made up of Boston Gas Company, Colonial Gas Company, and Essex Gas Company.
+                            <span class="quoteAuthor descriptionColor">- <a href="sanitization/data/Raw/NationalGrid/initial_filing.pdf">National Grid's 2014 Annual Service Quality Report</a></span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other gas companies who many be involved, but we have not processed and analyzed their data yet: -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <h2 class="sectionDescription col-sm-8 col-sm-offset-2">
+                              Other natural gas companies in Massachusetts:
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row customers">
+                    <div class="col-sm-12">
+                        <ul class="customersList clearfix" data-appear="fade-in" data-appear-direction="top">
+                            <li><a href="https://www.columbiagasma.com/">
+                                <img alt="Columbia Gas of MA" src="images/cma.png" /></a></li>
+                            <li><a href="https://www.berkshiregas.com">
+                                <img alt="Berkshire Gas" src="images/berkshiregas_com.gif" /></a></li>
+                            <li><a href="https://libertyutilities.com/">
+                                <img alt="Liberty Utilities" src="images/libertyUtilities.png" /></a></li>
+                            <li><a href="http://unitil.com">
+                                <img alt="Unitil" src="images/unitil-large.png" /></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--END section-->
+
+
+        <!--Meet the crew section-->
+        <section id="about" class="obliqueCut lightSection graySection separatorTop separatorBottom">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="separator" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 100 L100 0 L100 100 Z"></path>
+            </svg>
+            <!--SECTION ICON-->
+            <div class="sectionIcon icon_group"></div>
+
+            <div class="container">
+                <!--SECTION TITLE-->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="sectionInfo row">
+                            <h2 class="sectionTitle col-sm-4"><span class="underline">About</span> Us</h2>
+                            <div class="col-sm-7">
+                              <h2 class="sectionDescription">
+                                This isn't our day job, and we don't get paid to do this.
+                              </h2>
+                              <h3 class="sectionSubDescription">
+                                We hope our work will inform public discussion about natural gas leaks, their dissapearances, and their effects.
+                              </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--END SECTION TITLE-->
+
+                <!--SECTION CONTENT-->
+                <div class="row overflowHidden crewMembers">
+                    <!--CREW AVATARS-->
+                    <div class="col-sm-3 clearfix crewAvatars" data-appear="fade-in" data-appear-direction="left">
+                        <div class="crewAvatarsSlider">
+                            <span class="Prev animate">
+                                <img alt="Previous" src="images/prevDark.png" /></span>
+                            <span class="Next animate">
+                                <img alt="Next" src="images/nextDark.png" /></span>
+                        </div>
+                        <div class="crewAvatarsFixed">
+                            <div class="member text-center" data-toggle="tab" data-target="#Member1">
+                                <img class="memberImg animateFast boxShadowHover" alt="Crew member" src="images/crew1.jpg" />
+                                <div class="memberName titleColor">Al Carter</div>
+                                <div class="memberPosition">Data Wrangling, Clustering, Project Management</div>
+                            </div>
+                            <div class="member text-center" data-toggle="tab" data-target="#Member2">
+                                <img class="memberImg animateFast boxShadowHover" alt="Crew member" src="images/crew2.jpg" />
+                                <div class="memberName titleColor">Michael Webber</div>
+                                <div class="memberPosition">Clustering</div>
+                            </div>
+                            <div class="member text-center" data-toggle="tab" data-target="#Member3">
+                                <img class="memberImg animateFast boxShadowHover" alt="Crew member" src="images/crew3.jpg" />
+                                <div class="memberName titleColor">Allie S.</div>
+                                <div class="memberPosition">Map and Website</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--END CREW AVATARS-->
+
+                    <!--CREW DESCRIPTION-->
+                    <div class="tab-content" data-appear="fade-in" data-appear-direction="right">
+                        <!--MEMBER 1-->
+                        <div id="Member1" class="tab-pane fade in active">
+                            <!--ABOUT MEMBER-->
+                            <div class="col-sm-7 col-sm-offset-1 paddingRight0">
+                                <div class="memberAbout">
+                                    <div class="memberName descriptionColor">Albert Carter</div>
+                                    <div class="memberDesc1 titleColor">Programmer and research staff member at the MIT CSAIL Big Data Initiative and LivingLab.</div>
+                                    <div class="memberDesc2">Albert Carter has been at MIT for 4 years. While this project uses publicly available research and software from the lab, it is not a funded by MIT, CSAIL, or any other MIT-affiliated organization.</div>
+                                    <div class="memberSocial">
+                                        <h4>Follow Al</h4>
+                                        <ul class="memberSocialList">
+                                            <li><a class="soc_" href="https://github.com/RogerTangos" target="_blank"><i class="fa fa-github"></i>github/RogerTangos</a></li>
+                                            <li><a class="soc_linkedin" href="https://www.linkedin.com/in/brownualcarter" target="_blank">brownualcarter</a></li>
+                                            <li><a class="soc_twitter" href="http://twitter.com/al_carter" target="_blank">@al_carter</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--END MEMBER 1-->
+
+                        <!--MEMBER 2-->
+                        <div id="Member2" class="tab-pane fade">
+                            <!--ABOUT MEMBER-->
+                            <div class="col-sm-7 col-sm-offset-1 paddingRight0">
+                                <div class="memberAbout">
+                                    <div class="memberName descriptionColor">Michael Webber</div>
+                                    <div class="memberDesc1 titleColor">Creative and determined problem solver and builder, committed to excellence in his work and personal interactions.</div>
+                                    <div class="memberDesc2">Michael Webber has experience programming applications and supporting them, either working as part of a team and on his own while travelling across the country and working remotely. He is currently seeking interesting and challenging IT projects.</div>
+                                    <div class="memberSocial">
+                                        <h4>Follow Michael Webber</h4>
+                                        <ul class="memberSocialList">
+                                            <li><a class="soc_" href="https://github.com/MichaelRyanWebber" target="_blank"><i class="fa fa-github"></i>github/MichaelRyanWebber</a></li>
+                                            <li><a class="soc_linkedin" href="https://www.linkedin.com/in/mike-webber-25469213" target="_blank">mike-webber-25469213</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--END MEMBER 2-->
+
+                        <!--MEMBER 3-->
+                        <div id="Member3" class="tab-pane fade">
+                            <!--ABOUT MEMBER-->
+                            <div class="col-sm-7 col-sm-offset-1 paddingRight0">
+                                <div class="memberAbout">
+                                    <div class="memberName descriptionColor">Allison Sichling</div>
+                                    <div class="memberDesc1 titleColor">Web developer interested in interactive experiences, with a BA in Fine Art.</div>
+                                    <div class="memberDesc2">Allison graduated from General Assembly’s full-time Web Development Immersive boot camp in December 2015.  Generally passionate about creating things, she enjoys solving problems, learning, collaborating, drawing, painting, sewing, and making art with LEDs.</div>
+                                    <div class="memberSocial">
+                                        <h4>Follow Allie</h4>
+                                        <ul class="memberSocialList">
+                                            <li><a class="soc_" href="https://github.com/faetea" target="_blank"><i class="fa fa-github"></i>github/faetea</a></li>
+                                            <li><a class="soc_arrow" href="http://faetea.github.io/" target="_blank">Code Portfolio</a></li>
+                                            <li><a class="soc_linkedin" href="https://www.linkedin.com/in/allisonsebastian" target="_blank">allisonsebastian</a></li>
+                                            <li><a class="soc_twitter" href="https://twitter.com/faetea" target="_blank">@faetea</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--END MEMBER 3-->
+                    </div>
+                    <!--END CREW DESCRIPTION-->
+                </div>
+                <!--END SECTION CONTENT-->
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="separator" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 100 L100 0 L0 0 Z"></path>
+            </svg>
+        </section>
+        <!--END Meet the crew section-->
+
+
+        <!--Footer-->
+        <footer id="footer" class="obliqueCut lightSection separatorTop">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="separator"  viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 100 L100 0 L100 100 Z"></path>
+            </svg>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 text-left">
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <div>Theme designed by <a href="http://nasfactor.com" target="_blank">Nasirwd</a> with modifications by Allie.</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--END Footer-->
+    </div>
+
+    <!--Scripts-->
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nprogress.min.js"></script>
+    <script src="js/jquery.color.min.js"></script>
+    <script src="js/jquery.carouFredSel-6.2.1-packed.js"></script>
+    <script src="js/jquery.touchSwipe.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/jquery-magnific-popup.min.js"></script>
+    <script src="js/jquery.parallax-1.1.3.js"></script>
+    <script src="js/instafeed.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.mb.YTPlayer.js"></script>
+    <!-- jQuery REVOLUTION Slider  -->
+    <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+    <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+    <!--Google maps javascript-->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+    <script src="js/gmaps.js"></script>
+    <!--My javascript-->
+    <script src="js/script.js"></script>
+
+    <script src="leaflet/leaflet.js"></script>
+    <script src="map.js"></script>
+</body>
+</html>

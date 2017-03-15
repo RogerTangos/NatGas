@@ -1,0 +1,86 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#mapid {
+  height: 70em;
+}
+
+.lightSection h4 .lightSection .featureBox [class^="icon_"], .lightSection .featureBox [class*="icon_"] {
+  color: #009edb;
+}
+
+#where {
+  padding-bottom: 0px;
+}
+
+svg.middle {
+  vertical-align: middle;
+}
+
+.well {
+  min-width: 16em;
+}
+
+.well .text-right {
+  padding-right: 1em;
+}
+
+.fa-github {
+  color: #000;
+  font-size: 25px;
+  margin-right: 23px;
+}
+
+#how a:link { color: #ff9933; /* Deep saffron, Vivid orange*/ }
+#how a:hover { color: #ff3399; /* Vivid pink */ }
+#how a:visited { color: #ff6600; /* Pure orange*/ }
+
+#who .quoteText {
+    font-size: 18px;
+    /*font-weight: 300;*/
+    line-height: 36px;
+    margin-bottom: 28px;
+}
+#who .quoteAuthor {
+    font-size: 14px;
+    font-weight: 700;
+    float: right;
+    padding-right: 28px;
+    /*margin-bottom: 30px;*/
+}
+
+@media (max-width:767px) {
+  #lost {
+      padding-top: 60px;
+  }
+  .sectionTitle {
+      font-weight: 700;
+      margin-bottom: 12px;
+  }
+  h1 {
+      font-size: 24px;
+  }
+  .sectionInfo {
+      margin-bottom: 1em;
+  }
+  .featureBox p {
+    line-height: 28px;
+    font-size: 16px;
+  }
+}
+
+/*
+lg
+@media (min-width: 1200px) {}
+md
+@media (max-width: 1200px) {}
+sm
+@media (max-width:992px) {}
+sm
+@media (min-width:768px) {}
+xs
+@media (max-width:320px) {}
+*/

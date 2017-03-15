@@ -55,7 +55,8 @@ h3 { font-size: 18px; }
 h4 { font-size: 16px; }
 p { margin: 0 0 20px 0; }
 .bigText { font-weight: 900; font-size: 86px; line-height: 80px; }
-.mediumText { font-size: 22px; line-height: 95px; }
+.bigText { text-shadow: 2px 2px 4px #000000; }
+.mediumText { font-size: 22px; line-height: 95px; text-shadow: 1px 1px 2px #000000; }
 .textLight { font-weight: 300; }
 
 /* Anchors */
@@ -360,6 +361,7 @@ blockquote footer { color: #fff; }
 .style2 .lightSection .memberPosition, .style2 .lightSection .memberSocialList [class*="soc_"],
 .style2 .lightSection .blog_latest article .article_meta a, .style2 .lightSection .widget .widget-recentPosts .postMeta a,
 .style2 .lightSection .blog_latest .article_bottom .article_tags a { color: #009edb; }
+.style2 .lightSection .sectionSubDescription { color: #999; }
 .style2 .lightSection .sliderPagination a.selected, .style2 .lightSection .defaultPager ul li a.active,
 .style2 .lightSection .defaultPager ul li:hover a,
 .style2 .lightSection #comments .comment .comment-body .avatar { background: #009edb; }
@@ -454,7 +456,8 @@ blockquote footer { color: #fff; }
 .sectionIcon { font-size: 30px; display: inline-block; text-align: center; position: absolute; margin: auto; left: 0; right: 0; top: -37px; width: 75px; height: 75px; line-height: 75px; border-radius: 50%; vertical-align: middle; }
 section { position: relative; }
 
-.obliqueCut { padding-top: 120px; padding-bottom: 180px; position: relative; }
+/*.obliqueCut { padding-top: 120px; padding-bottom: 180px; position: relative; }*/
+.obliqueCut { padding-top: 120px; padding-bottom: 120px; position: relative; }
 .oblique .obliqueCut { padding-top: 75px; }
 .oblique .obliqueCut svg { position: absolute; display: block; z-index: 100; height: 110px; width: 100%; }
 .oblique .obliqueCut.separatorTop svg:first-of-type { top: -109px; bottom: auto; }
@@ -479,12 +482,14 @@ section { position: relative; }
 * CONTENT ELEMENTS
 ****************************/
 /*Section Info*/
-.sectionInfo { margin-bottom: 75px; }
+/*.sectionInfo { margin-bottom: 75px; }*/
+.sectionInfo { margin-bottom: 2em; }
 .extraSpacing2 .sectionInfo { margin-bottom: 90px; }
 .extraSpacing4 .sectionInfo { margin-bottom: 100px; }
-.sectionInfo h2 { font-size: 30px; }
+/*.sectionInfo h2 { font-size: 30px; }*/
 .sectionTitle { font-weight: 900; margin-bottom: 20px; line-height: 44px; }
 .sectionDescription { font-weight: 300; line-height: 40px; }
+.sectionSubDescription { font-weight: 400; line-height: 40px; }
 
 /*Feature Boxes*/
 .featureBox { margin-bottom: 25px; }
@@ -730,7 +735,7 @@ section { position: relative; }
 .timeline .timeline_box.right { margin-left: 40px; }
 .timeline .timeline_box h4 { font-weight: 700; }
 .timeline .timeline_box .date { font-weight: 700; font-size: 13px; margin-bottom: 10px; }
-.timeline .timeline_box p { font-weight: 300; font-size: 14px; line-height: 22px; }
+.timeline .timeline_box p { font-weight: 500; font-size: 14px; line-height: 22px; }
 .timeline .timeline_box p:last-child { margin-bottom: 0; }
 .timeline .timeline_box:before { content: ' '; display: block; width: 24px; height: 24px; border: 4px solid #fff; background: #337cc6; border-radius: 50%; position: absolute; top: 0; bottom: 0; margin: auto; }
 .timeline .timeline_box.left:before { right: -12px; }
